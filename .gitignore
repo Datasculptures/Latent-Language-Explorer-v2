@@ -1,0 +1,41 @@
+# Environment
+.env
+*.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# Data (large files not committed)
+backend/data/exports/
+backend/data/*.json
+backend/data/*.db
+!backend/data/journal/.gitkeep
+!backend/data/exports/.gitkeep
+
+# Node
+node_modules/
+frontend/dist/
+dist/
+
+# GloVe
+data/glove*.txt
+data/*.bin
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
