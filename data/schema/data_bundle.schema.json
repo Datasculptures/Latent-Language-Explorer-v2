@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "lle-v2/data-bundle",
+  "title": "DataBundle",
+  "type": "object",
+  "required": ["meta", "concepts"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["schema_version","data_bundle_version","umap_random_seed","embedding_model","term_count","timestamp"],
+      "properties": {
+        "schema_version":       {"type": "integer"},
+        "data_bundle_version":  {"type": "string"},
+        "umap_random_seed":     {"type": "integer",
+          "description": "Must be 42. If different, all journal coordinates are invalid."},
+        "embedding_model":      {"type": "string"},
+        "embedding_dim":        {"type": "integer"},
+        "pca_components":       {"type": "integer"},
+        "umap_components":      {"type": "integer", "const": 2,
+          "description": "Always 2. Terrain height is KDE density, not a UMAP dimension."},
+        "term_count":           {"type": "integer"},
+        "roget_category_count": {"type": "integer"},
+        "timestamp":            {"type": "string", "format": "date-time"},
+        "contextual_mode":      {"type": "string", "enum": ["template","real","synthetic","none"]},
+        "contextual_model":     {"oneOf": [{"type": "string"}, {"type": "null"}]},
+        "pipeline_git_hash":    {"oneOf": [{"type": "string"}, {"type": "null"}]}
+      }
+    },
+    "concepts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id","label","roget_category_id","roget_class_id","position_2d"],
+        "properties": {
+          "id":                   {"type": "string"},
+          "label":                {"type": "string", "maxLength": 100},
+          "roget_category_id":    {"type": "string"},
+          "roget_category_name":  {"type": "string"},
+          "roget_section_name":   {"type": "string"},
+          "roget_class_id":       {"type": "integer", "minimum": 1, "maximum": 6},
+          "roget_class_name":     {"type": "string"},
+          "is_polysemous":        {"type": "boolean"},
+          "all_roget_categories": {"type": "array", "items": {"type": "string"}},
+          "is_modern_addition":   {"type": "boolean"},
+          "position_2d":          {"type": "array", "items": {"type": "number"}, "minItems": 2, "maxItems": 2},
+          "context_spread":       {"oneOf": [{"type": "number"}, {"type": "null"}]},
+          "polysemy_score":       {"oneOf": [{"type": "number"}, {"type": "null"}]},
+          "contexts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "roget_class_context": {"type": "string"},
+                "position_2d":         {"type": "array", "items": {"type": "number"}, "minItems": 2, "maxItems": 2},
+                "distance_from_base":  {"type": "number"}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
