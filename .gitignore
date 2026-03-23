@@ -45,3 +45,8 @@ data/roget/roget_filtered.json
 data/roget/filter_report.json
 data/roget/roget_enriched.json
 data/roget/roget_modern.json
+data/roget/vocab_index.json
+data/roget/vocab_flat.json
+data/roget/vocab_validated.json
+data/roget/vocab_removed.json
+data/roget/category_colours.json
