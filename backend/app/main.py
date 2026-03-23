@@ -7,6 +7,7 @@ import html
 import json as _json
 import re
 import time
+from contextlib import asynccontextmanager
 from pathlib import Path
 
 from fastapi import FastAPI, Request
@@ -18,12 +19,27 @@ from .config import (
     LLM_RATE_LIMIT_INTERVAL_SECONDS,
 )
 from .routers import journal as journal_router
+from .services import probe_service
+
+
+@asynccontextmanager
+async def lifespan(app_instance):
+    # Startup: build embedding index if embeddings are available
+    built = probe_service.build_index()
+    if built:
+        print("Embedding index built and ready.")
+    else:
+        print("WARNING: Embeddings not found. Probe endpoint will return 501.")
+    yield
+    # Shutdown: nothing to clean up
+
 
 app = FastAPI(
     title="Latent Language Explorer V2",
     version=PROJECT_VERSION,
     docs_url="/api/docs",
     redoc_url=None,
+    lifespan=lifespan,
 )
 
 app.add_middleware(
@@ -143,8 +159,59 @@ async def get_taxonomy():
     return _pipeline_required("taxonomy")
 
 @app.post("/api/probe")
-async def probe():
-    return _pipeline_required("probe")
+async def probe_endpoint(request: Request):
+    from .config import MAX_QUERY_LENGTH, PROBE_STEPS
+
+    body = await request.json()
+
+    def sanitize_term(s: str) -> str:
+        s = re.sub(r'[\x00-\x1f\x7f]', '', str(s))
+        return s.strip()[:MAX_QUERY_LENGTH]
+
+    term_a  = sanitize_term(body.get("term_a", ""))
+    term_b  = sanitize_term(body.get("term_b", ""))
+    n_steps = int(body.get("n_steps", PROBE_STEPS))
+    n_steps = max(2, min(n_steps, 100))  # clamp
+
+    if not term_a or not term_b:
+        return JSONResponse(
+            status_code=422,
+            content={"detail": "term_a and term_b are required."},
+        )
+
+    idx = probe_service.get_index()
+    if idx is None or not idx.built:
+        return _pipeline_required("probe (embeddings not loaded)")
+
+    result = probe_service.probe(term_a, term_b, n_steps=n_steps)
+    if result is None:
+        return JSONResponse(
+            status_code=404,
+            content={"detail": f"One or both terms not found in index: "
+                                f"'{term_a}', '{term_b}'"},
+        )
+    return result
+
+
+@app.get("/api/nearest")
+async def get_nearest(term: str, k: int = 10):
+    """Return k nearest concepts to a given term in high-D space."""
+    from .config import MAX_QUERY_LENGTH
+    term = re.sub(r'[\x00-\x1f\x7f]', '', term).strip()[:MAX_QUERY_LENGTH]
+    k    = max(1, min(k, 50))
+
+    idx = probe_service.get_index()
+    if idx is None or not idx.built:
+        return _pipeline_required("nearest (embeddings not loaded)")
+
+    vec = idx.get_embedding(term)
+    if vec is None:
+        return JSONResponse(
+            status_code=404,
+            content={"detail": f"Term not found: '{term}'"},
+        )
+    nearest = idx.nearest_k(vec, k=k, exclude_terms={term})
+    return {"term": term, "nearest": nearest}
 
 
 # ── Generative decoding ───────────────────────────────────────────────
