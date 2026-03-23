@@ -41,3 +41,5 @@ Thumbs.db
 *.swp
 data/roget/
 data/roget/roget_parsed.json
+data/roget/roget_filtered.json
+data/roget/filter_report.json
