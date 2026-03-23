@@ -40,3 +40,4 @@ Thumbs.db
 .idea/
 *.swp
 data/roget/
+data/roget/roget_parsed.json
