@@ -1,11 +1,13 @@
 """
 backend/app/main.py
 FastAPI application entry point.
-All terrain endpoints return 501 until the data pipeline has run.
+Terrain endpoints serve pre-computed pipeline data from backend/data/.
 """
 import html
+import json as _json
 import re
 import time
+from pathlib import Path
 
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -36,6 +38,18 @@ app.include_router(journal_router.router)
 
 # In-memory rate limiting state (per process)
 _last_llm_call: float = 0.0
+
+# ── Data loader ───────────────────────────────────────────────────────
+
+_DATA_DIR = Path(__file__).resolve().parent.parent.parent / "backend" / "data"
+
+
+def _load_json(filename: str):
+    path = _DATA_DIR / filename
+    if not path.exists():
+        return None
+    with open(path, encoding="utf-8") as f:
+        return _json.load(f)
 
 
 # ── Health & config ───────────────────────────────────────────────────
@@ -70,27 +84,51 @@ def _pipeline_required(name: str):
 
 @app.get("/api/concepts")
 async def get_concepts():
-    return _pipeline_required("concepts")
+    data = _load_json("data_bundle.json")
+    if data is None:
+        return _pipeline_required("concepts")
+    return {"concepts": data["concepts"], "meta": data["meta"]}
 
 @app.get("/api/terrain")
 async def get_terrain():
-    return _pipeline_required("terrain")
+    data = _load_json("terrain_data.json")
+    if data is None:
+        return _pipeline_required("terrain")
+    return data
 
 @app.get("/api/desert-field")
 async def get_desert_field():
-    return _pipeline_required("desert-field")
+    data = _load_json("terrain_data.json")
+    if data is None:
+        return _pipeline_required("desert-field")
+    return {
+        "desert": data["desert"],
+        "x_grid": data["x_grid"],
+        "y_grid": data["y_grid"],
+        "meta":   data["meta"],
+    }
+
+@app.get("/api/attractors")
+async def get_attractors():
+    data = _load_json("terrain_data.json")
+    if data is None:
+        return _pipeline_required("attractors")
+    return {"attractors": data["attractors"]}
 
 @app.get("/api/basin-data")
 async def get_basin_data():
-    return _pipeline_required("basin-data")
+    data = _load_json("terrain_data.json")
+    if data is None:
+        return _pipeline_required("basin-data")
+    return {
+        "boundaries": data["basin_boundaries"],
+        "basin_grid": data["basin_grid"],
+        "meta":       data["meta"],
+    }
 
 @app.get("/api/basin-assignments")
 async def get_basin_assignments():
     return _pipeline_required("basin-assignments")
-
-@app.get("/api/attractors")
-async def get_attractors():
-    return _pipeline_required("attractors")
 
 @app.get("/api/voronoi-vertices")
 async def get_voronoi_vertices():
