@@ -44,3 +44,4 @@ data/roget/roget_parsed.json
 data/roget/roget_filtered.json
 data/roget/filter_report.json
 data/roget/roget_enriched.json
+data/roget/roget_modern.json
