@@ -505,7 +505,7 @@ export class SceneManager {
 
     const COUNT    = concepts.length
     const geo      = new THREE.SphereGeometry(0.04, 6, 6)
-    const mat      = new THREE.MeshBasicMaterial({ vertexColors: true })
+    const mat      = new THREE.MeshBasicMaterial()  // instance colors set via setColorAt(), no vertexColors needed
     const instanced = new THREE.InstancedMesh(geo, mat, COUNT)
     instanced.instanceMatrix.setUsage(THREE.DynamicDrawUsage)
 
