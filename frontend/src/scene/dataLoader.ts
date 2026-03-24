@@ -34,6 +34,9 @@ export async function loadSceneData(): Promise<LoadResult> {
     sm.loadTerrain(terrain)
     sm.loadConcepts(concepts.concepts ?? [])
 
+    // Load existing journal markers (fire-and-forget, non-blocking)
+    sm.loadJournalMarkers()
+
     return { ok: true, concepts: (concepts.concepts ?? []).length }
   } catch (e) {
     return { ok: false, concepts: 0, error: String(e) }

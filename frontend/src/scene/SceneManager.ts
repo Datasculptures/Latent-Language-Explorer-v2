@@ -105,6 +105,10 @@ export class SceneManager {
     dirLight.position.set(5, 10, 5)
     this.scene.add(ambient, dirLight)
 
+    // Journal group — persistent across data reloads
+    this._journalGroup = new THREE.Group()
+    this.scene.add(this._journalGroup)
+
     // Input
     this._bindInput()
 
@@ -682,7 +686,50 @@ export class SceneManager {
 
   // ── Journal markers (Piece 6) ─────────────────────────────────────────────
 
-  addJournalMarker(_entry: any): void { /* see Piece 6 */ }
+  addJournalMarker(entry: any): void {
+    if (!this._journalGroup) {
+      this._journalGroup = new THREE.Group()
+      this.scene.add(this._journalGroup)
+    }
+
+    const [ux, uy] = entry.coordinates_2d as [number, number]
+    const isStarred = entry.starred    as boolean
+    const desert    = entry.desert_value as number
+
+    const col = isStarred      ? 0xffd700
+              : desert >= 0.05 ? 0xff4400
+              : 0xffffff
+
+    const mesh = new THREE.Mesh(
+      new THREE.SphereGeometry(0.06, 8, 8),
+      new THREE.MeshBasicMaterial({ color: col }),
+    )
+
+    // [0,0] means no UMAP position yet (CLI discovery) — stack above origin
+    if (ux === 0 && uy === 0) {
+      mesh.position.set(0, 5 + this._journalGroup.children.length * 0.3, 0)
+    } else {
+      const pos = this.umapToScene(ux, uy)
+      pos.y    += 0.2
+      mesh.position.copy(pos)
+    }
+
+    mesh.userData = { journalId: entry.id, entryType: entry.type }
+    this._journalGroup.add(mesh)
+  }
+
+  async loadJournalMarkers(): Promise<void> {
+    try {
+      const resp = await fetch('/api/journal?limit=500')
+      if (!resp.ok) return
+      const data = await resp.json()
+      for (const entry of (data.entries ?? [])) {
+        this.addJournalMarker(entry)
+      }
+    } catch (_) {
+      // Journal may be empty or unavailable — not an error
+    }
+  }
   clearJournalMarkers(): void {
     if (this._journalGroup) {
       this.scene.remove(this._journalGroup)
