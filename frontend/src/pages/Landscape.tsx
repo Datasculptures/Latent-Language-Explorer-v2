@@ -1,3 +1,11 @@
+import RogetFilterPanel    from '../components/RogetFilterPanel'
+import NearbyConceptsPanel from '../components/NearbyConceptsPanel'
+
 export default function LandscapePage() {
-  return null  // Implemented in Phase 4 Piece 2
+  return (
+    <>
+      <RogetFilterPanel />
+      <NearbyConceptsPanel />
+    </>
+  )
 }

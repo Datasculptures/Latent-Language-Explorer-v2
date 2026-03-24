@@ -44,6 +44,10 @@ export class SceneManager {
   private _currentSurfaceMode: SurfaceMode = 'density'
   private _attractorMeshes: THREE.Mesh[] = []
 
+  // Concept sphere tracking
+  private _conceptPositions: THREE.Vector3[] = []
+  private _rogetClassId: number | null = null
+
   // Terrain data
   private _terrainData:  any    = null
   private _conceptData:  any[]  = []
@@ -479,13 +483,85 @@ export class SceneManager {
 
   private _animateDeepestMarker(): void { /* see Piece 5 */ }
 
-  // ── Build concept spheres (Piece 3) ───────────────────────────────────────
+  // ── Build concept spheres ─────────────────────────────────────────────────
 
-  private _buildConceptSpheres(): void { /* see Piece 3 */ }
+  private _buildConceptSpheres(): void {
+    if (this._conceptSpheres) {
+      this.scene.remove(this._conceptSpheres)
+      this._conceptSpheres.dispose()
+    }
 
-  // ── Roget filter (Piece 3) ────────────────────────────────────────────────
+    const concepts = this._conceptData
+    if (!concepts.length) return
 
-  applyRogetFilter(_classId: number | null): void { /* see Piece 3 */ }
+    const COUNT    = concepts.length
+    const geo      = new THREE.SphereGeometry(0.04, 6, 6)
+    const mat      = new THREE.MeshBasicMaterial({ vertexColors: true })
+    const instanced = new THREE.InstancedMesh(geo, mat, COUNT)
+    instanced.instanceMatrix.setUsage(THREE.DynamicDrawUsage)
+
+    const dummy  = new THREE.Object3D()
+    const colour = new THREE.Color()
+    this._conceptPositions = []
+
+    for (let i = 0; i < COUNT; i++) {
+      const c        = concepts[i]
+      const [ux, uy] = c.position_2d
+      const pos      = this.umapToScene(ux, uy)
+      pos.y         += 0.05  // lift slightly above terrain
+      this._conceptPositions.push(pos.clone())
+
+      dummy.position.copy(pos)
+      dummy.updateMatrix()
+      instanced.setMatrixAt(i, dummy.matrix)
+
+      colour.set(c.colour ?? '#888888')
+      instanced.setColorAt(i, colour)
+    }
+
+    instanced.instanceMatrix.needsUpdate = true
+    if (instanced.instanceColor) instanced.instanceColor.needsUpdate = true
+    this._conceptSpheres = instanced
+    this.scene.add(instanced)
+
+    // Re-apply any active filter (e.g. concepts reloaded while filter is on)
+    if (this._rogetClassId !== null) this.applyRogetFilter(this._rogetClassId)
+  }
+
+  // ── Roget filter ──────────────────────────────────────────────────────────
+
+  applyRogetFilter(classId: number | null): void {
+    this._rogetClassId = classId
+    if (!this._conceptSpheres) return
+
+    const concepts = this._conceptData
+    const dummy    = new THREE.Object3D()
+    const colour   = new THREE.Color()
+    const DIM      = 0.08
+
+    for (let i = 0; i < concepts.length; i++) {
+      const c        = concepts[i]
+      const matches  = classId === null || c.roget_class_id === classId
+      const [ux, uy] = c.position_2d
+      const pos      = this.umapToScene(ux, uy)
+      pos.y         += 0.05
+      const scale    = matches ? 1.0 : 0.3
+
+      dummy.position.copy(pos)
+      dummy.scale.setScalar(scale)
+      dummy.updateMatrix()
+      this._conceptSpheres.setMatrixAt(i, dummy.matrix)
+
+      colour.set(c.colour ?? '#888888')
+      if (!matches) colour.multiplyScalar(DIM)
+      this._conceptSpheres.setColorAt(i, colour)
+    }
+
+    this._conceptSpheres.instanceMatrix.needsUpdate = true
+    if (this._conceptSpheres.instanceColor) {
+      this._conceptSpheres.instanceColor.needsUpdate = true
+    }
+  }
 
   // ── Probe visualization (Piece 5) ─────────────────────────────────────────
 
