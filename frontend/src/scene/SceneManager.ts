@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import type { SurfaceMode } from '../types'
+import { useAppStore } from '../store'
 
 /**
  * SceneManager -- singleton owner of the Three.js renderer.
@@ -38,6 +39,10 @@ export class SceneManager {
   private _probeGroup:      THREE.Group | null = null
   private _journalGroup:    THREE.Group | null = null
   private _deepestMarker:   THREE.Mesh | null = null
+
+  // Surface mode
+  private _currentSurfaceMode: SurfaceMode = 'density'
+  private _attractorMeshes: THREE.Mesh[] = []
 
   // Terrain data
   private _terrainData:  any    = null
@@ -176,8 +181,19 @@ export class SceneManager {
   // ── Navigation ─────────────────────────────────────────────────────────────
 
   private _bindInput(): void {
-    window.addEventListener('keydown', e => { this._keys[e.code] = true })
-    window.addEventListener('keyup',   e => { this._keys[e.code] = false })
+    const SURFACE_MODES: SurfaceMode[] = ['wireframe', 'density', 'contour', 'desert']
+
+    window.addEventListener('keydown', e => {
+      this._keys[e.code] = true
+
+      if (e.code === 'KeyT') {
+        const idx  = SURFACE_MODES.indexOf(this._currentSurfaceMode)
+        const next = SURFACE_MODES[(idx + 1) % SURFACE_MODES.length]
+        this.setSurfaceMode(next)
+        useAppStore.getState().setSurfaceMode(next)
+      }
+    })
+    window.addEventListener('keyup', e => { this._keys[e.code] = false })
 
     this._canvas!.addEventListener('mousedown', e => {
       if (e.button === 2) {
@@ -259,24 +275,213 @@ export class SceneManager {
     this.camera.updateProjectionMatrix()
   }
 
-  // ── Build terrain mesh (Piece 2) ───────────────────────────────────────────
+  // ── Build terrain mesh ─────────────────────────────────────────────────────
 
-  private _buildTerrainMesh(): void { /* see Piece 2 */ }
-  private _buildBasins():      void { /* see Piece 2 */ }
-  private _buildAttractors():  void { /* see Piece 2 */ }
+  private _buildTerrainMesh(): void {
+    if (this._terrainMesh) {
+      this.scene.remove(this._terrainMesh)
+      ;(this._terrainMesh.material as THREE.Material).dispose()
+      this._terrainMesh.geometry.dispose()
+      this._terrainMesh = null
+    }
+
+    const density = this._densityGrid
+    const xGrid   = this._xGrid
+    const yGrid   = this._yGrid
+    const res     = xGrid.length  // 128
+
+    const W   = xGrid[res-1] - xGrid[0]
+    const H   = yGrid[res-1] - yGrid[0]
+    const geo = new THREE.PlaneGeometry(W, H, res-1, res-1)
+    geo.rotateX(-Math.PI / 2)
+
+    // PlaneGeometry row ri corresponds to umap_y = yGrid[res-1-ri]
+    // (top row ri=0 has largest y; bottom row ri=res-1 has smallest y)
+    const HEIGHT_SCALE = 3.0
+    const pos = geo.attributes.position as THREE.BufferAttribute
+    const col = new Float32Array(pos.count * 3)
+
+    for (let ri = 0; ri < res; ri++) {
+      const dRow = res - 1 - ri  // density row index for this geometry row
+      for (let ci = 0; ci < res; ci++) {
+        const idx = ri * res + ci
+        const d   = density[dRow]?.[ci] ?? 0
+        pos.setY(idx, d * HEIGHT_SCALE)
+        col[idx*3+0] = 0.05 + d * 0.10
+        col[idx*3+1] = 0.15 + d * 0.35
+        col[idx*3+2] = 0.25 + d * 0.45
+      }
+    }
+
+    pos.needsUpdate = true
+    geo.setAttribute('color', new THREE.BufferAttribute(col, 3))
+    geo.computeVertexNormals()
+
+    const mat = new THREE.MeshLambertMaterial({ vertexColors: true, wireframe: false })
+    this._terrainMesh = new THREE.Mesh(geo, mat)
+    this._terrainMesh.position.set(
+      (xGrid[0] + xGrid[res-1]) / 2,
+      0,
+      -(yGrid[0] + yGrid[res-1]) / 2,
+    )
+    this.scene.add(this._terrainMesh)
+    this._currentSurfaceMode = 'density'
+  }
+
+  // ── Surface mode ───────────────────────────────────────────────────────────
+
+  setSurfaceMode(mode: SurfaceMode): void {
+    this._currentSurfaceMode = mode
+    if (!this._terrainMesh) return
+    const mat = this._terrainMesh.material as THREE.MeshLambertMaterial
+    mat.wireframe = mode === 'wireframe'
+    if (mode === 'wireframe' || mode === 'density') {
+      this._applyDensityColours()
+    } else if (mode === 'contour') {
+      this._applyContourColours()
+    } else if (mode === 'desert') {
+      this._applyDesertColours()
+    }
+  }
+
+  private _applyDensityColours(): void {
+    if (!this._terrainMesh) return
+    const density = this._densityGrid
+    const res     = this._xGrid.length
+    const col     = this._terrainMesh.geometry.attributes.color as THREE.BufferAttribute
+    for (let ri = 0; ri < res; ri++) {
+      const dRow = res - 1 - ri
+      for (let ci = 0; ci < res; ci++) {
+        const d = density[dRow]?.[ci] ?? 0
+        col.setXYZ(ri * res + ci, 0.05 + d*0.10, 0.15 + d*0.35, 0.25 + d*0.45)
+      }
+    }
+    col.needsUpdate = true
+  }
+
+  private _applyContourColours(): void {
+    if (!this._terrainMesh) return
+    const density = this._densityGrid
+    const res     = this._xGrid.length
+    const col     = this._terrainMesh.geometry.attributes.color as THREE.BufferAttribute
+    for (let ri = 0; ri < res; ri++) {
+      const dRow = res - 1 - ri
+      for (let ci = 0; ci < res; ci++) {
+        const d    = density[dRow]?.[ci] ?? 0
+        const band = Math.floor(d * 12) % 2
+        const v    = band ? 0.45 : 0.20
+        col.setXYZ(ri * res + ci, v * 0.30, v * 0.85, v)
+      }
+    }
+    col.needsUpdate = true
+  }
+
+  private _applyDesertColours(): void {
+    if (!this._terrainMesh || !this._terrainData?.desert) return
+    const desert = this._terrainData.desert as number[][]
+    const res    = this._xGrid.length
+    const col    = this._terrainMesh.geometry.attributes.color as THREE.BufferAttribute
+    for (let ri = 0; ri < res; ri++) {
+      const dRow = res - 1 - ri
+      for (let ci = 0; ci < res; ci++) {
+        const d = desert[dRow]?.[ci] ?? 0
+        col.setXYZ(ri * res + ci, 0.05 + d * 0.75, 0.03 + d * 0.35, 0.0)
+      }
+    }
+    col.needsUpdate = true
+  }
+
+  // ── Build basin boundaries ─────────────────────────────────────────────────
+
+  private _buildBasins(): void {
+    if (this._basinBoundaries) {
+      this.scene.remove(this._basinBoundaries)
+      this._basinBoundaries.geometry.dispose()
+      ;(this._basinBoundaries.material as THREE.Material).dispose()
+      this._basinBoundaries = null
+    }
+
+    const boundaries: number[][] = this._terrainData?.basin_boundaries ?? []
+    if (!boundaries.length) return
+
+    const pts: number[] = []
+    const RAISE = 0.08  // lift slightly above terrain surface
+
+    for (const seg of boundaries) {
+      const [x1, y1, x2, y2] = seg
+      const s = this.umapToScene(x1, y1)
+      const e = this.umapToScene(x2, y2)
+      pts.push(s.x, s.y + RAISE, s.z)
+      pts.push(e.x, e.y + RAISE, e.z)
+    }
+
+    const geo = new THREE.BufferGeometry()
+    geo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(pts), 3))
+
+    const mat = new THREE.LineBasicMaterial({ color: 0x1a2a6c, opacity: 0.6, transparent: true })
+    this._basinBoundaries = new THREE.LineSegments(geo, mat)
+    this.scene.add(this._basinBoundaries)
+  }
+
+  // ── Build attractor markers ────────────────────────────────────────────────
+
+  private _buildAttractors(): void {
+    if (this._attractorGroup) {
+      this.scene.remove(this._attractorGroup)
+      this._attractorGroup = null
+    }
+    for (const m of this._attractorMeshes) {
+      m.geometry.dispose()
+      ;(m.material as THREE.Material).dispose()
+    }
+    this._attractorMeshes = []
+
+    const attractors: any[] = this._terrainData?.attractors ?? []
+    if (!attractors.length) return
+
+    this._attractorGroup = new THREE.Group()
+
+    for (const attr of attractors) {
+      const sp     = this.umapToScene(attr.umap_x, attr.umap_y)
+      const radius = attr.is_major ? 0.18 : 0.10
+      const color  = attr.is_major ? 0xffffff : 0x888888
+
+      const geo  = new THREE.SphereGeometry(radius, 8, 8)
+      const mat  = new THREE.MeshBasicMaterial({ color })
+      const mesh = new THREE.Mesh(geo, mat)
+
+      mesh.position.set(sp.x, sp.y + radius * 0.5, sp.z)
+      mesh.userData = {
+        isMajor: attr.is_major,
+        phase:   Math.random() * Math.PI * 2,
+      }
+
+      this._attractorMeshes.push(mesh)
+      this._attractorGroup.add(mesh)
+    }
+
+    this.scene.add(this._attractorGroup)
+  }
+
+  // ── Animate attractors ─────────────────────────────────────────────────────
+
+  private _animateAttractors(): void {
+    if (!this._attractorMeshes.length) return
+    const t = performance.now() * 0.001
+    for (const mesh of this._attractorMeshes) {
+      const phase = mesh.userData.phase as number
+      const pulse = 1 + 0.15 * Math.sin(t * 2.0 + phase)
+      mesh.scale.setScalar(pulse)
+    }
+  }
+
+  // ── Animate deepest marker (Piece 5) ───────────────────────────────────────
+
+  private _animateDeepestMarker(): void { /* see Piece 5 */ }
 
   // ── Build concept spheres (Piece 3) ───────────────────────────────────────
 
   private _buildConceptSpheres(): void { /* see Piece 3 */ }
-
-  // ── Animate (Pieces 2, 5) ──────────────────────────────────────────────────
-
-  private _animateAttractors():    void { /* see Piece 2 */ }
-  private _animateDeepestMarker(): void { /* see Piece 5 */ }
-
-  // ── Surface mode (Piece 2) ─────────────────────────────────────────────────
-
-  setSurfaceMode(_mode: SurfaceMode): void { /* see Piece 2 */ }
 
   // ── Roget filter (Piece 3) ────────────────────────────────────────────────
 
@@ -305,7 +510,11 @@ export class SceneManager {
     if (this._basinFill)       { this.scene.remove(this._basinFill);       this._basinFill = null }
     if (this._basinBoundaries) { this.scene.remove(this._basinBoundaries); this._basinBoundaries = null }
     if (this._attractorGroup)  { this.scene.remove(this._attractorGroup);  this._attractorGroup = null }
-    void this._terrainData  // scaffold: read to satisfy noUnusedLocals
+    for (const m of this._attractorMeshes) {
+      m.geometry.dispose()
+      ;(m.material as THREE.Material).dispose()
+    }
+    this._attractorMeshes = []
     this._terrainData = null
     this.renderer.dispose()
     SceneManager._instance = null
