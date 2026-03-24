@@ -19,6 +19,7 @@ from .config import (
     LLM_RATE_LIMIT_INTERVAL_SECONDS,
 )
 from .routers import journal as journal_router
+from .routers import fabrication as fabrication_router
 from .services import probe_service
 
 
@@ -51,6 +52,7 @@ app.add_middleware(
 )
 
 app.include_router(journal_router.router)
+app.include_router(fabrication_router.router)
 
 # In-memory rate limiting state (per process)
 _last_llm_call: float = 0.0
