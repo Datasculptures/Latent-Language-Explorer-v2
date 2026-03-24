@@ -36,7 +36,8 @@ DISCOVERY_DIR = PROJECT_ROOT / "data" / "discovery"
 sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
 from probe_lib import EmbeddingIndex, run_probe, probe_result_to_dict
 from terrain_config import (
-    DESERT_GATE_THRESHOLD, DESERT_SHALLOW_THRESHOLD,
+    PROBE_DESERT_GATE_THRESHOLD    as DESERT_GATE_THRESHOLD,
+    PROBE_DESERT_SHALLOW_THRESHOLD as DESERT_SHALLOW_THRESHOLD,
     LLM_RATE_LIMIT_INTERVAL_SECONDS,
 )
 

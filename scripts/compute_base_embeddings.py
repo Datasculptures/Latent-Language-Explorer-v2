@@ -113,7 +113,7 @@ def main():
                 batch_size=BATCH_SIZE,
                 show_progress_bar=False,
                 convert_to_numpy=True,
-                normalize_embeddings=False,
+                normalize_embeddings=True,
             )
             new_embeddings.append(vecs.astype(np.float32))
             new_terms.extend(batch_terms)

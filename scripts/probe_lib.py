@@ -34,9 +34,11 @@ from terrain_config import (
     SYNONYM_FILTER_COSINE,
     PROBE_PERCENTILE_LOW,
     PROBE_PERCENTILE_HIGH,
-    DESERT_GATE_THRESHOLD,
-    DESERT_SHALLOW_THRESHOLD,
+    PROBE_DESERT_GATE_THRESHOLD,
+    PROBE_DESERT_SHALLOW_THRESHOLD,
     MAX_CONCEPT_LABEL_LENGTH,
+    PROBE_INTERIOR_MIN,
+    PROBE_INTERIOR_MAX,
 )
 
 
@@ -61,12 +63,13 @@ class ProbeResult:
     class_id_b:      Optional[int]
     n_steps:         int
     steps:           list[ProbeStep]
-    deepest_step:    ProbeStep
-    desert_max:      float
-    desert_mean:     float
-    is_deep:         bool    # desert_max >= DESERT_GATE_THRESHOLD
-    is_shallow:      bool    # DESERT_SHALLOW_THRESHOLD > desert_max >= DESERT_GATE_THRESHOLD
-    measurement_space: str = "384d embedding space"
+    deepest_step:        ProbeStep
+    desert_max:          float
+    desert_mean:         float
+    is_deep:             bool    # desert_max >= PROBE_DESERT_GATE_THRESHOLD
+    is_shallow:          bool    # PROBE_DESERT_GATE_THRESHOLD <= desert_max < PROBE_DESERT_SHALLOW_THRESHOLD
+    interior_steps_only: bool = True
+    measurement_space:   str  = "384d embedding space"
 
 
 class EmbeddingIndex:
@@ -241,6 +244,14 @@ def run_probe(
         alpha = i / max(n_steps - 1, 1)
         vec   = (1 - alpha) * vec_a + alpha * vec_b
 
+        # Normalize to unit sphere before querying the KD-tree.
+        # Linear interpolation between unit vectors produces a sub-unit
+        # midpoint (norm < 1). Without normalization, L2 distances to
+        # unit-norm neighbors are inflated and incomparable to V1 values.
+        norm = np.linalg.norm(vec)
+        if norm > 1e-8:
+            vec = vec / norm
+
         nearest = index.nearest_k(vec, k=3, exclude_terms=exclude)
         if not nearest:
             continue
@@ -258,24 +269,37 @@ def run_probe(
     if not steps:
         return None
 
-    deepest = max(steps, key=lambda s: s.desert_value)
+    # Interior steps only: exclude the endpoint neighbourhood.
+    # Steps near alpha=0 (term_a) or alpha=1 (term_b) measure endpoint
+    # sparsity, not the cross-domain gap. The interesting region is
+    # the interior of the probe path.
+    interior_steps = [
+        s for s in steps
+        if PROBE_INTERIOR_MIN <= s.alpha <= PROBE_INTERIOR_MAX
+    ]
+
+    # Fall back to all steps if the interior is empty (very short probes)
+    scoring_steps = interior_steps if interior_steps else steps
+
+    deepest = max(scoring_steps, key=lambda s: s.desert_value)
     d_max   = deepest.desert_value
-    d_mean  = float(np.mean([s.desert_value for s in steps]))
+    d_mean  = float(np.mean([s.desert_value for s in scoring_steps]))
 
     return ProbeResult(
-        term_a=        term_a,
-        term_b=        term_b,
-        category_id_a= meta_a.get("category_id"),
-        category_id_b= meta_b.get("category_id"),
-        class_id_a=    meta_a.get("class_id"),
-        class_id_b=    meta_b.get("class_id"),
-        n_steps=       len(steps),
-        steps=         steps,
-        deepest_step=  deepest,
-        desert_max=    d_max,
-        desert_mean=   d_mean,
-        is_deep=       d_max >= DESERT_GATE_THRESHOLD,
-        is_shallow=    DESERT_SHALLOW_THRESHOLD > d_max >= DESERT_GATE_THRESHOLD,
+        term_a=              term_a,
+        term_b=              term_b,
+        category_id_a=       meta_a.get("category_id"),
+        category_id_b=       meta_b.get("category_id"),
+        class_id_a=          meta_a.get("class_id"),
+        class_id_b=          meta_b.get("class_id"),
+        n_steps=             len(steps),
+        steps=               steps,
+        deepest_step=        deepest,
+        desert_max=          d_max,
+        desert_mean=         d_mean,
+        is_deep=             d_max >= PROBE_DESERT_GATE_THRESHOLD,
+        is_shallow=          PROBE_DESERT_GATE_THRESHOLD <= d_max < PROBE_DESERT_SHALLOW_THRESHOLD,
+        interior_steps_only= len(interior_steps) > 0,
     )
 
 
@@ -299,12 +323,13 @@ def probe_result_to_dict(result: ProbeResult) -> dict:
         "category_id_b":      result.category_id_b,
         "class_id_a":         result.class_id_a,
         "class_id_b":         result.class_id_b,
-        "n_steps":            result.n_steps,
-        "desert_max":         result.desert_max,
-        "desert_mean":        result.desert_mean,
-        "is_deep":            result.is_deep,
-        "is_shallow":         result.is_shallow,
-        "measurement_space":  result.measurement_space,
+        "n_steps":             result.n_steps,
+        "desert_max":          result.desert_max,
+        "desert_mean":         result.desert_mean,
+        "is_deep":             result.is_deep,
+        "is_shallow":          result.is_shallow,
+        "interior_steps_only": result.interior_steps_only,
+        "measurement_space":   result.measurement_space,
         "deepest_step_index": result.deepest_step.step_index,
         "deepest_step":       step_to_dict(result.deepest_step),
         "steps":              [step_to_dict(s) for s in result.steps],

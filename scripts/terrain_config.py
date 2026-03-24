@@ -24,22 +24,51 @@ UMAP_MIN_DIST = 0.1
 # ── PCA pre-reduction ─────────────────────────────────────────────────
 PCA_N_COMPONENTS = 256
 
-# ── Desert field ──────────────────────────────────────────────────────
+# ── Desert field (2D terrain grid) ────────────────────────────────────
 # NOTE: The desert field grid is computed in 2D UMAP space (not high-D).
-# Desert values on probes are computed in the full high-D embedding space.
-# These are different measurements. Both are valid. Document this.
+# KDE density values are normalised to [0, 1] over the 2D grid.
+# DESERT_GATE_THRESHOLD and DESERT_SHALLOW_THRESHOLD here are for the
+# 2D terrain visualisation only.
 DESERT_FIELD_RESOLUTION = 128
 DESERT_FIELD_MAX_RESOLUTION = 1024
-DESERT_GATE_THRESHOLD = 0.02
-DESERT_SHALLOW_THRESHOLD = 0.05
+DESERT_GATE_THRESHOLD = 0.02       # 2D terrain: minimum KDE density to qualify as desert
+DESERT_SHALLOW_THRESHOLD = 0.05   # 2D terrain: boundary between shallow and deep desert
 DESERT_DIG_SITE_THRESHOLD = 0.65
 DESERT_DIG_SITE_MIN_CELLS = 8
+
+# ── Probe desert thresholds (high-D) ──────────────────────────────────
+# Probe desert values are L2 distances on the unit sphere in 384d space.
+# These are DIFFERENT from 2D terrain thresholds above.
+# Range: 0 (nearest term coincides) to ~2 (antipodal).
+# Empirical distribution for cross-class probes: 0.60–0.95.
+# adjacent-cat probes expected lower: 0.20–0.60.
+# Gate: minimum L2 distance to qualify as a discovery (worth journaling).
+# Shallow: divides "notable gap" from "deep discovery".
+PROBE_DESERT_GATE_THRESHOLD    = 0.50  # min L2 to qualify as discovery
+PROBE_DESERT_SHALLOW_THRESHOLD = 0.70  # min L2 for "deep" vs "shallow" discovery
 
 # ── Cross-domain probing ───────────────────────────────────────────────
 PROBE_STEPS = 30
 PROBE_PERCENTILE_LOW = 40
 PROBE_PERCENTILE_HIGH = 75
 SYNONYM_FILTER_COSINE = 0.85
+PROBE_INTERIOR_MIN = 0.10   # Exclude steps within 10% of term_a
+PROBE_INTERIOR_MAX = 0.90   # Exclude steps within 10% of term_b
+
+# Maximum mean distance to 5 nearest neighbours for a term to be
+# eligible as a probe endpoint. Terms above this threshold are
+# poorly represented in the embedding model.
+# Value derived empirically: well-represented common English words
+# have mean-5-NN distances of roughly 0.20–0.50 on the unit sphere.
+# Sparse/archaic terms often exceed 0.70.
+PROBE_MIN_DENSITY_THRESHOLD = 0.70
+
+# Minimum Zipf frequency (wordfreq) for a term to be eligible as a
+# probe endpoint. Zipf scale: 6=very common ("the"), 3=moderately
+# common ("bonfire", "serpent"), 0=not found in corpus.
+# Threshold of 3.0 keeps recognisable everyday words while filtering
+# archaic/technical Roget terms (virgate, cockloft, nuncupation → 0.0).
+PROBE_MIN_ZIPF_FREQUENCY = 3.0
 
 # ── Generative decoding ────────────────────────────────────────────────
 LLM_MODEL = "claude-haiku-4-5"

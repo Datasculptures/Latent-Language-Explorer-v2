@@ -81,12 +81,12 @@ async def health():
 async def get_config():
     """Return non-sensitive configuration values for the frontend."""
     from .config import (
-        DESERT_GATE_THRESHOLD, DESERT_SHALLOW_THRESHOLD,
+        PROBE_DESERT_GATE_THRESHOLD, PROBE_DESERT_SHALLOW_THRESHOLD,
         LLM_RATE_LIMIT_PER_HOUR, PROBE_STEPS,
     )
     return {
-        "desert_gate_threshold":   DESERT_GATE_THRESHOLD,
-        "desert_shallow_threshold": DESERT_SHALLOW_THRESHOLD,
+        "desert_gate_threshold":   PROBE_DESERT_GATE_THRESHOLD,
+        "desert_shallow_threshold": PROBE_DESERT_SHALLOW_THRESHOLD,
         "llm_rate_limit_per_hour": LLM_RATE_LIMIT_PER_HOUR,
         "probe_steps":             PROBE_STEPS,
     }
@@ -236,7 +236,9 @@ async def describe_point(request: Request):
     global _last_llm_call
 
     from .config import (
-        ANTHROPIC_API_KEY, DESERT_GATE_THRESHOLD, DESERT_SHALLOW_THRESHOLD,
+        ANTHROPIC_API_KEY,
+        PROBE_DESERT_GATE_THRESHOLD    as DESERT_GATE_THRESHOLD,
+        PROBE_DESERT_SHALLOW_THRESHOLD as DESERT_SHALLOW_THRESHOLD,
         LLM_MODEL, LLM_MAX_TOKENS, MAX_QUERY_LENGTH,
     )
 

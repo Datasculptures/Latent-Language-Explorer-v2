@@ -108,7 +108,7 @@ def main():
             "roget_class_ids":    class_ids,
             "is_polysemous":      len(cat_ids) > 1,
             "is_modern_addition": any(e["is_modern"] for e in entries),
-            "is_obsolete":        all(e["is_obsolete"] for e in entries),
+            "is_obsolete":        any(e["is_obsolete"] for e in entries),
         }
 
     # -- Build vocab_flat -----------------------------------------------------

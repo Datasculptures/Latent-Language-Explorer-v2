@@ -54,6 +54,8 @@ from terrain_config import (
     PROBE_PERCENTILE_LOW, PROBE_PERCENTILE_HIGH,
     SYNONYM_FILTER_COSINE,
     UMAP_RANDOM_SEED,
+    PROBE_MIN_DENSITY_THRESHOLD,
+    PROBE_MIN_ZIPF_FREQUENCY,
 )
 
 
@@ -81,6 +83,29 @@ def morphological_variants(term_a: str, term_b: str) -> bool:
     return a[:shared] == b[:shared]
 
 
+def shared_neighbourhood_score(
+    va:       np.ndarray,
+    vb:       np.ndarray,
+    all_vecs: np.ndarray,
+    k:        int = 20,
+) -> float:
+    """
+    Fraction of the top-k neighbours of va that are also in the
+    top-k neighbours of vb. A score > 0 means the two terms
+    share conceptual neighbourhood even at moderate distance.
+    Score = 0 means the terms point in completely different
+    directions with no shared vicinity.
+    """
+    from scipy.spatial import cKDTree
+    tree = cKDTree(all_vecs)
+    _, idx_a = tree.query(va.reshape(1, -1), k=k + 1)
+    _, idx_b = tree.query(vb.reshape(1, -1), k=k + 1)
+    set_a = set(idx_a[0][1:])   # exclude self
+    set_b = set(idx_b[0][1:])
+    overlap = len(set_a & set_b)
+    return overlap / k
+
+
 def select_pairs_from_groups(
     group_a:         list[tuple[str, np.ndarray]],
     group_b:         list[tuple[str, np.ndarray]],
@@ -94,6 +119,8 @@ def select_pairs_from_groups(
     """
     Select concept pairs between two groups at 40th, 60th, 75th percentile
     of pairwise L2 distance. Filters synonyms and morphological variants.
+    Applies a shared-neighbourhood filter to prefer pairs that have at
+    least one common neighbour in their top-20 — a minimal semantic bridge.
     """
     if not group_a or not group_b:
         return []
@@ -121,13 +148,36 @@ def select_pairs_from_groups(
         return []
 
     pairs_with_dist.sort(key=lambda x: x[2])
-    n = len(pairs_with_dist)
+
+    # Build all-vectors array for neighbourhood computation.
+    # Only pairs that passed the cosine/distance filters reach here.
+    vec_lookup = {t: v for t, v in sample_a + sample_b}
+    all_vecs_combined = np.array(list(vec_lookup.values()), dtype=np.float32)
+
+    # Filter: keep pairs with some shared neighbourhood
+    # (score > 0 means at least one common neighbour in top-20).
+    MIN_SHARED_SCORE = 0.0
+    filtered_pairs = []
+    for ta, tb, d, cs in pairs_with_dist:
+        va_vec = vec_lookup[ta]
+        vb_vec = vec_lookup[tb]
+        score = shared_neighbourhood_score(va_vec, vb_vec, all_vecs_combined)
+        if score > MIN_SHARED_SCORE:
+            filtered_pairs.append((ta, tb, d, cs, score))
+
+    if not filtered_pairs:
+        # Fall back to unfiltered if nothing shares neighbourhood
+        filtered_pairs = [(ta, tb, d, cs, 0.0) for ta, tb, d, cs in pairs_with_dist]
+
+    # Sort filtered pairs by distance for percentile selection
+    filtered_pairs.sort(key=lambda x: x[2])
+    n = len(filtered_pairs)
 
     selected = []
     for pct in [PROBE_PERCENTILE_LOW, 60, PROBE_PERCENTILE_HIGH]:
         idx = int(n * pct / 100)
         idx = max(0, min(idx, n - 1))
-        ta, tb, d, cs = pairs_with_dist[idx]
+        ta, tb, d, cs, score = filtered_pairs[idx]
         selected.append({
             "term_a":          ta,
             "term_b":          tb,
@@ -148,6 +198,46 @@ def select_pairs_from_groups(
         })
 
     return selected[:pairs_per_group]
+
+
+def build_density_filter(
+    emb_map:   dict,
+    threshold: float,
+    k:         int = 5,
+) -> set:
+    """
+    Return the set of terms that pass the density filter.
+    A term passes if its mean distance to its k nearest neighbours
+    is below threshold. Sparse/isolated terms are excluded.
+    Uses a KD-tree for efficient batch computation.
+    """
+    from scipy.spatial import cKDTree
+    terms_list = list(emb_map.keys())
+    matrix     = np.array([emb_map[t] for t in terms_list], dtype=np.float32)
+
+    print(f"Building density filter (k={k}, threshold={threshold}) "
+          f"over {len(terms_list):,} terms ...")
+    tree       = cKDTree(matrix)
+    # Query k+1 to exclude the term itself (distance=0)
+    dists, _   = tree.query(matrix, k=k + 1, workers=-1)
+    # dists[:,0] is always 0 (self), use dists[:,1:k+1]
+    mean_dists = dists[:, 1:k + 1].mean(axis=1)
+
+    dense_terms = {
+        terms_list[i]
+        for i, d in enumerate(mean_dists)
+        if d <= threshold
+    }
+    sparse_count = len(terms_list) - len(dense_terms)
+    print(f"  Dense terms (pass): {len(dense_terms):,}")
+    print(f"  Sparse terms (filtered): {sparse_count:,}")
+    if sparse_count > 0:
+        sparse_sample = [
+            terms_list[i] for i, d in enumerate(mean_dists)
+            if d > threshold
+        ][:10]
+        print(f"  Sample filtered: {sparse_sample}")
+    return dense_terms
 
 
 def main():
@@ -201,9 +291,68 @@ def main():
     cat_meta: dict[str, dict] = {}
     sec_meta: dict[str, dict] = {}
 
+    # Filter terms with near-zero norm (poorly represented in model)
+    # After normalization, all norms should be ~1.0; terms below 0.5 are suspect
+    emb_map = {
+        t: v for t, v in emb_map.items()
+        if np.linalg.norm(v) >= 0.5
+    }
+    print(f"After norm filter: {len(emb_map):,} terms")
+
+    # Hyphen filter: exclude compound terms like "back-stairs", "lamb-like".
+    # These are Roget-specific; they pass zipf but aren't clean concept words.
+    before_hyph = len(emb_map)
+    emb_map = {t: v for t, v in emb_map.items() if "-" not in t and "_" not in t}
+    print(f"After hyphen filter: {len(emb_map):,} terms ({before_hyph - len(emb_map):,} filtered)")
+
+    # Word frequency filter: exclude archaic/technical terms not found
+    # in common English text. Zipf < threshold means the word is too
+    # rare to represent a concept a human would recognise as a probe
+    # endpoint. This uses an external reference corpus (wordfreq), not
+    # the Roget index itself, so archaic terms that cluster with other
+    # archaic terms are correctly filtered.
+    #
+    # When wordfreq is available, skip the density filter below: both
+    # filters remove rare/poorly-embedded terms, but their thresholds
+    # are calibrated for different vocabulary sizes. Applying both
+    # double-filters and removes legitimate common words.
+    zipf_active = False
+    try:
+        from wordfreq import zipf_frequency
+        before = len(emb_map)
+        emb_map = {
+            t: v for t, v in emb_map.items()
+            if zipf_frequency(t, "en") >= PROBE_MIN_ZIPF_FREQUENCY
+        }
+        print(f"After zipf filter (>={PROBE_MIN_ZIPF_FREQUENCY}): "
+              f"{len(emb_map):,} terms ({before - len(emb_map):,} filtered)")
+        zipf_active = True
+    except ImportError:
+        print("WARNING: wordfreq not installed -- falling back to density filter. "
+              "Run: pip install wordfreq")
+
+    if zipf_active:
+        # Zipf already filtered rare/archaic terms; density filter is redundant
+        # and would remove legitimate common words (their mean-5-NN distances
+        # are higher when archaic neighbours are absent).
+        dense_terms = set(emb_map.keys())
+        print(f"Density filter skipped (zipf active): {len(dense_terms):,} terms eligible")
+    else:
+        # Fallback: density filter as proxy for word rarity when wordfreq
+        # is unavailable.
+        dense_terms = build_density_filter(
+            emb_map,
+            threshold=PROBE_MIN_DENSITY_THRESHOLD,
+            k=5,
+        )
+
     for c in concepts:
+        if c.get("is_obsolete", False):
+            continue
         term = c["label"]
         if term not in emb_map:
+            continue
+        if term not in dense_terms:
             continue
         vec = emb_map[term]
         cid = c["roget_category_id"]
