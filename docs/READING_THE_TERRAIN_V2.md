@@ -7,7 +7,7 @@
 
 ## Quick Guide
 
-The interface has two pages. **Landscape** is the macro navigation — the full terrain with all 36,102 concept points, coloured by Roget class, animated by gradient flow. **Discovery** is where you probe for unnamed concepts: enter two terms, run a probe, read the depth, optionally request a generated description, and save to the field journal.
+The interface has two pages. **Landscape** is the macro navigation — the full terrain with all 36,125 concept points, coloured by Roget class, animated by gradient flow. **Discovery** is where you probe for unnamed concepts: enter two terms, run a probe, read the depth, optionally request a generated description, and save to the field journal.
 
 The terrain height is KDE (kernel density estimation) — dense clusters of named concepts form peaks, sparse transitions form valleys. **Height is not a third UMAP dimension.** The UMAP projection is two-dimensional. Height is derived separately.
 
@@ -17,7 +17,7 @@ The deserts are the shallow fractures between conceptual territories. A desert i
 
 ## The Terrain
 
-The heightfield is computed from a 2D kernel density estimate over the UMAP-projected positions of all 36,102 concept terms. It is rendered as a Three.js mesh with the z-axis set to KDE density value.
+The heightfield is computed from a 2D kernel density estimate over the UMAP-projected positions of all 36,125 concept terms. It is rendered as a Three.js mesh with the z-axis set to KDE density value.
 
 **Peaks** are concentrations of named concepts — places where the vocabulary is dense and the model has strong local structure. Examples: the cluster around intellectual activity (Class 4), the cluster around emotional states (Class 6).
 
@@ -195,7 +195,7 @@ Materials used in the V1 and V2 practice: wood, cement, wire, nails, cardboard, 
 | Interior probe range | alpha 0.10–0.90 |
 | Probe gate threshold | 0.50 (L2) |
 | Probe shallow threshold | 0.70 (L2) |
-| Vocabulary | 36,102 terms |
+| Vocabulary | 36,125 terms |
 
 For schema reference (data file formats, JSON structures, NPZ arrays): see [docs/DATA_FORMATS.md](DATA_FORMATS.md).
 

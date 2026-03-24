@@ -2,7 +2,7 @@
 
 There are ideas that exist but do not have words. Not because they are vague or contested, but because the structure of language left them unnamed — concepts that sit in the gaps between the categories our vocabulary happens to cover. This project finds them, measures them, describes them, and materializes them as physical sculpture.
 
-The terrain is a navigable map of the embedding space of 36,102 concepts organized by Roget's Thesaurus (1911). Peaks are dense clusters of named meaning. Valleys are transitions. The deserts — shallow fractures between conceptual territories — are where the embedding model encodes something real that has no syntactic representation in natural language.
+The terrain is a navigable map of the embedding space of 36,125 concepts organized by Roget's Thesaurus (1911). Peaks are dense clusters of named meaning. Valleys are transitions. The deserts — shallow fractures between conceptual territories — are where the embedding model encodes something real that has no syntactic representation in natural language.
 
 The deserts are still shallow. The deepest measured gap is 0.9329 (L2 distance on the unit sphere in 384-dimensional space). But they are real, locatable, and consistent: run the same probe twice and you find the same gap. The computation is the instrument. The terrain is the map. The gaps are what we came to look at.
 
@@ -15,7 +15,7 @@ Companion to the oil painting *Are there deserts in vector space?*
 | Dimension | V1 | V2 |
 |---|---|---|
 | Vocabulary source | Hand-curated, 9 domains | Roget 1911 + WordNet + modern |
-| Vocabulary size | 8,735 | 36,102 |
+| Vocabulary size | 8,735 | 36,125 |
 | Taxonomy | 9 flat domains | 6 classes, ~39 sections, 991 categories |
 | Embedding model | GloVe 300d (static) | all-MiniLM-L6-v2 (384d) |
 | Probe measurement | Undocumented mix | 384d embedding space, interior steps only |

@@ -13,7 +13,7 @@
 - WordNet enrichment: +9,349 terms (+1 hop, capped 30/category)
 - Four modern domain supplements: AI/ML, Computing, Molecular Biology,
   Cognitive Science (+316 terms)
-- 36,102 validated terms (vs 8,735 in V1)
+- 36,125 validated terms (vs 8,735 in V1)
 - 41% polysemous terms (principled Roget multi-category membership)
 
 ### Embeddings

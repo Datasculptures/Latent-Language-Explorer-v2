@@ -9,7 +9,7 @@
 
 The Latent Language Explorer does not discover concepts. It discovers **gaps in a vocabulary's coverage of a geometric space**.
 
-The geometric space is a 384-dimensional vector space produced by the all-MiniLM-L6-v2 sentence embedding model, trained on a large corpus of English text. The vocabulary is Roget's Thesaurus 1911, enriched with WordNet and four modern domain supplements, totalling 36,102 terms. The "desert" between two probe endpoints is the maximum L2 distance from the probe midpoint to the nearest term in that vocabulary, measured in the full 384-dimensional space.
+The geometric space is a 384-dimensional vector space produced by the all-MiniLM-L6-v2 sentence embedding model, trained on a large corpus of English text. The vocabulary is Roget's Thesaurus 1911, enriched with WordNet and four modern domain supplements, totalling 36,125 terms. The "desert" between two probe endpoints is the maximum L2 distance from the probe midpoint to the nearest term in that vocabulary, measured in the full 384-dimensional space.
 
 A high desert score means: **the model has a region of geometric space that no term in our vocabulary is close to.**
 
