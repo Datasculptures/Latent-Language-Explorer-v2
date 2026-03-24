@@ -148,11 +148,17 @@ async def get_basin_assignments():
 
 @app.get("/api/voronoi-vertices")
 async def get_voronoi_vertices():
-    return _pipeline_required("voronoi-vertices")
+    data = _load_json("voronoi_data.json")
+    if data is None:
+        return _pipeline_required("voronoi-vertices")
+    return data
 
 @app.get("/api/dig-sites")
 async def get_dig_sites():
-    return _pipeline_required("dig-sites")
+    data = _load_json("dig_sites.json")
+    if data is None:
+        return _pipeline_required("dig-sites")
+    return data
 
 @app.get("/api/taxonomy")
 async def get_taxonomy():
