@@ -481,7 +481,12 @@ export class SceneManager {
 
   // ── Animate deepest marker (Piece 5) ───────────────────────────────────────
 
-  private _animateDeepestMarker(): void { /* see Piece 5 */ }
+  private _animateDeepestMarker(): void {
+    if (!this._deepestMarker) return
+    const mat = this._deepestMarker.material as THREE.MeshBasicMaterial
+    const t   = performance.now() * 0.003
+    mat.opacity = 0.5 + 0.4 * Math.sin(t)
+  }
 
   // ── Build concept spheres ─────────────────────────────────────────────────
 
@@ -565,7 +570,85 @@ export class SceneManager {
 
   // ── Probe visualization (Piece 5) ─────────────────────────────────────────
 
-  drawProbe(_result: any): void { /* see Piece 5 */ }
+  drawProbe(result: any): void {
+    this.clearProbe()
+    if (!result?.steps?.length) return
+
+    this._probeGroup = new THREE.Group()
+
+    const steps     = result.steps     as any[]
+    const maxDesert = result.desert_max as number
+
+    const termA = this._conceptData.find((c: any) => c.label === result.term_a)
+    const termB = this._conceptData.find((c: any) => c.label === result.term_b)
+    if (!termA || !termB) return
+
+    const posA = this.umapToScene(termA.position_2d[0], termA.position_2d[1])
+    const posB = this.umapToScene(termB.position_2d[0], termB.position_2d[1])
+
+    const colLow  = new THREE.Color(0x1a4fff)  // blue  = near concepts
+    const colHigh = new THREE.Color(0xff4400)  // red   = deep desert
+
+    // Tube line with per-vertex colour
+    const positions: number[] = []
+    const colours:   number[] = []
+    for (const step of steps) {
+      const t   = step.alpha as number
+      const pos = posA.clone().lerp(posB, t)
+      pos.y    += 0.1
+      const d   = Math.min((step.desert_value as number) / Math.max(maxDesert, 0.001), 1)
+      const col = colLow.clone().lerp(colHigh, d)
+      positions.push(pos.x, pos.y, pos.z)
+      colours.push(col.r, col.g, col.b)
+    }
+
+    const lineGeo = new THREE.BufferGeometry()
+    lineGeo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3))
+    lineGeo.setAttribute('color',    new THREE.Float32BufferAttribute(colours, 3))
+    this._probeGroup.add(new THREE.Line(lineGeo,
+      new THREE.LineBasicMaterial({ vertexColors: true, linewidth: 2 })))
+
+    // Step nodes scaled by desert value
+    for (let i = 0; i < steps.length; i++) {
+      const step  = steps[i]
+      const t     = step.alpha as number
+      const pos   = posA.clone().lerp(posB, t)
+      pos.y      += 0.1
+      const d     = Math.min((step.desert_value as number) / Math.max(maxDesert, 0.001), 1)
+      const scale = 0.012 + d * 0.023
+      const col   = colLow.clone().lerp(colHigh, d)
+      const node  = new THREE.Mesh(
+        new THREE.SphereGeometry(scale, 6, 6),
+        new THREE.MeshBasicMaterial({ color: col }),
+      )
+      node.position.copy(pos)
+      node.userData = {
+        stepIndex:   i,
+        desertValue: step.desert_value,
+        nearestTerm: step.nearest_term,
+      }
+      this._probeGroup.add(node)
+    }
+
+    // Deepest point ring marker
+    const deepIdx = result.deepest_step_index as number
+    if (deepIdx >= 0 && deepIdx < steps.length) {
+      const deepPos = posA.clone().lerp(posB, steps[deepIdx].alpha as number)
+      deepPos.y    += 0.12
+      const ringGeo = new THREE.RingGeometry(0.06, 0.09, 32)
+      ringGeo.rotateX(-Math.PI / 2)
+      this._deepestMarker = new THREE.Mesh(ringGeo,
+        new THREE.MeshBasicMaterial({
+          color: 0xffee00, transparent: true, opacity: 0.9, side: THREE.DoubleSide,
+        }),
+      )
+      this._deepestMarker.position.copy(deepPos)
+      this._deepestMarker.userData = { birthTime: performance.now() }
+      this.scene.add(this._deepestMarker)
+    }
+
+    this.scene.add(this._probeGroup)
+  }
   clearProbe(): void {
     if (this._probeGroup) {
       this.scene.remove(this._probeGroup)
