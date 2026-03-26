@@ -19,6 +19,9 @@ interface AppState {
   surfaceMode:    SurfaceMode
   setSurfaceMode: (mode: SurfaceMode) => void
 
+  atmosphereOn:    boolean
+  setAtmosphereOn: (on: boolean) => void
+
   rogetFilter:      RogetFilter
   setRogetClass:    (classId: RogetClassId | null) => void
   setRogetSection:  (sectionName: string | null) => void
@@ -49,6 +52,9 @@ export const useAppStore = create<AppState>()((set) => ({
 
   surfaceMode:    'wireframe',
   setSurfaceMode: (mode) => set({ surfaceMode: mode }),
+
+  atmosphereOn:    false,
+  setAtmosphereOn: (on) => set({ atmosphereOn: on }),
 
   rogetFilter: { activeClassId: null, activeSectionName: null, activeCategoryId: null },
   setRogetClass:    (classId) => set((s) => ({

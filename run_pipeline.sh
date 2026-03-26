@@ -26,15 +26,16 @@ fi
 
 echo ""
 echo "=== Embedding Pipeline ==="
-step "1/9" "Base embeddings"           scripts/compute_base_embeddings.py
-step "2/9" "Contextual embeddings"     scripts/compute_contextual_embeddings.py
-step "3/9" "UMAP projection"           scripts/compute_umap.py
-step "4/9" "Density field"             scripts/compute_density.py
-step "5/9" "Gradient field"            scripts/compute_gradients.py
-step "6/9" "Attractors"                scripts/compute_attractors.py
+step "1/10" "Base embeddings"           scripts/compute_base_embeddings.py
+step "2/10" "Contextual embeddings"     scripts/compute_contextual_embeddings.py
+step "3/10" "UMAP projection"           scripts/compute_umap.py
+step "4/10" "Context positions"         scripts/compute_context_positions.py
+step "5/10" "Density field"             scripts/compute_density.py
+step "6/10" "Gradient field"            scripts/compute_gradients.py
+step "7/10" "Attractors"                scripts/compute_attractors.py
 python3 scripts/compute_basins.py
-step "7/9" "Desert field"              scripts/compute_desert_field.py
-step "8/9" "Data bundle"               scripts/assemble_bundle.py
+step "8/10" "Desert field"              scripts/compute_desert_field.py
+step "9/10" "Data bundle"               scripts/assemble_bundle.py
 
 echo ""
 echo "=== Discovery Data ==="

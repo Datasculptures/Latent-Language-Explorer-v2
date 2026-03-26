@@ -40,6 +40,32 @@ export class SceneManager {
   private _journalGroup:    THREE.Group | null = null
   private _deepestMarker:   THREE.Mesh | null = null
 
+  // Voronoi
+  private _voronoiMesh: THREE.InstancedMesh | null = null
+  private _voronoiData: any[] = []
+
+  // Atmosphere layer (context variant spheres, filaments, hulls)
+  private _atmosphereOn    = false
+  private _atmSpheres:    THREE.InstancedMesh  | null = null
+  private _atmFilaments:  THREE.LineSegments   | null = null
+  private _atmHullGroup:  THREE.Group          | null = null
+  // Per-instance lookup: instanceId → { conceptIndex, contextIndex }
+  private _variantMeta: Array<{ conceptIndex: number; contextIndex: number }> = []
+
+  // Atmosphere rendering constants (mirrors terrain_config.py)
+  private readonly _ATM_MIN_POLYSEMY  = 0.3
+  private readonly _ATM_HULL_POLYSEMY = 0.7
+  private readonly _ATM_MAX_VARIANTS  = 50000
+  private readonly _ATM_MAX_HULLS     = 200
+  private readonly _CONTEXT_KEYS = [
+    'abstract_relations','space','matter','intellect','volition','affections','neutral',
+  ]
+
+  // Concept path
+  private _pathGroup:         THREE.Group | null = null
+  private _pathWaypoints:     THREE.Vector3[] = []
+  private _pathWaypointIndex: number = 0
+
   // Surface mode
   private _currentSurfaceMode: SurfaceMode = 'density'
   private _attractorMeshes: THREE.Mesh[] = []
@@ -47,6 +73,9 @@ export class SceneManager {
   // Concept sphere tracking
   private _conceptPositions: THREE.Vector3[] = []
   private _rogetClassId: number | null = null
+
+  // Tortuosity colour mode
+  private _tortuosityMode = false
 
   // Terrain data
   private _terrainData:  any    = null
@@ -63,6 +92,15 @@ export class SceneManager {
   private _isDragging  = false
   private _lastMouseX  = 0
   private _lastMouseY  = 0
+
+  // Ground following
+  private readonly _EYE_HEIGHT          = 1.2
+  private readonly _LERP_SPEED          = 0.12
+  private readonly _GROUND_OVERRIDE_MS  = 2000
+  private _groundFollow         = true
+  private _groundFollowOverride = false
+  private _groundFollowOverrideTime = 0
+  private _flyingTo             = false
 
   static getInstance(): SceneManager {
     if (!SceneManager._instance) {
@@ -159,6 +197,24 @@ export class SceneManager {
            v01 * (1-tx_)*ty_     + v11 * tx_*ty_
   }
 
+  /**
+   * Return the scene-space Y value of the terrain surface at the given
+   * scene-space (x, z) position, using bilinear interpolation.
+   * Returns 0 if the grid has not been loaded or the point is out of bounds.
+   */
+  getTerrainHeightAt(x: number, z: number): number {
+    if (!this._xGrid.length || !this._yGrid.length) return 0
+    // Reverse the coordinate transform: scene x = umap_x, scene z = -umap_y
+    const umapX = x
+    const umapY = -z
+    const gx = this._xGrid
+    const gy = this._yGrid
+    // Out-of-bounds check
+    if (umapX < gx[0] || umapX > gx[gx.length - 1] ||
+        umapY < gy[0] || umapY > gy[gy.length - 1]) return 0
+    return this._sampleDensity(umapX, umapY) * 3.0  // HEIGHT_SCALE = 3.0
+  }
+
   // ── Data loading ───────────────────────────────────────────────────────────
 
   loadTerrain(terrainData: any): void {
@@ -200,6 +256,22 @@ export class SceneManager {
         this.setSurfaceMode(next)
         useAppStore.getState().setSurfaceMode(next)
       }
+
+      if (e.code === 'KeyQ' || e.code === 'KeyE') {
+        this._groundFollowOverride     = true
+        this._groundFollowOverrideTime = performance.now()
+      }
+
+      if (e.code === 'KeyN') this.stepConceptPath(1)
+      if (e.code === 'KeyP') this.stepConceptPath(-1)
+      if (e.code === 'Escape') this.clearConceptPath()
+
+      // Shift+A — toggle atmosphere layer (matches V1 keybind)
+      if (e.code === 'KeyA' && e.shiftKey) {
+        const next = !this._atmosphereOn
+        this.setAtmosphere(next)
+        useAppStore.getState().setAtmosphereOn(next)
+      }
     })
     window.addEventListener('keyup', e => { this._keys[e.code] = false })
 
@@ -238,6 +310,11 @@ export class SceneManager {
     const right = new THREE.Vector3()
     right.crossVectors(dir, new THREE.Vector3(0, 1, 0)).normalize()
 
+    const isMoving =
+      this._keys['KeyW']     || this._keys['ArrowUp']    ||
+      this._keys['KeyS']     || this._keys['ArrowDown']  ||
+      this._keys['ArrowLeft']|| this._keys['ArrowRight']
+
     if (this._keys['KeyW'] || this._keys['ArrowUp'])    this.camera.position.addScaledVector(dir, speed)
     if (this._keys['KeyS'] || this._keys['ArrowDown'])  this.camera.position.addScaledVector(dir, -speed)
     if (this._keys['ArrowLeft'])                        this.camera.position.addScaledVector(right, -speed)
@@ -255,10 +332,39 @@ export class SceneManager {
       this.camera.position.set(0, 8, 12)
       this._yaw = 0
       this._pitch = 0
+      this._groundFollowOverride = false
+    }
+
+    // Re-engage ground following after Q/E override timeout
+    if (this._groundFollowOverride &&
+        (performance.now() - this._groundFollowOverrideTime > this._GROUND_OVERRIDE_MS)) {
+      this._groundFollowOverride = false
+    }
+
+    // Ground following
+    if (this._groundFollow && !this._groundFollowOverride && !this._flyingTo) {
+      const groundY = this.getTerrainHeightAt(
+        this.camera.position.x,
+        this.camera.position.z,
+      )
+      if (groundY !== 0 && !isNaN(groundY)) {
+        const targetY = groundY + this._EYE_HEIGHT
+        // If the camera is significantly above the target and the player isn't
+        // moving, hold position — engage the lerp only once they move.
+        const tooHigh = this.camera.position.y > targetY + 2.0 && !isMoving
+        if (!tooHigh) {
+          this.camera.position.y = THREE.MathUtils.lerp(
+            this.camera.position.y, targetY, this._LERP_SPEED,
+          )
+          // Hard floor — never clip into the terrain
+          if (this.camera.position.y < groundY) this.camera.position.y = groundY
+        }
+      }
     }
   }
 
   flyTo(scenePos: THREE.Vector3, duration = 1200): void {
+    this._flyingTo = true
     const start     = this.camera.position.clone()
     const target    = scenePos.clone().add(new THREE.Vector3(0, 3, 3))
     const startTime = performance.now()
@@ -267,7 +373,12 @@ export class SceneManager {
       const ease = t < 0.5 ? 2*t*t : -1+(4-2*t)*t
       this.camera.position.lerpVectors(start, target, ease)
       this.camera.lookAt(scenePos)
-      if (t < 1) requestAnimationFrame(animate)
+      if (t < 1) {
+        requestAnimationFrame(animate)
+      } else {
+        // Re-engage ground following 500 ms after the fly-to completes
+        setTimeout(() => { this._flyingTo = false }, 500)
+      }
     }
     animate()
   }
@@ -535,6 +646,8 @@ export class SceneManager {
 
     // Re-apply any active filter (e.g. concepts reloaded while filter is on)
     if (this._rogetClassId !== null) this.applyRogetFilter(this._rogetClassId)
+    // Rebuild atmosphere if on and no filter (filter path rebuilds inside applyRogetFilter)
+    else if (this._atmosphereOn) this._buildAtmosphere()
   }
 
   // ── Roget filter ──────────────────────────────────────────────────────────
@@ -561,7 +674,11 @@ export class SceneManager {
       dummy.updateMatrix()
       this._conceptSpheres.setMatrixAt(i, dummy.matrix)
 
-      colour.set(c.colour ?? '#888888')
+      if (this._tortuosityMode && typeof c.tortuosity === 'number') {
+        colour.copy(this._tortuosityToColour(c.tortuosity))
+      } else {
+        colour.set(c.colour ?? '#888888')
+      }
       if (!matches) colour.multiplyScalar(DIM)
       this._conceptSpheres.setColorAt(i, colour)
     }
@@ -570,6 +687,40 @@ export class SceneManager {
     if (this._conceptSpheres.instanceColor) {
       this._conceptSpheres.instanceColor.needsUpdate = true
     }
+
+    // Rebuild atmosphere to match updated filter
+    if (this._atmosphereOn) this._buildAtmosphere()
+  }
+
+  // ── Tortuosity colour mode ────────────────────────────────────────────────
+
+  setTortuosityMode(on: boolean): void {
+    this._tortuosityMode = on
+    this.applyRogetFilter(this._rogetClassId)
+  }
+
+  isTortuosityMode(): boolean { return this._tortuosityMode }
+
+  private _tortuosityToColour(t: number): THREE.Color {
+    // Stops: 1.0→deep-blue, ~4→teal, ~7→gold, 10+→orange
+    // Normalize: t=1.0 → 0, t=10.0 → 1.0, clamp.
+    const n = Math.max(0, Math.min((t - 1.0) / 9.0, 1.0))
+    // Four colour stops at positions 0, 0.33, 0.67, 1.0
+    const stops: [number, number, number][] = [
+      [0x1a / 255, 0x3a / 255, 0x6a / 255],  // deep blue   #1a3a6a
+      [0x2a / 255, 0x8a / 255, 0x5a / 255],  // teal/green  #2a8a5a
+      [0xff / 255, 0xcc / 255, 0x00 / 255],  // bright gold #ffcc00
+      [0xff / 255, 0x66 / 255, 0x00 / 255],  // hot orange  #ff6600
+    ]
+    const seg = n * (stops.length - 1)
+    const i   = Math.min(Math.floor(seg), stops.length - 2)
+    const f   = seg - i
+    const s0  = stops[i], s1 = stops[i + 1]
+    return new THREE.Color(
+      s0[0] + f * (s1[0] - s0[0]),
+      s0[1] + f * (s1[1] - s0[1]),
+      s0[2] + f * (s1[2] - s0[2]),
+    )
   }
 
   // ── Probe visualization (Piece 5) ─────────────────────────────────────────
@@ -664,6 +815,126 @@ export class SceneManager {
     }
   }
 
+  // ── Voronoi vertices ──────────────────────────────────────────────────────
+
+  loadVoronoi(vertices: any[]): void {
+    this.clearVoronoi()
+    if (!vertices.length) return
+
+    this._voronoiData = vertices
+    const COUNT = vertices.length
+    const geo   = new THREE.IcosahedronGeometry(0.09, 0)
+    const mat   = new THREE.MeshBasicMaterial({
+      color: 0xffffff, wireframe: true, opacity: 0.6, transparent: true,
+    })
+    const mesh = new THREE.InstancedMesh(geo, mat, COUNT)
+    mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage)
+
+    const dummy = new THREE.Object3D()
+    for (let i = 0; i < COUNT; i++) {
+      const v   = vertices[i]
+      const pos = this.umapToScene(v.x, v.y)
+      pos.y    += 0.12
+      dummy.position.copy(pos)
+      dummy.updateMatrix()
+      mesh.setMatrixAt(i, dummy.matrix)
+    }
+    mesh.instanceMatrix.needsUpdate = true
+    this._voronoiMesh = mesh
+    this.scene.add(mesh)
+  }
+
+  clearVoronoi(): void {
+    if (this._voronoiMesh) {
+      this.scene.remove(this._voronoiMesh)
+      this._voronoiMesh.geometry.dispose()
+      ;(this._voronoiMesh.material as THREE.Material).dispose()
+      this._voronoiMesh = null
+    }
+    this._voronoiData = []
+  }
+
+  showVoronoi(visible: boolean): void {
+    if (this._voronoiMesh) this._voronoiMesh.visible = visible
+  }
+
+  pickVoronoi(clientX: number, clientY: number): any | null {
+    if (!this._voronoiMesh || !this._canvas) return null
+    const rect = this._canvas.getBoundingClientRect()
+    const ndcX =  ((clientX - rect.left) / rect.width)  * 2 - 1
+    const ndcY = -((clientY - rect.top)  / rect.height) * 2 + 1
+    const raycaster = new THREE.Raycaster()
+    raycaster.setFromCamera(new THREE.Vector2(ndcX, ndcY), this.camera)
+    const hits = raycaster.intersectObject(this._voronoiMesh)
+    if (hits.length > 0 && hits[0].instanceId !== undefined) {
+      return this._voronoiData[hits[0].instanceId] ?? null
+    }
+    return null
+  }
+
+  // ── Concept path ──────────────────────────────────────────────────────────
+
+  drawConceptPath(result: any): void {
+    this.clearConceptPath()
+    const steps: any[] = result?.steps ?? []
+    if (steps.length < 2) return
+
+    this._pathGroup = new THREE.Group()
+    this._pathWaypoints = []
+    this._pathWaypointIndex = 0
+
+    // Build waypoint positions
+    const pts: THREE.Vector3[] = steps.map((s: any) => {
+      const p = this.umapToScene(s.position_2d[0], s.position_2d[1])
+      p.y += 0.25
+      return p
+    })
+    this._pathWaypoints = pts
+
+    // TubeGeometry through waypoints
+    const curve    = new THREE.CatmullRomCurve3(pts)
+    const segments = Math.max(pts.length * 4, 64)
+    const tubeGeo  = new THREE.TubeGeometry(curve, segments, 0.025, 6, false)
+    const tubeMat  = new THREE.MeshBasicMaterial({
+      color: 0xffffff, transparent: true, opacity: 0.75,
+    })
+    this._pathGroup.add(new THREE.Mesh(tubeGeo, tubeMat))
+
+    // Waypoint spheres
+    const sphereGeo = new THREE.SphereGeometry(0.06, 8, 8)
+    for (let i = 0; i < pts.length; i++) {
+      const isEnd = i === 0 || i === pts.length - 1
+      const mat   = new THREE.MeshBasicMaterial({ color: isEnd ? 0x00d4ff : 0xffffff })
+      const node  = new THREE.Mesh(sphereGeo, mat)
+      node.position.copy(pts[i])
+      node.userData = { pathStep: i, term: steps[i].term }
+      this._pathGroup.add(node)
+    }
+
+    this.scene.add(this._pathGroup)
+  }
+
+  clearConceptPath(): void {
+    if (this._pathGroup) {
+      this.scene.remove(this._pathGroup)
+      this._pathGroup = null
+    }
+    this._pathWaypoints     = []
+    this._pathWaypointIndex = 0
+  }
+
+  stepConceptPath(dir: 1 | -1): void {
+    if (!this._pathWaypoints.length) return
+    this._pathWaypointIndex = Math.max(
+      0,
+      Math.min(this._pathWaypoints.length - 1, this._pathWaypointIndex + dir),
+    )
+    this.flyTo(this._pathWaypoints[this._pathWaypointIndex], 600)
+  }
+
+  getPathWaypointIndex(): number { return this._pathWaypointIndex }
+  getPathLength(): number        { return this._pathWaypoints.length }
+
   // ── Dispose ────────────────────────────────────────────────────────────────
 
   dispose(): void {
@@ -678,6 +949,7 @@ export class SceneManager {
       ;(m.material as THREE.Material).dispose()
     }
     this._attractorMeshes = []
+    this._clearAtmosphere()
     this._terrainData = null
     this.renderer.dispose()
     SceneManager._instance = null
@@ -705,14 +977,12 @@ export class SceneManager {
       new THREE.MeshBasicMaterial({ color: col }),
     )
 
-    // [0,0] means no UMAP position yet (CLI discovery) — stack above origin
-    if (ux === 0 && uy === 0) {
-      mesh.position.set(0, 5 + this._journalGroup.children.length * 0.3, 0)
-    } else {
-      const pos = this.umapToScene(ux, uy)
-      pos.y    += 0.2
-      mesh.position.copy(pos)
-    }
+    // [0,0] means no UMAP position (CLI discovery) — skip 3D marker
+    if (ux === 0 && uy === 0) return
+
+    const pos = this.umapToScene(ux, uy)
+    pos.y    += 0.2
+    mesh.position.copy(pos)
 
     mesh.userData = { journalId: entry.id, entryType: entry.type }
     this._journalGroup.add(mesh)
@@ -751,5 +1021,201 @@ export class SceneManager {
       })
       .sort((a, b) => a._dist - b._dist)
       .slice(0, k)
+  }
+
+  // ── Concept picking (hover) ───────────────────────────────────────────────
+
+  /**
+   * Raycast against concept spheres at the given client-space mouse position.
+   * Returns the concept data object for the hit sphere, or null.
+   */
+  pickConcept(clientX: number, clientY: number): any | null {
+    if (!this._conceptSpheres || !this._canvas) return null
+
+    const rect = this._canvas.getBoundingClientRect()
+    const ndcX =  ((clientX - rect.left) / rect.width)  * 2 - 1
+    const ndcY = -((clientY - rect.top)  / rect.height) * 2 + 1
+
+    const raycaster = new THREE.Raycaster()
+    raycaster.setFromCamera(new THREE.Vector2(ndcX, ndcY), this.camera)
+
+    const hits = raycaster.intersectObject(this._conceptSpheres)
+    if (hits.length > 0 && hits[0].instanceId !== undefined) {
+      return this._conceptData[hits[0].instanceId] ?? null
+    }
+    return null
+  }
+
+  // ── Atmosphere layer ──────────────────────────────────────────────────────
+
+  setAtmosphere(on: boolean): void {
+    this._atmosphereOn = on
+    if (on) {
+      this._buildAtmosphere()
+    } else {
+      this._clearAtmosphere()
+    }
+  }
+
+  isAtmosphereOn(): boolean { return this._atmosphereOn }
+
+  private _clearAtmosphere(): void {
+    if (this._atmSpheres) {
+      this.scene.remove(this._atmSpheres)
+      this._atmSpheres.dispose()
+      this._atmSpheres = null
+    }
+    if (this._atmFilaments) {
+      this.scene.remove(this._atmFilaments)
+      this._atmFilaments.geometry.dispose()
+      ;(this._atmFilaments.material as THREE.Material).dispose()
+      this._atmFilaments = null
+    }
+    if (this._atmHullGroup) {
+      this.scene.remove(this._atmHullGroup)
+      this._atmHullGroup.children.forEach(child => {
+        const m = child as THREE.Mesh
+        m.geometry?.dispose()
+        ;(m.material as THREE.Material)?.dispose()
+      })
+      this._atmHullGroup = null
+    }
+    this._variantMeta = []
+  }
+
+  private _buildAtmosphere(): void {
+    this._clearAtmosphere()
+    if (!this._conceptData.length || !this._xGrid.length) return
+
+    // Filter candidates: polysemy above threshold, matching active Roget filter
+    const candidates = this._conceptData
+      .map((c: any, i: number) => ({ c, i }))
+      .filter(({ c }: { c: any }) => {
+        const poly = c.polysemy_score ?? 0
+        if (poly <= this._ATM_MIN_POLYSEMY) return false
+        if (this._rogetClassId !== null && c.roget_class_id !== this._rogetClassId) return false
+        if (!Array.isArray(c.contexts) || c.contexts.length !== 7) return false
+        return true
+      })
+
+    // Sort by polysemy descending so the cap keeps the most interesting terms
+    candidates.sort((a: any, b: any) =>
+      (b.c.polysemy_score ?? 0) - (a.c.polysemy_score ?? 0)
+    )
+
+    const maxConcepts = Math.floor(this._ATM_MAX_VARIANTS / 7)
+    const filtered    = candidates.slice(0, maxConcepts)
+    if (filtered.length === 0) return
+
+    const totalVariants = filtered.length * 7
+    const sphereGeo = new THREE.SphereGeometry(0.025, 5, 5)
+    const sphereMat = new THREE.MeshBasicMaterial({ transparent: true, opacity: 0.5 })
+    const instanced = new THREE.InstancedMesh(sphereGeo, sphereMat, totalVariants)
+    instanced.instanceMatrix.setUsage(THREE.DynamicDrawUsage)
+
+    const dummy       = new THREE.Object3D()
+    const colour      = new THREE.Color()
+    const linePos:    number[] = []
+    const lineColRgb: number[] = []
+    this._variantMeta = []
+
+    let hullCount = 0
+    this._atmHullGroup = new THREE.Group()
+
+    let instanceIdx = 0
+    for (const { c, i: conceptIndex } of filtered) {
+      const basePos = this.umapToScene(c.position_2d[0], c.position_2d[1])
+      basePos.y += 0.05  // same lift as base concept spheres
+
+      colour.set(c.colour ?? '#888888')
+      const { r, g, b } = colour
+
+      for (let ci = 0; ci < 7; ci++) {
+        const ctx              = c.contexts[ci]
+        const [vx, vy]         = ctx.position_2d as [number, number]
+        const varPos           = this.umapToScene(vx, vy)
+        varPos.y              += 0.3  // float above terrain height + 0.3
+
+        dummy.position.copy(varPos)
+        dummy.updateMatrix()
+        instanced.setMatrixAt(instanceIdx, dummy.matrix)
+        instanced.setColorAt(instanceIdx, colour)
+
+        this._variantMeta.push({ conceptIndex, contextIndex: ci })
+
+        // Filament: base concept → variant sphere
+        linePos.push(basePos.x, basePos.y, basePos.z)
+        linePos.push(varPos.x,  varPos.y,  varPos.z)
+        lineColRgb.push(r, g, b, r, g, b)  // 2 vertices × 3 floats
+
+        instanceIdx++
+      }
+
+      // Convex hull approximation for highly polysemous terms
+      if ((c.polysemy_score ?? 0) > this._ATM_HULL_POLYSEMY && hullCount < this._ATM_MAX_HULLS) {
+        const spread   = c.context_spread ?? 0.1
+        const hullGeo  = new THREE.SphereGeometry(Math.max(spread * 0.5, 0.05), 8, 8)
+        const hullMat  = new THREE.MeshBasicMaterial({
+          color: c.colour ?? '#888888',
+          transparent: true,
+          opacity: 0.10,
+          side: THREE.DoubleSide,
+          depthWrite: false,
+        })
+        const hullMesh = new THREE.Mesh(hullGeo, hullMat)
+        hullMesh.position.copy(basePos)
+        hullMesh.position.y += 0.15
+        this._atmHullGroup.add(hullMesh)
+        hullCount++
+      }
+    }
+
+    instanced.instanceMatrix.needsUpdate = true
+    if (instanced.instanceColor) instanced.instanceColor.needsUpdate = true
+    this._atmSpheres = instanced
+    this.scene.add(instanced)
+
+    // Filaments — single LineSegments draw call, per-vertex colour at 25% opacity
+    const lineGeo = new THREE.BufferGeometry()
+    lineGeo.setAttribute('position', new THREE.Float32BufferAttribute(linePos,    3))
+    lineGeo.setAttribute('color',    new THREE.Float32BufferAttribute(lineColRgb, 3))
+    const lineMat = new THREE.LineBasicMaterial({
+      vertexColors: true, transparent: true, opacity: 0.25,
+    })
+    this._atmFilaments = new THREE.LineSegments(lineGeo, lineMat)
+    this.scene.add(this._atmFilaments)
+
+    if (this._atmHullGroup.children.length > 0) {
+      this.scene.add(this._atmHullGroup)
+    }
+  }
+
+  /**
+   * Raycast against atmosphere variant spheres.
+   * Returns { concept, contextKey, distFromBase } or null.
+   */
+  pickVariant(clientX: number, clientY: number): {
+    concept: any; contextKey: string; distFromBase: number
+  } | null {
+    if (!this._atmSpheres || !this._atmosphereOn || !this._canvas) return null
+
+    const rect = this._canvas.getBoundingClientRect()
+    const ndcX =  ((clientX - rect.left) / rect.width)  * 2 - 1
+    const ndcY = -((clientY - rect.top)  / rect.height) * 2 + 1
+
+    const raycaster = new THREE.Raycaster()
+    raycaster.setFromCamera(new THREE.Vector2(ndcX, ndcY), this.camera)
+
+    const hits = raycaster.intersectObject(this._atmSpheres)
+    if (hits.length > 0 && hits[0].instanceId !== undefined) {
+      const meta        = this._variantMeta[hits[0].instanceId]
+      if (!meta) return null
+      const concept     = this._conceptData[meta.conceptIndex]
+      const contextKey  = this._CONTEXT_KEYS[meta.contextIndex]
+      const ctx         = concept?.contexts?.[meta.contextIndex]
+      const distFromBase = ctx?.distance_from_base ?? 0
+      return { concept, contextKey, distFromBase }
+    }
+    return null
   }
 }

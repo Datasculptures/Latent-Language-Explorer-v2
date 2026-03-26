@@ -82,6 +82,21 @@ VOCAB_WORDNET_HOP_DEPTH = 1
 VOCAB_MODERN_DOMAIN_CAP = 4
 VOCAB_MODERN_DOMAIN_TERM_CAP = 100
 
+# ── Tortuosity ─────────────────────────────────────────────────────────
+# Basin-path tortuosity = (gradient-ascent path length) / (straight-line
+# distance to attractor).  Values near 1.0 = clear basin centre;
+# high values = contested territory near basin boundary.
+TORTUOSITY_LOW_THRESHOLD  = 1.5    # Below = clear basin centre
+TORTUOSITY_MID_THRESHOLD  = 3.0    # Below = moderate basin position
+TORTUOSITY_HIGH_THRESHOLD = 6.0    # Below = near basin boundary
+                                    # Above = highly contested
+
+# ── Camera / navigation ────────────────────────────────────────────────
+# These values are mirrored in SceneManager.ts as private readonly fields.
+CAMERA_EYE_HEIGHT         = 1.2    # Scene units above terrain surface (head height)
+CAMERA_LERP_SPEED         = 0.12   # Ground-follow smoothing factor (per frame)
+CAMERA_GROUND_OVERRIDE_MS = 2000   # ms before re-engaging ground follow after Q/E
+
 # ── Fabrication export ─────────────────────────────────────────────────
 EXPORT_DEFAULT_GRID_SIZE = 48
 EXPORT_DEFAULT_BASE_INCHES = 12.0
@@ -126,6 +141,12 @@ ROGET_CLASSES = {
     5: "Volition",
     6: "Affections",
 }
+
+# ── Atmosphere layer ───────────────────────────────────────────────────
+ATMOSPHERE_MIN_POLYSEMY    = 0.3   # Minimum polysemy to render variants
+ATMOSPHERE_HULL_POLYSEMY   = 0.7   # Minimum polysemy to render hull
+ATMOSPHERE_MAX_VARIANTS    = 50000 # Hard cap on rendered variant spheres
+ATMOSPHERE_MAX_HULLS       = 200   # Hard cap on convex hulls
 
 # ── Data bundle ────────────────────────────────────────────────────────
 DATA_BUNDLE_VERSION = "2.0"

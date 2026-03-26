@@ -31,13 +31,15 @@ BASE_NPZ        = PROJECT_ROOT / "data" / "embeddings" / "base_embeddings.npz"
 DENSITY_NPZ     = PROJECT_ROOT / "data" / "terrain" / "density_field.npz"
 GRADIENT_NPZ    = PROJECT_ROOT / "data" / "terrain" / "gradient_field.npz"
 DESERT_NPZ      = PROJECT_ROOT / "data" / "terrain" / "desert_field.npz"
-ATTRACTORS_JSON = PROJECT_ROOT / "data" / "terrain" / "attractors.json"
-BASINS_JSON     = PROJECT_ROOT / "data" / "terrain" / "basin_boundaries.json"
-SCHEMA_FILE     = PROJECT_ROOT / "data" / "schema" / "data_bundle.schema.json"
+ATTRACTORS_JSON  = PROJECT_ROOT / "data" / "terrain" / "attractors.json"
+BASINS_JSON      = PROJECT_ROOT / "data" / "terrain" / "basin_boundaries.json"
+SCHEMA_FILE      = PROJECT_ROOT / "data" / "schema" / "data_bundle.schema.json"
 
-BACKEND_DATA = PROJECT_ROOT / "backend" / "data"
-BUNDLE_FILE  = BACKEND_DATA / "data_bundle.json"
-TERRAIN_FILE = BACKEND_DATA / "terrain_data.json"
+BACKEND_DATA      = PROJECT_ROOT / "backend" / "data"
+BUNDLE_FILE       = BACKEND_DATA / "data_bundle.json"
+TERRAIN_FILE      = BACKEND_DATA / "terrain_data.json"
+TORTUOSITY_JSON   = BACKEND_DATA / "tortuosity.json"
+CTX_POS_FILE      = BACKEND_DATA / "context_positions.json"
 
 sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
 from terrain_config import (
@@ -103,11 +105,17 @@ def main():
         if term not in pos_map:
             continue
         base_pos = pos_map[term]
+        term_ctx_pos = ctx_positions.get(term, [])
         variants = []
         for j, key in enumerate(ctx_keys):
+            # Use computed position if available, else fall back to base position
+            if j < len(term_ctx_pos):
+                pos_2d = term_ctx_pos[j]
+            else:
+                pos_2d = base_pos  # placeholder until compute_context_positions.py runs
             variants.append({
                 "roget_class_context": key,
-                "position_2d":         base_pos,  # Placeholder -- Phase 4 computes per-context UMAP
+                "position_2d":         pos_2d,
                 "distance_from_base":  float(
                     np.linalg.norm(
                         ctx_embeddings[i, j] - ctx_embeddings[i, neutral_idx]
@@ -124,6 +132,23 @@ def main():
         attractors = json.load(f)
     with open(BASINS_JSON) as f:
         basins = json.load(f)
+
+    # Context positions — optional, produced by compute_context_positions.py
+    ctx_positions: dict = {}
+    if CTX_POS_FILE.exists():
+        with open(CTX_POS_FILE) as f:
+            ctx_positions = json.load(f)
+        print(f"Loaded context positions for {len(ctx_positions):,} terms.")
+    else:
+        print("Note: context_positions.json not found — "
+              "using base position as placeholder for context variants.")
+
+    # Tortuosity is optional — only added if compute_tortuosity.py has run
+    tortuosity_map: dict = {}
+    if TORTUOSITY_JSON.exists():
+        with open(TORTUOSITY_JSON) as f:
+            tortuosity_map = json.load(f)
+        print(f"Loaded tortuosity for {len(tortuosity_map):,} terms.")
 
     # -- Build concept list ------------------------------------------------
     print(f"Building concept list for {len(vocab):,} terms ...")
@@ -149,6 +174,7 @@ def main():
             "context_spread":       spread_map.get(term),
             "polysemy_score":       polysemy_map.get(term),
             "colour":               colour,
+            "tortuosity":           tortuosity_map.get(term),
             "contexts":             ctx_variants.get(term, []),
         })
 

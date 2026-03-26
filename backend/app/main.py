@@ -5,6 +5,7 @@ Terrain endpoints serve pre-computed pipeline data from backend/data/.
 """
 import html
 import json as _json
+import os
 import re
 import time
 from contextlib import asynccontextmanager
@@ -155,6 +156,13 @@ async def get_voronoi_vertices():
         return _pipeline_required("voronoi-vertices")
     return data
 
+@app.get("/api/tortuosity")
+async def get_tortuosity():
+    data = _load_json("tortuosity.json")
+    if data is None:
+        return _pipeline_required("tortuosity (run compute_tortuosity.py then assemble_bundle.py)")
+    return data
+
 @app.get("/api/dig-sites")
 async def get_dig_sites():
     data = _load_json("dig_sites.json")
@@ -162,9 +170,107 @@ async def get_dig_sites():
         return _pipeline_required("dig-sites")
     return data
 
+@app.get("/api/context-positions")
+async def get_context_positions():
+    data = _load_json("context_positions.json")
+    if data is None:
+        return _pipeline_required(
+            "context-positions (run scripts/compute_context_positions.py)"
+        )
+    return data
+
 @app.get("/api/taxonomy")
 async def get_taxonomy():
     return _pipeline_required("taxonomy")
+
+
+# ── Concept graph cache ────────────────────────────────────────────────
+_concept_graph: dict | None = None
+
+def _get_concept_graph() -> dict | None:
+    global _concept_graph
+    if _concept_graph is None:
+        _concept_graph = _load_json("concept_graph.json")
+    return _concept_graph
+
+
+@app.post("/api/path")
+async def find_path(request: Request):
+    """Dijkstra shortest path between two concepts on the k-NN UMAP graph."""
+    import heapq
+    from .config import MAX_QUERY_LENGTH
+
+    body = await request.json()
+    term_a = re.sub(r'[\x00-\x1f\x7f]', '', str(body.get("term_a", ""))).strip()[:MAX_QUERY_LENGTH]
+    term_b = re.sub(r'[\x00-\x1f\x7f]', '', str(body.get("term_b", ""))).strip()[:MAX_QUERY_LENGTH]
+
+    if not term_a or not term_b:
+        return JSONResponse(status_code=422, content={"detail": "term_a and term_b are required."})
+
+    graph = _get_concept_graph()
+    if graph is None:
+        return _pipeline_required("path (concept_graph.json not found — run compute_concept_graph.py)")
+
+    terms     = graph["terms"]
+    positions = graph["positions"]
+    adj       = graph["adj"]
+
+    term_index = {t: i for i, t in enumerate(terms)}
+
+    if term_a not in term_index:
+        return JSONResponse(status_code=404, content={"detail": f"Term not found: '{term_a}'"})
+    if term_b not in term_index:
+        return JSONResponse(status_code=404, content={"detail": f"Term not found: '{term_b}'"})
+
+    src = term_index[term_a]
+    dst = term_index[term_b]
+
+    # Dijkstra
+    INF  = float("inf")
+    dist = [INF] * len(terms)
+    prev = [-1]  * len(terms)
+    dist[src] = 0.0
+    heap = [(0.0, src)]
+
+    while heap:
+        d, u = heapq.heappop(heap)
+        if d > dist[u]:
+            continue
+        if u == dst:
+            break
+        row = adj[u]
+        for k in range(0, len(row), 2):
+            v  = row[k]
+            w  = row[k + 1]
+            nd = d + w
+            if nd < dist[v]:
+                dist[v] = nd
+                prev[v] = u
+                heapq.heappush(heap, (nd, v))
+
+    if dist[dst] == INF:
+        return JSONResponse(status_code=404, content={"detail": f"No path found between '{term_a}' and '{term_b}'"})
+
+    # Reconstruct path
+    path = []
+    cur  = dst
+    while cur != -1:
+        path.append(cur)
+        cur = prev[cur]
+    path.reverse()
+
+    steps = [
+        {"term": terms[i], "position_2d": positions[i]}
+        for i in path
+    ]
+
+    return {
+        "term_a":       term_a,
+        "term_b":       term_b,
+        "steps":        steps,
+        "total_length": round(dist[dst], 6),
+        "step_count":   len(steps),
+    }
 
 @app.post("/api/probe")
 async def probe_endpoint(request: Request):
@@ -236,11 +342,23 @@ async def describe_point(request: Request):
     global _last_llm_call
 
     from .config import (
-        ANTHROPIC_API_KEY,
         PROBE_DESERT_GATE_THRESHOLD    as DESERT_GATE_THRESHOLD,
         PROBE_DESERT_SHALLOW_THRESHOLD as DESERT_SHALLOW_THRESHOLD,
         LLM_MODEL, LLM_MAX_TOKENS, MAX_QUERY_LENGTH,
+        PROJECT_ROOT,
     )
+
+    # Read API key fresh each call so .env changes take effect without restart
+    ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY")
+    if not ANTHROPIC_API_KEY:
+        _env = PROJECT_ROOT / ".env"
+        if _env.exists():
+            with open(_env, encoding="utf-8") as _f:
+                for _line in _f:
+                    _line = _line.strip()
+                    if _line.startswith("ANTHROPIC_API_KEY="):
+                        ANTHROPIC_API_KEY = _line.split("=", 1)[1].strip().strip("\"'")
+                        break
 
     # Backend rate limiting
     elapsed = time.time() - _last_llm_call
