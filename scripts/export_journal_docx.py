@@ -5,12 +5,15 @@ backend/data/journal/journal.json.
 
 Usage:
     py scripts/export_journal_docx.py
+    py scripts/export_journal_docx.py --deep-only
+    py scripts/export_journal_docx.py --output-dir docs/
 
 Outputs:
     docs/FIELD_JOURNAL.docx
     docs/FIELD_JOURNAL_DEEP_ONLY.docx
 """
 
+import argparse
 import json
 import os
 import re
@@ -405,16 +408,24 @@ def render_appendix_a(doc: Document, entries: list) -> None:
         r.font.size = Pt(10)
     _para_spacing(p, before=4, after=8)
 
-    # Level breakdown
-    levels = defaultdict(int)
+    # Level breakdown with mean desert
+    levels_count: dict[str, int]   = defaultdict(int)
+    levels_deserts: dict[str, list] = defaultdict(list)
     for e in probe:
         lv = _level_tag(e)
         if lv:
-            levels[lv] += 1
+            levels_count[lv] += 1
+            dv = e.get("desert_value")
+            if isinstance(dv, float):
+                levels_deserts[lv].append(dv)
 
     doc.add_heading("By level", level=2)
-    lev_rows = [(k, str(v)) for k, v in sorted(levels.items())]
-    _add_simple_table(doc, ["Level", "Count"], lev_rows)
+    lev_rows = []
+    for k in sorted(levels_count.keys()):
+        vals = levels_deserts[k]
+        mean_s = f"{sum(vals)/len(vals):.4f}" if vals else "—"
+        lev_rows.append((k, str(levels_count[k]), mean_s))
+    _add_simple_table(doc, ["Level", "Count", "Mean desert"], lev_rows)
 
     # Class-pair table
     doc.add_heading("By Roget class pair (probe discoveries)", level=2)
@@ -443,10 +454,12 @@ def render_appendix_a(doc: Document, entries: list) -> None:
     top_rows = []
     for e in top10:
         ta, tb = _parse_pair(e)
-        nc0 = (e.get("nearest_concepts") or [{}])[0]
+        nc0  = (e.get("nearest_concepts") or [{}])[0]
         near = nc0.get("term", "—")
-        top_rows.append((ta, tb, f"{e['desert_value']:.4f}", near))
-    _add_simple_table(doc, ["Term A", "Term B", "Desert", "Deepest near"], top_rows)
+        desc = (e.get("generated_description") or "").strip()
+        desc_preview = desc[:60] + ("…" if len(desc) > 60 else "") if desc else ""
+        top_rows.append((ta, tb, f"{e['desert_value']:.4f}", near, desc_preview))
+    _add_simple_table(doc, ["Term A", "Term B", "Desert", "Deepest near", "Description"], top_rows)
 
 
 # ---------------------------------------------------------------------------
@@ -474,10 +487,12 @@ def render_appendix_b(doc: Document, entries: list) -> None:
 # ---------------------------------------------------------------------------
 
 def render_title_page(doc: Document, entries: list) -> None:
-    probe   = [e for e in entries if e.get("type") == "probe_discovery"]
-    deep    = [e for e in probe if (e.get("desert_value") or 0) >= DEEP_THRESHOLD]
-    shallow = [e for e in probe if SHALLOW_THRESHOLD <= (e.get("desert_value") or 0) < DEEP_THRESHOLD]
-    max_dv  = max((e.get("desert_value") or 0) for e in probe) if probe else 0
+    probe      = [e for e in entries if e.get("type") == "probe_discovery"]
+    deep       = [e for e in probe if (e.get("desert_value") or 0) >= DEEP_THRESHOLD]
+    shallow    = [e for e in probe if SHALLOW_THRESHOLD <= (e.get("desert_value") or 0) < DEEP_THRESHOLD]
+    max_dv     = max((e.get("desert_value") or 0) for e in probe) if probe else 0
+    n_desc     = sum(1 for e in entries if e.get("generated_description"))
+    n_starred  = sum(1 for e in entries if e.get("starred"))
 
     for _ in range(4):
         doc.add_paragraph()
@@ -515,8 +530,10 @@ def render_title_page(doc: Document, entries: list) -> None:
     stat_p = doc.add_paragraph()
     stat_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     stat_text = (
-        f"{len(entries)} entries  ·  {len(deep)} deep (≥ {DEEP_THRESHOLD})  ·  "
+        f"{len(entries)} total entries\n"
+        f"{len(deep)} deep (≥ {DEEP_THRESHOLD})  ·  "
         f"{len(shallow)} shallow ({SHALLOW_THRESHOLD}–{DEEP_THRESHOLD})\n"
+        f"{n_desc} with descriptions  ·  {n_starred} starred\n"
         f"Max desert depth: {max_dv:.4f}"
     )
     rs2 = stat_p.add_run(stat_text)
@@ -597,8 +614,26 @@ def build_journal_doc(
 # ---------------------------------------------------------------------------
 
 def main():
+    parser = argparse.ArgumentParser(
+        description="Generate FIELD_JOURNAL.docx from journal.json.",
+    )
+    parser.add_argument("--deep-only", action="store_true",
+                        help="Generate only FIELD_JOURNAL_DEEP_ONLY.docx (Section 1 + Appendix A)")
+    parser.add_argument("--output-dir", default=None,
+                        help="Output directory (default: docs/ inside project root)")
+    args = parser.parse_args()
+
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
     journal_path = os.path.join(project_root, JOURNAL_PATH)
+
+    # Honour --output-dir, keeping output within the project for safety
+    global OUTPUT_DIR
+    if args.output_dir:
+        cand = os.path.abspath(args.output_dir)
+        if not cand.startswith(project_root):
+            print(f"ERROR: --output-dir must be inside the project directory.")
+            sys.exit(1)
+        OUTPUT_DIR = os.path.relpath(cand, project_root)
 
     if not os.path.exists(journal_path):
         print(f"ERROR: journal not found at {journal_path}")
@@ -626,16 +661,24 @@ def main():
         for sid, _ in skipped:
             print(f"  SKIPPED entry: {sid}")
 
-    # Counts
+    # Counts for summary
     probe   = [e for e in valid if e.get("type") == "probe_discovery" and isinstance(e.get("desert_value"), float)]
     deep    = [e for e in probe if e["desert_value"] >= DEEP_THRESHOLD]
     shallow = [e for e in probe if SHALLOW_THRESHOLD <= e["desert_value"] < DEEP_THRESHOLD]
-    other   = [e for e in valid if e not in probe or e.get("desert_value", 0) < SHALLOW_THRESHOLD]
+    other_set = set(id(e) for e in probe)
+    other   = [e for e in valid if id(e) not in other_set or e.get("desert_value", 0) < SHALLOW_THRESHOLD]
 
     out_full      = safe_output_path("FIELD_JOURNAL.docx")
     out_deep_only = safe_output_path("FIELD_JOURNAL_DEEP_ONLY.docx")
-
     os.makedirs(os.path.dirname(out_full), exist_ok=True)
+
+    if args.deep_only:
+        print("Building FIELD_JOURNAL_DEEP_ONLY.docx …")
+        n_deep = build_journal_doc(valid, out_deep_only, deep_only=True)
+        size_deep = os.path.getsize(out_deep_only) // 1024
+        approx_pages_deep = max(1, n_deep // 3)
+        print(f"\nFIELD_JOURNAL_DEEP_ONLY.docx: {n_deep} entries, approx {approx_pages_deep} pages  ({size_deep} KB)")
+        return
 
     print("Building FIELD_JOURNAL.docx …")
     n_full = build_journal_doc(valid, out_full, deep_only=False)
@@ -645,15 +688,16 @@ def main():
 
     size_full = os.path.getsize(out_full) // 1024
     size_deep = os.path.getsize(out_deep_only) // 1024
+    approx_pages_full = max(1, n_full // 3)
+    approx_pages_deep = max(1, n_deep // 3)
 
     print()
-    print(f"Total entries written: {n_full}")
     print(f"  Deep entries:         {len(deep)}")
     print(f"  Shallow entries:      {len(shallow)}")
     print(f"  Manual/other entries: {len(other)}")
     print()
-    print(f"Output: docs/FIELD_JOURNAL.docx           ({size_full} KB)")
-    print(f"        docs/FIELD_JOURNAL_DEEP_ONLY.docx ({size_deep} KB)")
+    print(f"FIELD_JOURNAL.docx:           {n_full} entries, approx {approx_pages_full} pages  ({size_full} KB)")
+    print(f"FIELD_JOURNAL_DEEP_ONLY.docx: {n_deep} entries, approx {approx_pages_deep} pages  ({size_deep} KB)")
 
 
 if __name__ == "__main__":
