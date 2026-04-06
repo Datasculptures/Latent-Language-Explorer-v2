@@ -126,7 +126,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "The concept of **configuration** or **disposition**—the specific way something is spatially or structurally positioned, distinct from the act of arranging it or the abstract manner of doing so. This is the state of being disposed, the actual layout itself rather than the process or style.",
     "user_notes": "orderly vs pedantic",
     "fabrication_notes": {
       "material": "",
@@ -140,7 +140,7 @@
       "class_4",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "01f3c39c-dec8-4bc5-87b7-3064ded5cfd8",
     "timestamp": "2026-03-24T20:05:49.103203+00:00",
@@ -181,7 +181,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space captures the **sensory residue of consumed experience**—what remains perceptually present after something has passed through you, neither fully internalized knowledge (noemata) nor expelled waste (egesta), but the lingering flavor-memory or stain left behind (annatto&#x27;s coloring function). It&#x27;s the ghost-trace of interaction: what your senses retain when the object itself is gone.",
     "user_notes": "iota vs watercraft",
     "fabrication_notes": {
       "material": "",
@@ -195,7 +195,7 @@
       "class_2",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "6b9fd569-53a4-4758-9ced-c3183f256a55",
     "timestamp": "2026-03-24T20:05:51.155665+00:00",
@@ -236,7 +236,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This is the act of imagining a radically different framework or system that doesn&#x27;t yet exist—holding a vision of alternative possibilities while actively thinking through its implications. It&#x27;s the conceptual space where abstract rethinking meets concrete envisioning.",
     "user_notes": "quadripartite vs manifesto",
     "fabrication_notes": {
       "material": "",
@@ -250,7 +250,7 @@
       "class_4",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "c3100b4f-7c64-4368-9689-3e6534a9a05d",
     "timestamp": "2026-03-24T20:05:53.183251+00:00",
@@ -291,7 +291,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This appears to be the concept of **absentminded marking**—the idle, purposeless scratching or scribbling done while thinking about something else, where the physical act of mark-making is decoupled from intentional creation or communication.",
     "user_notes": "lunation vs crayons",
     "fabrication_notes": {
       "material": "",
@@ -305,7 +305,7 @@
       "class_4",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "e4cce038-33d2-4d74-b74c-aa3bb96d9c9d",
     "timestamp": "2026-03-24T20:05:55.245038+00:00",
@@ -401,7 +401,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This is the space between *seam-work* (carvel&#x27;s precise joining) and *wrinkled irregularity* (rivel&#x27;s creasing)—a concept for surfaces that are *intentionally textured or deliberately roughened* rather than smoothly joined or naturally creased. Think of deliberately corrugate or scored surfaces made for grip, aesthetic effect, or functional texture.",
     "user_notes": "bevel vs witenagemote",
     "fabrication_notes": {
       "material": "",
@@ -415,7 +415,7 @@
       "class_5",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "553fbaa1-9641-4e42-a775-c2b1f537daee",
     "timestamp": "2026-03-24T20:05:59.349922+00:00",
@@ -456,7 +456,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This is the act of exceeding a legitimate boundary or claim with exaggeration—crossing a line not just spatially (overstep) but through inflated assertion (overstate). It&#x27;s the specific moment when pushing too far becomes making something false or unfounded.",
     "user_notes": "overstay vs hero",
     "fabrication_notes": {
       "material": "",
@@ -470,7 +470,7 @@
       "class_6",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "f75186fa-b2a1-413e-839c-574f45b93170",
     "timestamp": "2026-03-24T20:06:01.400355+00:00",
@@ -511,7 +511,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This point captures **spatial negation or absence**—the concept of &quot;not here&quot; or &quot;elsewhere&quot;—existing between volitional rejection (ratsbane&#x27;s poisonous refusal) and locative markers (there, above). It&#x27;s the semantic space of displacement or being-away-from rather than being-at.",
     "user_notes": "ensure vs henbane",
     "fabrication_notes": {
       "material": "",
@@ -525,7 +525,7 @@
       "class_5",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "f930210c-39a2-496a-ab31-bf9fb4d86550",
     "timestamp": "2026-03-24T20:06:03.465437+00:00",
@@ -2656,7 +2656,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This is a sacred or consecrated space that exists outside organized religious hierarchy—a place of devotion stripped of institutional apparatus, where spiritual intensity matters more than architectural grandeur or formal designation.",
     "user_notes": "reported vs basilica",
     "fabrication_notes": {
       "material": "",
@@ -2670,7 +2670,7 @@
       "class_6",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "40a6a25f-8fc5-4292-95a5-11151d4e42d8",
     "timestamp": "2026-03-24T21:31:29.546143+00:00",
@@ -2711,7 +2711,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space captures the transitional zone where atmospheric moisture condenses into visible form—the threshold between invisible vapor and tangible cloud matter, or the moment a bird&#x27;s feather catches and displaces air currents into visible disturbance patterns.",
     "user_notes": "peacock vs nerd",
     "fabrication_notes": {
       "material": "",
@@ -2725,7 +2725,7 @@
       "class_4",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "5ff78968-d654-4db0-8a20-510e4b2e7085",
     "timestamp": "2026-03-24T21:31:31.594302+00:00",
@@ -2766,7 +2766,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "The unnamed space between noble rank and autonomous rule, with wealth as a tertiary anchor—suggesting a concept of regional autonomy purchased through accumulated resources: a princely fiefdom where economic power directly translates into political independence.",
     "user_notes": "develop vs magnate",
     "fabrication_notes": {
       "material": "",
@@ -2780,7 +2780,7 @@
       "class_6",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "ef095840-14e2-4898-81f5-e8bf22af6a36",
     "timestamp": "2026-03-24T21:31:33.672127+00:00",
@@ -2821,7 +2821,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "The deliberate withholding of opposition or complaint when you have grounds to object—tacit acceptance achieved through strategic silence rather than explicit consent. This is the space where inaction becomes complicity.",
     "user_notes": "flashlight vs grievance",
     "fabrication_notes": {
       "material": "",
@@ -2835,7 +2835,7 @@
       "class_5",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "a6595dc9-372a-4aeb-becc-485a73054a59",
     "timestamp": "2026-03-24T21:31:35.711049+00:00",
@@ -2876,7 +2876,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This point captures the moment of **encountering something unexpected within an unfolding situation**—the cognitive snap between &quot;events are proceeding normally&quot; and &quot;wait, this defies expectation.&quot; It&#x27;s the gap where surprise *becomes* salient within active experience.",
     "user_notes": "prey vs staggering",
     "fabrication_notes": {
       "material": "",
@@ -2890,7 +2890,7 @@
       "class_4",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "d3246051-2dc0-4e1d-8d4b-f08cde7b2a2d",
     "timestamp": "2026-03-24T21:31:37.784690+00:00",
@@ -2931,7 +2931,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space captures **spiraling sharpness in isolation**—the cutting edge of something that winds through emptiness, like a drill bit boring through sand or a corkscrew&#x27;s penetrating twist through void. It&#x27;s the quality of piercing precision applied to formlessness.",
     "user_notes": "backbone vs artists",
     "fabrication_notes": {
       "material": "",
@@ -2945,7 +2945,7 @@
       "class_4",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "a7d3398b-f576-46f0-8950-406e937b1ff2",
     "timestamp": "2026-03-24T21:31:39.823847+00:00",
@@ -2986,7 +2986,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "The intentional manipulation of natural forces or circumstances to produce a desired effect—craft applied to the world rather than to deception or aesthetics alone. This is engineering consciousness: making things work through cunning application of how the world actually behaves.",
     "user_notes": "articulation vs mistake",
     "fabrication_notes": {
       "material": "",
@@ -3000,7 +3000,7 @@
       "class_4",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "c29c7643-4891-403f-90ad-f1172897bd7b",
     "timestamp": "2026-03-24T21:31:41.888404+00:00",
@@ -3041,7 +3041,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space holds **competitive extremism under intoxication or poor judgment**—the impulse to outdo others recklessly, driven by diminished inhibition rather than clear ambition. It&#x27;s what happens when the desire to surpass meets the state of being too impaired to compete fairly or wisely.",
     "user_notes": "outcry vs booze",
     "fabrication_notes": {
       "material": "",
@@ -3055,7 +3055,7 @@
       "class_6",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "30a7d8a7-550e-47a7-8c26-f5cb5cca85f4",
     "timestamp": "2026-03-24T21:31:43.927199+00:00",
@@ -3096,7 +3096,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This position maps the absorption of external matter into an organism&#x27;s physical substance—metabolic incorporation where foreign material becomes indistinguishable from the body&#x27;s own tissue. The concept bridges digestion (assimilate) with biological process (physiological) while touching on boundlessness through the theoretically unlimited capacity for such integration.",
     "user_notes": "physiology vs intimidate",
     "fabrication_notes": {
       "material": "",
@@ -3110,7 +3110,7 @@
       "class_6",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "7c7c2fa7-3044-4b8e-95a8-3cfa034b0b04",
     "timestamp": "2026-03-24T21:31:45.971260+00:00",
@@ -3151,7 +3151,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This point captures **rhetorical contamination through material excess**—the deliberate smearing or fouling of someone&#x27;s reputation by associating them with base, physical matter (greed, bodily corruption, filth). It&#x27;s slander that works by making the target seem literally polluted rather than morally wrong.",
     "user_notes": "lipid vs asterisk",
     "fabrication_notes": {
       "material": "",
@@ -3165,7 +3165,7 @@
       "class_4",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "5fb85a27-eb9b-4b3b-9f1a-d232ed0e6b1a",
     "timestamp": "2026-03-24T21:31:48.012182+00:00",
@@ -3206,7 +3206,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This point captures **stunning disorientation**—the specific state of being forcefully knocked out of one&#x27;s baseline awareness, whether through physical shock or emotional devastation, where coherence hasn&#x27;t yet fractured into full panic or despair.",
     "user_notes": "mountainous vs anguish",
     "fabrication_notes": {
       "material": "",
@@ -3220,7 +3220,7 @@
       "class_3",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "86527f26-168f-4bb4-9440-33ad0cb7d955",
     "timestamp": "2026-03-24T21:31:50.057439+00:00",
@@ -3261,7 +3261,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This appears to be the concept of **dispersal or scattering under heat/pressure**—when a cohesive group or substance breaks apart and spreads outward, like rodents fleeing a burning warren or a solid losing its structure. The embedding sits where physical dissolution (melting) meets social/biological fragmentation (ratlings fleeing).",
     "user_notes": "squirrel vs molten",
     "fabrication_notes": {
       "material": "",
@@ -3275,7 +3275,7 @@
       "class_3",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "dc6cea4d-9c13-436e-9ff1-f5375c0b7995",
     "timestamp": "2026-03-24T21:31:52.105787+00:00",
@@ -3316,7 +3316,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "The experience of sourness as a physical sensation—the pucker reflex and salivary response to acidic stimuli, independent of taste perception or color recognition.",
     "user_notes": "lemon vs tolerate",
     "fabrication_notes": {
       "material": "",
@@ -3330,7 +3330,7 @@
       "class_5",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "f4ce2fe0-8dcc-4a99-a7b0-e1de20857089",
     "timestamp": "2026-03-24T21:31:54.144887+00:00",
@@ -3371,7 +3371,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "The involuntary physical response of being caught in a moment of intellectual clarity about one&#x27;s own social inadequacy—the heat of embarrassment mixed with the sharp awareness that you deserve it.",
     "user_notes": "blush vs atrocious",
     "fabrication_notes": {
       "material": "",
@@ -3385,7 +3385,7 @@
       "class_6",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "bed16473-a81b-4932-af9c-0426be9d73cd",
     "timestamp": "2026-03-24T21:31:56.189282+00:00",
@@ -3426,7 +3426,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This point captures **formal authority granted through advanced study within an institutional hierarchy**—the intersection of doctorate&#x27;s legitimizing credential with ecclesiastical power structures. It&#x27;s the concept of earned rank that simultaneously confers both intellectual standing and social/spiritual jurisdiction.",
     "user_notes": "thesis vs archbishop",
     "fabrication_notes": {
       "material": "",
@@ -3440,7 +3440,7 @@
       "class_6",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "11a96ca1-613d-45d6-8d58-e4f6273383be",
     "timestamp": "2026-03-24T21:31:58.244828+00:00",
@@ -3481,7 +3481,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This gap captures the tension between **risk exposure and perceptual framing**—the moment when something becomes visible as a threat versus remaining obscured. It&#x27;s the space where optical clarity meets volitional danger: what you can see determines what you&#x27;re willing to hazard.",
     "user_notes": "optic vs jeopardize",
     "fabrication_notes": {
       "material": "",
@@ -3495,7 +3495,7 @@
       "class_5",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "ed07670f-4835-47ad-a245-325c017d8d40",
     "timestamp": "2026-03-24T21:32:00.288488+00:00",
@@ -3536,7 +3536,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space captures the act of temporary escape or restoration through descent—seeking relief by withdrawing into unfamiliar or lowered circumstances, like retreating to a remote place to recover. It&#x27;s the counterintuitive restoration found in harsh or hidden environments rather than comfort.",
     "user_notes": "refreshing vs hades",
     "fabrication_notes": {
       "material": "",
@@ -3550,7 +3550,7 @@
       "class_6",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "24c59231-b3ab-4f90-ab35-78bcfd3bbe9d",
     "timestamp": "2026-03-24T21:32:02.323951+00:00",
@@ -3591,7 +3591,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space captures the **state of being foreign-inserted yet socially performed**—something that occupies your mind/body against your own volition, like an unwanted thought you keep expressing, or a cultural affectation you&#x27;ve absorbed and now reflexively display.",
     "user_notes": "implantation vs hoard",
     "fabrication_notes": {
       "material": "",
@@ -3605,7 +3605,7 @@
       "class_5",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "c9043b82-ccba-4114-94dc-b5e13232f69f",
     "timestamp": "2026-03-24T21:32:04.366059+00:00",
@@ -3646,7 +3646,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space captures **competitive physical exchange without clear victor orientation**—the contested moment itself rather than winning or losing. It&#x27;s the mutual engagement of struggle (like &quot;battled&quot;) stripped of narrative outcome, closer to the raw symmetry of &quot;brawl&quot; than the transactional quality of &quot;swop.&quot;",
     "user_notes": "showdown vs swoop",
     "fabrication_notes": {
       "material": "",
@@ -3660,7 +3660,7 @@
       "class_2",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "3fc2be47-dee9-4718-8ec2-24be13f5e48c",
     "timestamp": "2026-03-24T21:32:06.415713+00:00",
@@ -3701,7 +3701,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This is the stance of tentative assent—agreeing to something while explicitly reserving judgment, like saying &quot;that seems right, but I&#x27;m not fully convinced.&quot; It&#x27;s the semantic position between confidence and doubt where you acknowledge a claim&#x27;s plausibility without committing to it.",
     "user_notes": "ends vs likelihood",
     "fabrication_notes": {
       "material": "",
@@ -3715,7 +3715,7 @@
       "class_4",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "598732b4-a355-4618-83b6-8d21d66d817b",
     "timestamp": "2026-03-24T21:32:08.464686+00:00",
@@ -3756,7 +3756,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This appears to be the concept of **coerced labor exchange**—work extracted through systematic deprivation or threat rather than voluntary trade, where the laborer has no meaningful choice but the transaction maintains commercial forms.\n\nIt&#x27;s the space where slavery&#x27;s forced servitude meets commerce&#x27;s transactional structure, without fully being either: labor that is bought and sold but cannot be refused.",
     "user_notes": "goods vs oppression",
     "fabrication_notes": {
       "material": "",
@@ -3770,7 +3770,7 @@
       "class_5",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "a5b9fe9b-d371-4a7a-9eb6-511cd26d0c25",
     "timestamp": "2026-03-24T21:32:10.514543+00:00",
@@ -3811,7 +3811,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This point captures **purposeful movement through unstructured terrain**—the act of finding your way forward when there are no clear paths or rules, combining navigation&#x27;s directionality with comedy&#x27;s acceptance of absurdity and uncertainty.",
     "user_notes": "navigation vs comedian",
     "fabrication_notes": {
       "material": "",
@@ -3825,7 +3825,7 @@
       "class_4",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "841cb340-ea23-4d0c-834c-59d0b6cc9320",
     "timestamp": "2026-03-24T21:32:12.569562+00:00",
@@ -3866,7 +3866,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This is the concept of **exposure or vulnerability to uncontrolled spread**—the state of being open to contagion or influence without protective barriers, where something previously contained becomes widely accessible or affecting.",
     "user_notes": "openness vs plague",
     "fabrication_notes": {
       "material": "",
@@ -3880,7 +3880,7 @@
       "class_5",
       "cross_class"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "4e529b7b-0507-48e1-ad4b-114e9d0ba5bf",
     "timestamp": "2026-03-24T21:32:14.654380+00:00",
@@ -5083,7 +5083,7 @@
       "class_a": "Volition",
       "class_b": "Volition"
     },
-    "generated_description": null,
+    "generated_description": "The capacity to maintain composure while exercising authority—a leader who remains unflappable under pressure, making decisive choices from a state of inner stillness rather than reactive agitation.",
     "user_notes": "chairperson vs composure",
     "fabrication_notes": {
       "material": "",
@@ -5097,7 +5097,7 @@
       "class_5",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "279f507f-082a-444b-b099-fafd46978d3b",
     "timestamp": "2026-03-24T21:37:33.351312+00:00",
@@ -5145,7 +5145,7 @@
       "class_a": "Volition",
       "class_b": "Volition"
     },
-    "generated_description": null,
+    "generated_description": "The act of displaying a weapon or hostile capability to coerce compliance without (yet) executing harm—the communicative threshold between possessing destructive power and using it. This is intimidation as a deliberate tool of will.",
     "user_notes": "ammunition vs ultimatum",
     "fabrication_notes": {
       "material": "",
@@ -5159,7 +5159,7 @@
       "class_5",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "bdb77820-9b46-4129-9009-5cdf5ae74e9b",
     "timestamp": "2026-03-24T21:37:35.412813+00:00",
@@ -5207,7 +5207,7 @@
       "class_a": "Abstract Relations",
       "class_b": "Abstract Relations"
     },
-    "generated_description": null,
+    "generated_description": "**Queued suspension**: The state of being held in a sequence where your turn hasn&#x27;t arrived yet—neither actively processed nor abandoned, but temporarily sidelined pending resolution. It&#x27;s the liminal position between a thing that follows something else and something situated in the middle of a process.",
     "user_notes": "queue vs area",
     "fabrication_notes": {
       "material": "",
@@ -5221,7 +5221,7 @@
       "class_1",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "22ad4180-9b2d-4c6f-8dd9-9ff2d1c344b8",
     "timestamp": "2026-03-24T21:37:37.488428+00:00",
@@ -5269,7 +5269,7 @@
       "class_a": "Affections",
       "class_b": "Affections"
     },
-    "generated_description": null,
+    "generated_description": "A state of heightened sexual arousal that clouds judgment without reaching full intoxication—the mental fog of desire that impairs rational thought while maintaining physical control. It&#x27;s lust-induced distraction or preoccupation, where sexual fixation temporarily corrupts clear thinking.",
     "user_notes": "lewd vs alcoholism",
     "fabrication_notes": {
       "material": "",
@@ -5283,7 +5283,7 @@
       "class_6",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "f3382e6a-4df6-431c-b466-027277b229fc",
     "timestamp": "2026-03-24T21:37:39.578158+00:00",
@@ -5393,7 +5393,7 @@
       "class_a": "Volition",
       "class_b": "Volition"
     },
-    "generated_description": null,
+    "generated_description": "**Soft wealth** — a luxury good that is both materially refined (silk&#x27;s smoothness) and economically valuable (cash&#x27;s purchasing power), occupying the space where desirability as material meets desirability as tradeable asset.",
     "user_notes": "cashmere vs toxicology",
     "fabrication_notes": {
       "material": "",
@@ -5407,7 +5407,7 @@
       "class_5",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "4aea00cd-508e-4c8e-ad9d-8d0985a69f12",
     "timestamp": "2026-03-24T21:37:43.695824+00:00",
@@ -5455,7 +5455,7 @@
       "class_a": "Affections",
       "class_b": "Affections"
     },
-    "generated_description": null,
+    "generated_description": "The obligation to govern a territory or people you are responsible for—the binding weight of stewardship rather than mere authority. It&#x27;s duty crystallized into territorial form, where your power and your accountability occupy the same space.",
     "user_notes": "customs vs dominion",
     "fabrication_notes": {
       "material": "",
@@ -5469,7 +5469,7 @@
       "class_6",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "68db16a5-de45-4923-9aad-ec680d712df2",
     "timestamp": "2026-03-24T21:37:45.772016+00:00",
@@ -5517,7 +5517,7 @@
       "class_a": "Affections",
       "class_b": "Affections"
     },
-    "generated_description": null,
+    "generated_description": "The concept of **territorial dominion without legitimate authority**—a space where power is exercised over a region but the right to do so is contested or absent, as in occupation, usurpation, or colonization.",
     "user_notes": "dominion vs immoral",
     "fabrication_notes": {
       "material": "",
@@ -5531,7 +5531,7 @@
       "class_6",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "83ea1c6c-02d5-45ea-b512-ee26e88318c0",
     "timestamp": "2026-03-24T21:37:47.812976+00:00",
@@ -5579,7 +5579,7 @@
       "class_a": "Matter",
       "class_b": "Matter"
     },
-    "generated_description": null,
+    "generated_description": "A quality of obscured visibility or muffled perception—something that blocks clear sight or sound without being dense enough to be called shade, like fog filtering light or undergrowth dampening noise.",
     "user_notes": "blind vs misty",
     "fabrication_notes": {
       "material": "",
@@ -5593,7 +5593,7 @@
       "class_3",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "b843748e-5d42-41da-884c-3777c71db003",
     "timestamp": "2026-03-24T21:37:49.863832+00:00",
@@ -5641,7 +5641,7 @@
       "class_a": "Intellect",
       "class_b": "Intellect"
     },
-    "generated_description": null,
+    "generated_description": "**Lexical compression**: the deliberate choice of fewer, denser words that carry maximum semantic weight—saying &quot;taciturn&quot; instead of &quot;doesn&#x27;t talk much.&quot; It&#x27;s conciseness achieved through vocabulary precision rather than mere brevity.",
     "user_notes": "condensed vs nonfiction",
     "fabrication_notes": {
       "material": "",
@@ -5655,7 +5655,7 @@
       "class_4",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "0fa8ab1d-cf1a-4e03-92fc-641d89a78e1b",
     "timestamp": "2026-03-24T21:37:51.913006+00:00",
@@ -5703,7 +5703,7 @@
       "class_a": "Space",
       "class_b": "Space"
     },
-    "generated_description": null,
+    "generated_description": "**Expanse without subdivision** — a continuous stretch of space or material that lacks internal divisions or boundaries, where extent matters more than any structured organization within it.",
     "user_notes": "width vs frontier",
     "fabrication_notes": {
       "material": "",
@@ -5717,7 +5717,7 @@
       "class_2",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "96b60aa4-dc54-47b6-98a3-68339a736ced",
     "timestamp": "2026-03-24T21:37:53.938915+00:00",
@@ -5827,7 +5827,7 @@
       "class_a": "Intellect",
       "class_b": "Intellect"
     },
-    "generated_description": null,
+    "generated_description": "**Combative intellect**: intellectual engagement driven by competitive assertion rather than truth-seeking or wisdom—the mind deployed as a weapon to dominate, prove superiority, or overcome opposition rather than understand.",
     "user_notes": "illuminati vs magnus",
     "fabrication_notes": {
       "material": "",
@@ -5841,7 +5841,7 @@
       "class_4",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "c25e5444-1518-48b3-916b-82c691bcc4b2",
     "timestamp": "2026-03-24T21:37:58.110427+00:00",
@@ -5889,7 +5889,7 @@
       "class_a": "Matter",
       "class_b": "Matter"
     },
-    "generated_description": null,
+    "generated_description": "The passive experiencing of something objectionable—noticing foul air or a bad smell without acting on it, the way a bystander registers an unpleasant fact.",
     "user_notes": "spectator vs tainted",
     "fabrication_notes": {
       "material": "",
@@ -5903,7 +5903,7 @@
       "class_3",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "16654d16-67db-4fee-bdc9-418437ff21f9",
     "timestamp": "2026-03-24T21:38:00.136511+00:00",
@@ -5951,7 +5951,7 @@
       "class_a": "Affections",
       "class_b": "Affections"
     },
-    "generated_description": null,
+    "generated_description": "The state of using alcohol to bolster one&#x27;s ego or self-regard—intoxication that loosens self-criticism and permits self-aggrandizing thoughts. It&#x27;s drunken vanity, where lowered inhibitions merge with inflated self-perception.",
     "user_notes": "sherry vs flattering",
     "fabrication_notes": {
       "material": "",
@@ -5965,7 +5965,7 @@
       "class_6",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "f6e85c56-fb23-470f-89b6-b662ea5b5957",
     "timestamp": "2026-03-24T21:38:02.193653+00:00",
@@ -6013,7 +6013,7 @@
       "class_a": "Matter",
       "class_b": "Matter"
     },
-    "generated_description": null,
+    "generated_description": "This is **bearing or deportment**—the physical and social presentation of oneself through bodily comportment, facial expression, and demeanor that communicates status, mood, or intention to others. It&#x27;s the observable interface where a person&#x27;s internal state and social intentions manifest through their body.",
     "user_notes": "demeanor vs society",
     "fabrication_notes": {
       "material": "",
@@ -6027,7 +6027,7 @@
       "class_3",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "a6227ae5-ac03-4674-ad00-f75e0d43a4bb",
     "timestamp": "2026-03-24T21:38:04.253950+00:00",
@@ -6075,7 +6075,7 @@
       "class_a": "Volition",
       "class_b": "Volition"
     },
-    "generated_description": null,
+    "generated_description": "This space captures **provisional action taken under uncertainty**—acting despite unresolved doubts, where you proceed because waiting costs more than the risk of being wrong. It&#x27;s the stance of someone who questions but doesn&#x27;t paralyze, who doubts but moves anyway.",
     "user_notes": "convenient vs quarantine",
     "fabrication_notes": {
       "material": "",
@@ -6089,7 +6089,7 @@
       "class_5",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "a9f23875-41de-4b24-a572-d4799ec1dc54",
     "timestamp": "2026-03-24T21:38:06.312273+00:00",
@@ -6137,7 +6137,7 @@
       "class_a": "Intellect",
       "class_b": "Intellect"
     },
-    "generated_description": null,
+    "generated_description": "**Prepared performance**: The act of delivering pre-learned material with controlled expression, where intellectual mastery and stylistic choices merge—neither raw recitation nor full improvisation, but practiced rendition shaped by rehearsed interpretation.",
     "user_notes": "recital vs wording",
     "fabrication_notes": {
       "material": "",
@@ -6151,7 +6151,7 @@
       "class_4",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "1eca297f-8c92-45ce-bc7e-0be27db518ba",
     "timestamp": "2026-03-24T21:38:08.372406+00:00",
@@ -6261,7 +6261,7 @@
       "class_a": "Matter",
       "class_b": "Matter"
     },
-    "generated_description": null,
+    "generated_description": "**Volatility** or **dispersibility**: the property of a substance to readily escape into gaseous form or dissipate into space, sitting between the abstract state of being a gas and the concrete measure of how tightly packed matter is. This unnamed concept captures why hydrogen specifically evaporates or diffuses so readily—it&#x27;s the susceptibility to become uncontained.",
     "user_notes": "ammonia vs candy",
     "fabrication_notes": {
       "material": "",
@@ -6275,7 +6275,7 @@
       "class_3",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "ed389e60-7f49-4faa-8676-76b34cc536f7",
     "timestamp": "2026-03-24T21:38:12.448581+00:00",
@@ -6323,7 +6323,7 @@
       "class_a": "Affections",
       "class_b": "Affections"
     },
-    "generated_description": null,
+    "generated_description": "**Bitter consumption**: the act of taking in or enduring something harmful while harboring deep displeasure—swallowing what you resent. This is resentment that has become metabolized into the body rather than merely felt in the mind.",
     "user_notes": "bile vs spite",
     "fabrication_notes": {
       "material": "",
@@ -6337,7 +6337,7 @@
       "class_6",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "ea872bab-765b-458a-8788-75b2549e7636",
     "timestamp": "2026-03-24T21:38:14.518097+00:00",
@@ -6385,7 +6385,7 @@
       "class_a": "Volition",
       "class_b": "Volition"
     },
-    "generated_description": null,
+    "generated_description": "**Self-maintenance through constraint**: A system modifying its own operating parameters to persist unchanged—like homeostatic regulation or a tradition actively enforcing its own continuity. It&#x27;s preservation that works by continuously adjusting rules rather than resisting change.",
     "user_notes": "preserved vs promoter",
     "fabrication_notes": {
       "material": "",
@@ -6399,7 +6399,7 @@
       "class_5",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "1fa834b5-3e43-4177-a825-d425ed0dbef1",
     "timestamp": "2026-03-24T21:38:16.584567+00:00",
@@ -6447,7 +6447,7 @@
       "class_a": "Volition",
       "class_b": "Volition"
     },
-    "generated_description": null,
+    "generated_description": "**Sustained commitment to a chosen direction or role.** This is the volition to maintain or prioritize something over time—neither the momentary decision to pursue it (Store) nor its abstract value (Importance), but the active, ongoing choice to keep it central to one&#x27;s life or work.",
     "user_notes": "arsenal vs materially",
     "fabrication_notes": {
       "material": "",
@@ -6461,7 +6461,7 @@
       "class_5",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "0cdd59df-e2e0-42b8-940a-7fc6fb3374b2",
     "timestamp": "2026-03-24T21:38:18.656825+00:00",
@@ -6509,7 +6509,7 @@
       "class_a": "Abstract Relations",
       "class_b": "Abstract Relations"
     },
-    "generated_description": null,
+    "generated_description": "The brief, delicate existence of something—a life span so short it&#x27;s almost negligible, yet vivid enough to matter. This is the concept of *ephemeral vitality*: creatures or phenomena that burn intensely but vanish within a season, like moths or butterflies, existing in the gap between the boundless time of perpetuity and the dependency of infancy.",
     "user_notes": "caterpillar vs continual",
     "fabrication_notes": {
       "material": "",
@@ -6523,7 +6523,7 @@
       "class_1",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "06677c41-cd4d-4cef-9fa1-aad27776df77",
     "timestamp": "2026-03-24T21:38:20.712688+00:00",
@@ -6564,7 +6564,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This appears to be the fuzzy zone between **habitual emotional disposition** (the &quot;usually&quot; of feeling) and **sovereign affection** (thearchy&#x27;s hierarchical love). The concept here might be: *a feeling that recurs so consistently it becomes constitutional to one&#x27;s nature, neither chosen nor imposed but intrinsic*.",
     "user_notes": "whale vs emery",
     "fabrication_notes": {
       "material": "",
@@ -6578,7 +6578,7 @@
       "class_2",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "c7a13ab1-ef45-4c4f-9954-c4d4c5c9ae61",
     "timestamp": "2026-03-24T21:38:22.074738+00:00",
@@ -6626,7 +6626,7 @@
       "class_a": "Intellect",
       "class_b": "Intellect"
     },
-    "generated_description": null,
+    "generated_description": "The shared chamber—a space designed to hold multiple presences together, whether physical (a vaulted room), social (companions in arms), or cognitive (a lens that frames collective experience). It&#x27;s the structural principle of containment that enables both intimate gathering and systematic observation.",
     "user_notes": "videotape vs wording",
     "fabrication_notes": {
       "material": "",
@@ -6640,7 +6640,7 @@
       "class_4",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "d927acc6-71ae-40b1-bd8a-5bed8ad63a0e",
     "timestamp": "2026-03-24T21:38:22.775552+00:00",
@@ -6681,7 +6681,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This is the moment when something passes from controlled custody into circulation—neither the act of giving it away (obtainment/issuing imply intentional transfer) nor the state of being free (released suggests finality), but the threshold act of relinquishing hold so it becomes accessible to others.",
     "user_notes": "disposition vs example",
     "fabrication_notes": {
       "material": "",
@@ -6695,7 +6695,7 @@
       "class_1",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "2f682b1a-58cf-49d8-88aa-3a15dbcb61b7",
     "timestamp": "2026-03-24T21:38:24.164806+00:00",
@@ -6743,7 +6743,7 @@
       "class_a": "Matter",
       "class_b": "Matter"
     },
-    "generated_description": null,
+    "generated_description": "A biological system operating at minimal metabolic cost, where functional processes continue with dramatically reduced activity or signaling—the physiological equivalent of dormancy or torpor, where an organism maintains structure without noise or communication.",
     "user_notes": "metabolism vs silently",
     "fabrication_notes": {
       "material": "",
@@ -6757,7 +6757,7 @@
       "class_3",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "c216da93-c61e-43f6-99d3-7feaeb2be987",
     "timestamp": "2026-03-24T21:38:24.831241+00:00",
@@ -6798,7 +6798,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "The social acknowledgment gesture that&#x27;s too minimal or ambiguous to name—a half-wave, a mouth-twitch of recognition, or the micro-expression exchanged between strangers who almost collide. It&#x27;s the threshold between deliberately communicating and accidentally signaling presence.",
     "user_notes": "salute vs baseline",
     "fabrication_notes": {
       "material": "",
@@ -6812,7 +6812,7 @@
       "class_4",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "94fe28f5-cd28-4d5b-81d9-ed068554dc7f",
     "timestamp": "2026-03-24T21:38:26.224813+00:00",
@@ -6860,7 +6860,7 @@
       "class_a": "Space",
       "class_b": "Space"
     },
-    "generated_description": null,
+    "generated_description": "The concept of **lateral compartmentalization in linear vessels**—the division of a ship&#x27;s interior into side-by-side functional zones (galley, crew quarters, cargo sections) that are accessed along a central axis rather than nested vertically.",
     "user_notes": "starboard vs upright",
     "fabrication_notes": {
       "material": "",
@@ -6874,7 +6874,7 @@
       "class_2",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "4d566084-32d2-47ba-a6b7-72594ff0c20a",
     "timestamp": "2026-03-24T21:38:26.900721+00:00",
@@ -6915,7 +6915,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space maps the dignity or prestige attached to a position or role—the honor of holding office itself, distinct from personal nobility or vanity. It&#x27;s the structural esteem granted by institutional rank rather than moral character or appearance.",
     "user_notes": "dean vs valiant",
     "fabrication_notes": {
       "material": "",
@@ -6929,7 +6929,7 @@
       "class_6",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "6e65eaa5-e10b-428e-8723-70d0ca2c1ac8",
     "timestamp": "2026-03-24T21:38:28.258228+00:00",
@@ -6977,7 +6977,7 @@
       "class_a": "Space",
       "class_b": "Space"
     },
-    "generated_description": null,
+    "generated_description": "**Adjacency with Discontinuity** — the state where two things are positioned near each other but separated by a gap, boundary, or unbridged space that prevents merging or crossing (like neighboring properties divided by a fence, or crystal faces that nearly touch but remain distinct).",
     "user_notes": "proximal vs lattice",
     "fabrication_notes": {
       "material": "",
@@ -6991,7 +6991,7 @@
       "class_2",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "da3dc68b-c29d-4654-9214-b6915956ab14",
     "timestamp": "2026-03-24T21:38:28.967529+00:00",
@@ -7149,7 +7149,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This point captures the experience of being **forced to move through opposing forces or constraints simultaneously**—the moment of committed transition where you must go *through* rather than around, accepting the friction of conflicting demands (like crossing a desert: spatial traversal that demands endurance against hostile conditions).",
     "user_notes": "crossroads vs rents",
     "fabrication_notes": {
       "material": "",
@@ -7163,7 +7163,7 @@
       "class_2",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "36ca60b3-8f77-4b78-aa9b-d377c53cae30",
     "timestamp": "2026-03-24T21:38:32.415672+00:00",
@@ -7211,7 +7211,7 @@
       "class_a": "Space",
       "class_b": "Space"
     },
-    "generated_description": null,
+    "generated_description": "The concept of **self-propelled travel by water using natural forces**—the specific intersection of maritime movement and human agency through wind or paddle rather than engine or external aid.",
     "user_notes": "kick vs rower",
     "fabrication_notes": {
       "material": "",
@@ -7225,7 +7225,7 @@
       "class_2",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "2fcbd842-49d6-4a30-947d-31617dbee0d8",
     "timestamp": "2026-03-24T21:38:33.100455+00:00",
@@ -7266,7 +7266,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "The state of being materially dependent on another&#x27;s continued favor or patronage—sustained submissiveness that requires constant performance of loyalty to preserve one&#x27;s position or livelihood.",
     "user_notes": "nuisance vs customer",
     "fabrication_notes": {
       "material": "",
@@ -7280,7 +7280,7 @@
       "class_5",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "529fdfff-e0cc-4ae5-abcc-c0b5a0610965",
     "timestamp": "2026-03-24T21:38:34.458229+00:00",
@@ -7328,7 +7328,7 @@
       "class_a": "Abstract Relations",
       "class_b": "Abstract Relations"
     },
-    "generated_description": null,
+    "generated_description": "The concept of **periodic gathering or recurrence tied to a specific time**: the idea that certain activities, celebrations, or events happen at appointed intervals rather than continuously—like how festivals return seasonally, or how &quot;sometimes&quot; marks discontinuous occurrence.",
     "user_notes": "midsummer vs simultaneously",
     "fabrication_notes": {
       "material": "",
@@ -7342,7 +7342,7 @@
       "class_1",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "df6fbe7a-dcfc-436a-b92f-54d08c82b4fe",
     "timestamp": "2026-03-24T21:38:35.180685+00:00",
@@ -7383,7 +7383,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This is the space where **evidence becomes assertion**—the moment when observed facts or demonstrated proof gets spoken aloud as a claim demanding belief, rather than remaining mere data. It&#x27;s testimony without the courtroom formality; demonstration that&#x27;s been verbalized into persuasion.",
     "user_notes": "summarize vs testimonial",
     "fabrication_notes": {
       "material": "",
@@ -7397,7 +7397,7 @@
       "class_4",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "8c538ebf-4061-4a77-acbf-9fa8573d44cc",
     "timestamp": "2026-03-24T21:38:36.499322+00:00",
@@ -7445,7 +7445,7 @@
       "class_a": "Intellect",
       "class_b": "Intellect"
     },
-    "generated_description": null,
+    "generated_description": "**Chromatic Desolation** — The visual emptiness of a monochromatic or severely color-restricted landscape, where the scarcity of hue variation itself becomes the dominant perceptual fact, as in vast sand or snow fields.",
     "user_notes": "anonymous vs palette",
     "fabrication_notes": {
       "material": "",
@@ -7459,7 +7459,7 @@
       "class_4",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "ae23c6ed-af7f-4d05-8a60-b104620eaf71",
     "timestamp": "2026-03-24T21:38:37.245755+00:00",
@@ -7500,7 +7500,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This region captures **comprehensive scope with upward directionality**—the quality of something being both all-encompassing and elevated or superior in application, like &quot;across the board at a higher level&quot; or the sense that a rule applies universally *and* transcends particular cases.",
     "user_notes": "constructive vs rehabilitation",
     "fabrication_notes": {
       "material": "",
@@ -7514,7 +7514,7 @@
       "class_4",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "8f30bfdf-f4b6-4c69-86d1-cec664c7aab0",
     "timestamp": "2026-03-24T21:38:38.567055+00:00",
@@ -7562,7 +7562,7 @@
       "class_a": "Matter",
       "class_b": "Matter"
     },
-    "generated_description": null,
+    "generated_description": "A surface that appears brown only under dim illumination—the concept collapses when light increases, revealing either a different hue or that brownness was an artifact of shadow rather than intrinsic color.",
     "user_notes": "mahogany vs flashlight",
     "fabrication_notes": {
       "material": "",
@@ -7576,7 +7576,7 @@
       "class_3",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "a95a5a72-b4a6-4111-801a-69381910b278",
     "timestamp": "2026-03-24T21:38:39.293779+00:00",
@@ -7617,7 +7617,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space maps the boundary between **formlessness acquiring structure** and **constraint shaping potential**—the zone where something initially undefined begins accepting definition through external pressure or pattern. It&#x27;s the moment of *being formed rather than forming*, distinct from both the abstract concept of quantum indeterminacy and the concrete process of molding itself.",
     "user_notes": "magician vs molded",
     "fabrication_notes": {
       "material": "",
@@ -7631,7 +7631,7 @@
       "class_6",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "6ea2c236-51fa-4ff3-8287-9563beb2b154",
     "timestamp": "2026-03-24T21:38:40.634174+00:00",
@@ -7679,7 +7679,7 @@
       "class_a": "Space",
       "class_b": "Space"
     },
-    "generated_description": null,
+    "generated_description": "A raised, stable surface that bears weight without being furniture—the structural principle of a plateau, ridge, or mesa that naturally supports things through its own geology rather than intentional design.",
     "user_notes": "chair vs plateau",
     "fabrication_notes": {
       "material": "",
@@ -7693,7 +7693,7 @@
       "class_2",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "b340345c-c328-4278-9ae5-1b0b1ce8a638",
     "timestamp": "2026-03-24T21:38:41.384468+00:00",
@@ -7734,7 +7734,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space captures **claimed authority through personal avowal**—asserting something as true or binding based on one&#x27;s own word or experience rather than external evidence, combining testimony&#x27;s evidential weight with animo&#x27;s willful assertion and sanctimony&#x27;s performative conviction. It&#x27;s the gap where self-report becomes self-authorization.",
     "user_notes": "testimonial vs instruct",
     "fabrication_notes": {
       "material": "",
@@ -7748,7 +7748,7 @@
       "class_4",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "3da1fda8-b989-40aa-a86a-80890e78ef5c",
     "timestamp": "2026-03-24T21:38:42.711250+00:00",
@@ -7796,7 +7796,7 @@
       "class_a": "Matter",
       "class_b": "Matter"
     },
-    "generated_description": null,
+    "generated_description": "**Abraded texture** — the rough, worn surface created when friction strips away smoothness, leaving fibers lifted and edges frayed rather than cleanly cut.",
     "user_notes": "fray vs kiln",
     "fabrication_notes": {
       "material": "",
@@ -7810,7 +7810,7 @@
       "class_3",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "5ee55b38-39f6-4f9f-9087-db5fc80b25ba",
     "timestamp": "2026-03-24T21:38:43.429278+00:00",
@@ -7851,7 +7851,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This point occupies the space between **meaning-as-reference** (what words point to) and **meaning-as-relation** (how words connect to each other). It&#x27;s the concept of meaning that emerges from *both* the thing itself *and* its position in a network of associations—neither pure semantics nor pure lexical structure, but their friction point.",
     "user_notes": "sphinx vs feature",
     "fabrication_notes": {
       "material": "",
@@ -7865,7 +7865,7 @@
       "class_1",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "35c96657-3ba8-43c8-9ed2-c727459b7f4a",
     "timestamp": "2026-03-24T21:38:44.774129+00:00",
@@ -7913,7 +7913,7 @@
       "class_a": "Volition",
       "class_b": "Volition"
     },
-    "generated_description": null,
+    "generated_description": "**Performative refusal**: deliberately acting unwilling or resistant in ways designed to provoke amusement or reaction, rather than expressing genuine resistance or pure whim—the staging of reluctance as entertainment.",
     "user_notes": "unwillingness vs hysterical",
     "fabrication_notes": {
       "material": "",
@@ -7927,7 +7927,7 @@
       "class_5",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "f6517877-df93-4236-9707-9f80105c5926",
     "timestamp": "2026-03-24T21:38:45.489850+00:00",
@@ -8030,7 +8030,7 @@
       "class_a": "Matter",
       "class_b": "Matter"
     },
-    "generated_description": null,
+    "generated_description": "The unnamed concept here captures **individual human agency within collective identity**—the tension between a singular person&#x27;s particular existence and their membership in humanity as a whole. It&#x27;s the semantic space where &quot;a man&quot; becomes both irreducibly himself and an instance of mankind.",
     "user_notes": "drake vs homo",
     "fabrication_notes": {
       "material": "",
@@ -8044,7 +8044,7 @@
       "class_3",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "53766eec-c208-40e9-a802-98cd695ca24b",
     "timestamp": "2026-03-24T21:38:47.553144+00:00",
@@ -8085,7 +8085,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "A fortified refuge in harsh terrain—a place made defensible by its own inhospitable geography, where survival itself requires both isolation and active maintenance of boundaries.",
     "user_notes": "stronghold vs faithfully",
     "fabrication_notes": {
       "material": "",
@@ -8099,7 +8099,7 @@
       "class_5",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "3d8c6baa-e245-4e5c-9b29-2989608b7ffa",
     "timestamp": "2026-03-24T21:38:48.897660+00:00",
@@ -8147,7 +8147,7 @@
       "class_a": "Matter",
       "class_b": "Matter"
     },
-    "generated_description": null,
+    "generated_description": "A deep, desaturated olive or khaki—the color of parched earth, charcoal dust, or aged bronze. This is the chromatic space where light is actively absorbed rather than merely absent, characteristic of oxidized metals, dried vegetation, or mineral deposits.",
     "user_notes": "ebony vs yellow",
     "fabrication_notes": {
       "material": "",
@@ -8161,7 +8161,7 @@
       "class_3",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "557c67c1-23de-4685-b7fd-c24c83290159",
     "timestamp": "2026-03-24T21:38:49.637168+00:00",
@@ -8202,7 +8202,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This point captures **exceeding natural limits through dominance**—when something physically encroaches beyond its proper bounds (overgrowth) while simultaneously asserting authority to do so (overruling). It&#x27;s the concept of aggressive expansion that justifies itself.",
     "user_notes": "cleavage vs meltdown",
     "fabrication_notes": {
       "material": "",
@@ -8216,7 +8216,7 @@
       "class_1",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "317fe032-3cf1-46f2-b7ca-dc28cbb3e49c",
     "timestamp": "2026-03-24T21:38:50.976537+00:00",
@@ -8264,7 +8264,7 @@
       "class_a": "Matter",
       "class_b": "Matter"
     },
-    "generated_description": null,
+    "generated_description": "**Light modulation through aperture and time** — the physical manipulation of luminous intensity to capture or reveal form, where darkness and brightness become controllable materials rather than mere absence or presence.",
     "user_notes": "shutter vs soothing",
     "fabrication_notes": {
       "material": "",
@@ -8278,7 +8278,7 @@
       "class_3",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "e739cfb1-090b-49e1-8cd5-74198d05d3c9",
     "timestamp": "2026-03-24T21:38:51.702637+00:00",
@@ -8319,7 +8319,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space captures the **mechanical affirming of something already in motion**—the act of officially endorsing or validating something that is already underway or rattling forward, like a governing body ratifying a treaty already being implemented.",
     "user_notes": "whirlwind vs ratchet",
     "fabrication_notes": {
       "material": "",
@@ -8333,7 +8333,7 @@
       "class_1",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "fcab01af-56e1-47ae-a9f8-b7db1b97bb6f",
     "timestamp": "2026-03-24T21:38:53.079299+00:00",
@@ -8381,7 +8381,7 @@
       "class_a": "Matter",
       "class_b": "Matter"
     },
-    "generated_description": null,
+    "generated_description": "A bulbous plant structure that&#x27;s harvested and consumed—specifically something like an onion or garlic bulb, which occupies the gap between being a biological organism (zoology) and being a prepared/processed food ingredient (condiment).",
     "user_notes": "zoological vs onion",
     "fabrication_notes": {
       "material": "",
@@ -8395,7 +8395,7 @@
       "class_3",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "918aa416-4b9c-4f04-83ca-01cc623a97c9",
     "timestamp": "2026-03-24T21:38:53.793918+00:00",
@@ -8436,7 +8436,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This concept occupies the space between *organized human groups pursuing goals* (troops, militia) and *individuals traversing unfamiliar terrain* (adventurer, desert). It likely describes a band of people moving together with collective purpose through harsh or unknown territory—a raiding party, nomadic caravan, or expedition crew.",
     "user_notes": "mischief vs mercenary",
     "fabrication_notes": {
       "material": "",
@@ -8450,7 +8450,7 @@
       "class_5",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "c2cc6b16-34ad-419b-a510-4e304889122d",
     "timestamp": "2026-03-24T21:38:55.164250+00:00",
@@ -8498,7 +8498,7 @@
       "class_a": "Volition",
       "class_b": "Volition"
     },
-    "generated_description": null,
+    "generated_description": "**Vindication** or **exoneration**—the moment when someone&#x27;s goodness is proven true by external circumstances, when their refuge (hiding, withdrawal, innocence) is validated and they&#x27;re shown to be right all along. The concept of being cleared by what&#x27;s revealed.",
     "user_notes": "brilliant vs asylum",
     "fabrication_notes": {
       "material": "",
@@ -8512,7 +8512,7 @@
       "class_5",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "e1debfda-2281-4e92-b692-3045476a8053",
     "timestamp": "2026-03-24T21:38:55.833509+00:00",
@@ -8553,7 +8553,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This point captures the moment when disparate elements become bound together through mutual consent or recognition—the space between *unification* (merger itself) and *approval* (agreement to something), where a previously fragmented thing gains coherence by being validated or endorsed as a unified whole.",
     "user_notes": "ratification vs secret",
     "fabrication_notes": {
       "material": "",
@@ -8567,7 +8567,7 @@
       "class_4",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "9a335fd4-aee7-475d-a1d8-5b6d852a3c27",
     "timestamp": "2026-03-24T21:38:57.427311+00:00",
@@ -8615,7 +8615,7 @@
       "class_a": "Affections",
       "class_b": "Affections"
     },
-    "generated_description": null,
+    "generated_description": "The unnamed concept here captures **habitual spatial or relational positioning**—the persistent state of being situated *there* rather than elsewhere, or of characteristically *relating* in a particular way. It&#x27;s the sense of customary placement or default orientation, bridging between affective attachment (Canonicals) and broader social positioning (Laity).",
     "user_notes": "cope vs brethren",
     "fabrication_notes": {
       "material": "",
@@ -8629,7 +8629,7 @@
       "class_6",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "cdae537c-21a7-4694-8c25-bcfe614cadb7",
     "timestamp": "2026-03-24T21:38:57.930159+00:00",
@@ -8670,7 +8670,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This region captures the act of establishing or applying a conventional label or rule to something—the moment when an abstract category gets anchored to a concrete instance, like calling something by a new name or deciding how to classify it based on typical patterns.",
     "user_notes": "defeated vs hippie",
     "fabrication_notes": {
       "material": "",
@@ -8684,7 +8684,7 @@
       "class_5",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "148b3e4e-135d-4824-bb0b-ba662cbf382e",
     "timestamp": "2026-03-24T21:38:59.519977+00:00",
@@ -8732,7 +8732,7 @@
       "class_a": "Space",
       "class_b": "Space"
     },
-    "generated_description": null,
+    "generated_description": "This is the concept of **habitual spatial absence or avoidance**—a place or direction someone regularly doesn&#x27;t go, or a gap in one&#x27;s typical movement patterns. The embedding sits between directional orientation and bodily elimination because both involve the body&#x27;s relationship to space, filtered through routine behavior (&quot;usually&quot;).",
     "user_notes": "south vs diarrhoea",
     "fabrication_notes": {
       "material": "",
@@ -8746,7 +8746,7 @@
       "class_2",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "2e29fd8b-b2f4-4e07-a19c-2e609597d1de",
     "timestamp": "2026-03-24T21:39:00.014741+00:00",
@@ -8787,7 +8787,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space captures **habitual authority**—the power someone gains by consistently showing up or intervening in a domain, like how the Godfather&#x27;s influence comes from always being the one people turn to, or how &quot;usually&quot; signals predictable control. It&#x27;s the authority of frequency and expectation rather than formal position.",
     "user_notes": "mechanical vs mafia",
     "fabrication_notes": {
       "material": "",
@@ -8801,7 +8801,7 @@
       "class_5",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "0c79d5ca-3ca4-4d6f-8363-07e912bb2afd",
     "timestamp": "2026-03-24T21:39:01.587269+00:00",
@@ -8849,7 +8849,7 @@
       "class_a": "Matter",
       "class_b": "Matter"
     },
-    "generated_description": null,
+    "generated_description": "The concept of **barrenness as thermal extremity**—a place defined by its capacity to generate and radiate intense heat, where sparseness and aridity are consequences of temperature itself rather than merely coexisting with it. This is the experiential gap between &quot;something that burns&quot; and &quot;something that stings,&quot; where heat becomes the primary organizing principle of an entire landscape&#x27;s hostility.",
     "user_notes": "molten vs cavendish",
     "fabrication_notes": {
       "material": "",
@@ -8863,7 +8863,7 @@
       "class_3",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "1b1b8798-a852-4ff5-b2f0-0aca845f0049",
     "timestamp": "2026-03-24T21:39:02.095849+00:00",
@@ -8904,7 +8904,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This appears to be the intersection of **induced altered consciousness** and **sexual arousal**—the specific state of being mentally entranced or cognitively compromised *by* erotic content, where arousal functions as the mechanism of mental capture rather than mere accompaniment.",
     "user_notes": "kindergarten vs trance",
     "fabrication_notes": {
       "material": "",
@@ -8918,7 +8918,7 @@
       "class_4",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "0c9f86da-72f6-4b96-8837-f3050fcf7983",
     "timestamp": "2026-03-24T21:39:03.652377+00:00",
@@ -8966,7 +8966,7 @@
       "class_a": "Space",
       "class_b": "Space"
     },
-    "generated_description": null,
+    "generated_description": "The unnamed concept here captures **unpredictable deviation from an expected path or norm**—the quality of something that breaks leftward (sinistrality) from what should proceed straight (horizontality). This maps to actions or entities that deviate dangerously rather than reliably, sitting between roguish unreliability and ominous wrongness.",
     "user_notes": "mesa vs sinister",
     "fabrication_notes": {
       "material": "",
@@ -8980,7 +8980,7 @@
       "class_2",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "19a07260-a8e8-4ae4-9238-5246071bb7cb",
     "timestamp": "2026-03-24T21:39:04.129655+00:00",
@@ -9021,7 +9021,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This concept describes the causal or temporal bridge where one action directly triggers a sequence of events—the precise moment when a cause becomes a consequence that unfolds. It&#x27;s the notion of &quot;setting in motion&quot; or &quot;what follows necessarily from&quot; rather than mere succession.",
     "user_notes": "prevalent vs undergo",
     "fabrication_notes": {
       "material": "",
@@ -9035,7 +9035,7 @@
       "class_1",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "c075f180-c008-4cb2-a158-efe2dd0000a9",
     "timestamp": "2026-03-24T21:39:05.698751+00:00",
@@ -9083,7 +9083,7 @@
       "class_a": "Affections",
       "class_b": "Affections"
     },
-    "generated_description": null,
+    "generated_description": "**Paid admiration**: compensation given specifically to elicit or validate favorable regard—the monetization of approval rather than genuine affection or earned flattery.",
     "user_notes": "remuneration vs flattering",
     "fabrication_notes": {
       "material": "",
@@ -9097,7 +9097,7 @@
       "class_6",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "0374adc0-f855-4e86-b308-83c3b1bf3a4c",
     "timestamp": "2026-03-24T21:39:06.204879+00:00",
@@ -9138,7 +9138,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "A structure that divides space into distinct zones while remaining traversable—the functional boundary itself rather than either side. Think of a threshold, membrane, or architectural division that controls flow between regions rather than blocking it entirely.",
     "user_notes": "formal vs portal",
     "fabrication_notes": {
       "material": "",
@@ -9152,7 +9152,7 @@
       "class_1",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "b312434c-0ab3-4d0c-82fb-6015ff87545c",
     "timestamp": "2026-03-24T21:39:07.749092+00:00",
@@ -9200,7 +9200,7 @@
       "class_a": "Matter",
       "class_b": "Matter"
     },
-    "generated_description": null,
+    "generated_description": "The capacity to strip away sensory markers of identity—rendering something legally/socially forfeited, or something biologically drained of vitality. An object or creature reduced to bare legal liability or desiccated absence.",
     "user_notes": "palatable vs deodorant",
     "fabrication_notes": {
       "material": "",
@@ -9214,7 +9214,7 @@
       "class_3",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "32d3ab3c-e736-44b4-b2fc-19a2f0195618",
     "timestamp": "2026-03-24T21:39:08.280038+00:00",
@@ -9255,7 +9255,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space captures the notion of a **quantified exclusion or deduction**—a specific portion that is removed, withheld, or doesn&#x27;t apply. It&#x27;s the semantic intersection of &quot;how much is set aside/taken out&quot; (expenditure + amount) with &quot;what doesn&#x27;t count/applies differently&quot; (exemption).",
     "user_notes": "allowance vs contents",
     "fabrication_notes": {
       "material": "",
@@ -9269,7 +9269,7 @@
       "class_1",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "96870acf-d88c-4a12-8418-67d5153a8119",
     "timestamp": "2026-03-24T21:39:09.800654+00:00",
@@ -9317,7 +9317,7 @@
       "class_a": "Matter",
       "class_b": "Matter"
     },
-    "generated_description": null,
+    "generated_description": "This is the quality of **deep saturated color perceived in low light**—how a blue gemstone or sapphire gleams distinctly in shadow, where darkness would normally erase hue. It&#x27;s the narrow condition where something retains chromatic identity despite insufficient illumination.",
     "user_notes": "sapphire vs darkened",
     "fabrication_notes": {
       "material": "",
@@ -9331,7 +9331,7 @@
       "class_3",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "a37051d3-8b7a-4eff-867b-3a42315f04ff",
     "timestamp": "2026-03-24T21:39:10.362386+00:00",
@@ -9372,7 +9372,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "The state of noticing something with both intellectual appreciation and emotional satisfaction—attending to what merits attention while finding pleasure in that very act of attention itself.",
     "user_notes": "regards vs enthusiasm",
     "fabrication_notes": {
       "material": "",
@@ -9386,7 +9386,7 @@
       "class_6",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "4439ef98-c548-4540-8547-ed29e19c1edb",
     "timestamp": "2026-03-24T21:39:11.836475+00:00",
@@ -9434,7 +9434,7 @@
       "class_a": "Intellect",
       "class_b": "Intellect"
     },
-    "generated_description": null,
+    "generated_description": "**Cognitive void or perceptual gap**: the subjective experience of encountering information so fragmented or dispersed that it fails to cohere into either ignorance (lack of knowledge) or breakdown (fractured thinking)—like staring at scattered clues that refuse to form a pattern.",
     "user_notes": "unexplained vs spaced",
     "fabrication_notes": {
       "material": "",
@@ -9448,7 +9448,7 @@
       "class_4",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "921e82f7-8100-4b92-9423-2c9968164a08",
     "timestamp": "2026-03-24T21:39:12.401017+00:00",
@@ -9489,7 +9489,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This region captures the quality of **barrenness as active depletion**—a space or system that has been stripped down to minimum function, whether through extraction (excel draining resources), geological erosion (khudd as a ravine), or gravitational collapse (kugelblitz consuming matter). It&#x27;s the concept of &quot;used-up&quot; as a spatial or material state.",
     "user_notes": "excellency vs kudos",
     "fabrication_notes": {
       "material": "",
@@ -9503,7 +9503,7 @@
       "class_6",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "4e22fc7e-a93f-4ccc-a340-188f0cf50668",
     "timestamp": "2026-03-24T21:39:13.901639+00:00",
@@ -9551,7 +9551,7 @@
       "class_a": "Affections",
       "class_b": "Affections"
     },
-    "generated_description": null,
+    "generated_description": "A person who adopts an ingratiating manner to escape social censure or self-reproach—performing compliance or humility not from genuine conviction but from fear of judgment.",
     "user_notes": "shameless vs dude",
     "fabrication_notes": {
       "material": "",
@@ -9565,7 +9565,7 @@
       "class_6",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "59e7181e-a715-426a-a980-ca0ba60349e2",
     "timestamp": "2026-03-24T21:39:14.448738+00:00",
@@ -9606,7 +9606,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This is the state of moving undetected through hostile or monitored territory—present but deliberately invisible to authority or threat, combining the evasion of sneak with the circumstance of fugitive existence.",
     "user_notes": "unavoidable vs evade",
     "fabrication_notes": {
       "material": "",
@@ -9620,7 +9620,7 @@
       "class_4",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "aa7c2e2a-9403-4b27-81d6-f3b6e953d0a2",
     "timestamp": "2026-03-24T21:39:15.988470+00:00",
@@ -9668,7 +9668,7 @@
       "class_a": "Affections",
       "class_b": "Affections"
     },
-    "generated_description": null,
+    "generated_description": "A person&#x27;s obligation to fulfill duties or serve within a defined social order—the intersection of legal/professional role (Lawyer) with earned consequence or accountability (Dueness). This captures civic duty or military service: structured commitment grounded in both formal position and moral weight.",
     "user_notes": "civilian vs deserving",
     "fabrication_notes": {
       "material": "",
@@ -9682,7 +9682,7 @@
       "class_6",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "5b9221cc-d610-45b6-8232-582d0017cb49",
     "timestamp": "2026-03-24T21:39:16.529931+00:00",
@@ -9723,7 +9723,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "A gathering of people assembled for a specific practical purpose—neither the formal deliberative body of a committee nor the chaotic accumulation of a dunghill, but something like a temporary congregation organized around a concrete task or shared need.",
     "user_notes": "dung vs subcommittee",
     "fabrication_notes": {
       "material": "",
@@ -9737,7 +9737,7 @@
       "class_5",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "89d9ad03-7827-4b23-a51d-6fea0dce141c",
     "timestamp": "2026-03-24T21:39:18.069302+00:00",
@@ -9785,7 +9785,7 @@
       "class_a": "Affections",
       "class_b": "Affections"
     },
-    "generated_description": null,
+    "generated_description": "**Uncritical enthusiasm for tradition or aesthetic preference**—the tendency to embrace established forms (rituals, styles, customs) without questioning them, sitting between the fastidious person&#x27;s exacting standards and the simple person&#x27;s lack of concern for refinement. This is credulity applied to matters of taste rather than fact.",
     "user_notes": "meticulous vs chastity",
     "fabrication_notes": {
       "material": "",
@@ -9799,7 +9799,7 @@
       "class_6",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "5f80b198-3b28-4aed-a28a-a9edaf4574a4",
     "timestamp": "2026-03-24T21:39:18.601544+00:00",
@@ -9840,7 +9840,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "The act or condition of crossing a border to settle elsewhere, stripped of legal status or formal process—movement itself as the primary fact, before it becomes categorized as &quot;immigration&quot; (the system) or &quot;immigrant&quot; (the identity).",
     "user_notes": "assimilation vs tenacity",
     "fabrication_notes": {
       "material": "",
@@ -9854,7 +9854,7 @@
       "class_1",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "cbab5609-a131-4dd3-b1af-b3c640dc5b70",
     "timestamp": "2026-03-24T21:39:20.141595+00:00",
@@ -9902,7 +9902,7 @@
       "class_a": "Affections",
       "class_b": "Affections"
     },
-    "generated_description": null,
+    "generated_description": "**Grudging tolerance** — the state of enduring someone&#x27;s presence or existence without active hostility, while withholding forgiveness and remaining fundamentally displeased with them.",
     "user_notes": "resentment vs forsaken",
     "fabrication_notes": {
       "material": "",
@@ -9916,7 +9916,7 @@
       "class_6",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "7ed13293-7646-4f34-b064-58b558fcb846",
     "timestamp": "2026-03-24T21:39:20.696461+00:00",
@@ -9957,7 +9957,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space captures **earned security through dominance**—the state of having won enough power or resources that you&#x27;re no longer vulnerable. It&#x27;s the psychological position after victory where one becomes a protector rather than a supplicant, inhabiting the shelter created by one&#x27;s own conquest.",
     "user_notes": "bartender vs triumphant",
     "fabrication_notes": {
       "material": "",
@@ -9971,7 +9971,7 @@
       "class_5",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "b41fdcbb-acf8-45c7-87ce-5a624f3c3ea8",
     "timestamp": "2026-03-24T21:39:22.203019+00:00",
@@ -10019,7 +10019,7 @@
       "class_a": "Affections",
       "class_b": "Affections"
     },
-    "generated_description": null,
+    "generated_description": "A person who pursues pleasure and freedom while maintaining shrewd judgment about consequences—indulgent but not reckless, self-interested but strategically careful.",
     "user_notes": "counsellor vs pimp",
     "fabrication_notes": {
       "material": "",
@@ -10033,7 +10033,7 @@
       "class_6",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "47e4785b-956c-4865-97bd-6aadd120b863",
     "timestamp": "2026-03-24T21:39:22.762641+00:00",
@@ -10074,7 +10074,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space occupies the intersection of **institutional authority with physical renewal**—the concept of an organization claiming rights to transform or repurpose an existing structure (as in a corporation obtaining a charter to renovate a building, or a chartered body retrofitting infrastructure).",
     "user_notes": "rebuild vs chartered",
     "fabrication_notes": {
       "material": "",
@@ -10088,7 +10088,7 @@
       "class_5",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "b302919f-f37b-49e2-bb75-989e431967ea",
     "timestamp": "2026-03-24T21:39:24.252714+00:00",
@@ -10136,7 +10136,7 @@
       "class_a": "Volition",
       "class_b": "Volition"
     },
-    "generated_description": null,
+    "generated_description": "**Therapeutic intervention** — the deliberate application of biological or medical knowledge to address a specific ailment or condition. This is intention crystallized into action within a medical framework.",
     "user_notes": "undertaking vs biopsy",
     "fabrication_notes": {
       "material": "",
@@ -10150,7 +10150,7 @@
       "class_5",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "dea7136b-d6b6-4b8c-a18a-1db93571d153",
     "timestamp": "2026-03-24T21:39:24.843046+00:00",
@@ -10191,7 +10191,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This is the concept of **potential agency or capacity**—the unnamed space between an entity that could act (someone) and the power to act (ability). It captures the notion of &quot;what one might do&quot; or &quot;one&#x27;s range of possible actions,&quot; without committing to either the agent or the power separately.",
     "user_notes": "blower vs qualities",
     "fabrication_notes": {
       "material": "",
@@ -10205,7 +10205,7 @@
       "class_6",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "5f64c71d-e8c6-4346-9654-0b7772890f2d",
     "timestamp": "2026-03-24T21:39:26.333904+00:00",
@@ -10253,7 +10253,7 @@
       "class_a": "Matter",
       "class_b": "Matter"
     },
-    "generated_description": null,
+    "generated_description": "**Emotional coldness that persists**—the state of having one&#x27;s feelings deliberately or circumstantially dampened rather than temporarily chilled, occupying the space between the permanent absence of sensation (numbness) and the active process of emotional suppression (refrigeration).",
     "user_notes": "apathy vs cooling",
     "fabrication_notes": {
       "material": "",
@@ -10267,7 +10267,7 @@
       "class_3",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "2193090d-4400-41c8-91ae-508c5ee51df6",
     "timestamp": "2026-03-24T21:39:26.912351+00:00",
@@ -10308,7 +10308,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This is the state of receiving consequences that were deliberately applied by another agent—the intersection of having something forcibly done *to* you (impose) and the emotional/social weight of that action (punished), organized through deliberate mechanisms (enforcement). It&#x27;s coercion with legitimacy or structure behind it.",
     "user_notes": "antisocial vs sanctioned",
     "fabrication_notes": {
       "material": "",
@@ -10322,7 +10322,7 @@
       "class_6",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "19240f68-873f-436a-aefb-7d89ae1e21c1",
     "timestamp": "2026-03-24T21:39:28.434213+00:00",
@@ -10370,7 +10370,7 @@
       "class_a": "Matter",
       "class_b": "Matter"
     },
-    "generated_description": null,
+    "generated_description": "This space describes **mineral solidity with structural grain**—the property of being hard but also inherently fracturable along internal planes, like how granite splits cleanly but resists scratching. It&#x27;s hardness paired with directional weakness, the brittleness that comes from crystalline organization rather than uniform density.",
     "user_notes": "quartz vs wetland",
     "fabrication_notes": {
       "material": "",
@@ -10384,7 +10384,7 @@
       "class_3",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "7a511d63-d607-465d-85a9-5d09d5f2d6a8",
     "timestamp": "2026-03-24T21:39:28.975390+00:00",
@@ -10425,7 +10425,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This is **vocal protest or public declaration**—the act of speaking claims aloud to an audience, whether as unverified information (rumor) or organized announcement (picket line chanting). It occupies the gap between informal spreading of speech and formal organized vocalization.",
     "user_notes": "gossip vs singing",
     "fabrication_notes": {
       "material": "",
@@ -10439,7 +10439,7 @@
       "class_4",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "f33c4c28-778c-4370-bd19-986cd1685e93",
     "timestamp": "2026-03-24T21:39:30.518842+00:00",
@@ -10487,7 +10487,7 @@
       "class_a": "Matter",
       "class_b": "Matter"
     },
-    "generated_description": null,
+    "generated_description": "The experience of receiving news of someone&#x27;s death through sound—a phone call, a voice message, or overhearing a conversation—where the auditory event itself becomes the irreversible moment that transforms the living into the bereaved.",
     "user_notes": "telephone vs obituary",
     "fabrication_notes": {
       "material": "",
@@ -10501,7 +10501,7 @@
       "class_3",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "2dfd2364-0364-4e4c-aec9-e871ab9a2f8f",
     "timestamp": "2026-03-24T21:39:31.055394+00:00",
@@ -10542,7 +10542,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "A person who enforces discipline or standards through direct instruction and oversight—someone positioned between the intellectual authority of a teacher and the coercive control of a taskmaster, closer to structured mentorship than pure domination.",
     "user_notes": "helper vs superintendent",
     "fabrication_notes": {
       "material": "",
@@ -10556,7 +10556,7 @@
       "class_5",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "9d20a0d6-e0fa-47c4-8ecf-e0529aae11a1",
     "timestamp": "2026-03-24T21:39:32.560249+00:00",
@@ -10604,7 +10604,7 @@
       "class_a": "Matter",
       "class_b": "Matter"
     },
-    "generated_description": null,
+    "generated_description": "**Auditory criticism or commentary** — the act of hearing something and immediately responding with verbal judgment or reaction, occupying the space where passive listening becomes active, opinionated speech.",
     "user_notes": "blatant vs eyewitness",
     "fabrication_notes": {
       "material": "",
@@ -10618,7 +10618,7 @@
       "class_3",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "fd631d63-0bf0-4c25-8a2e-480f5492cfad",
     "timestamp": "2026-03-24T21:39:33.129109+00:00",
@@ -10659,7 +10659,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space captures **ritualistic self-deprivation through austere living**—the specific practice of voluntarily abandoning comfort and resources (like a desert hermit or ascetic practitioner) as an act of devotion or spiritual discipline. It&#x27;s the behavioral intersection where personal commitment materializes through physical renunciation.",
     "user_notes": "devote vs vulture",
     "fabrication_notes": {
       "material": "",
@@ -10673,7 +10673,7 @@
       "class_5",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "054fd864-299e-4d74-a04e-5fa0d327021d",
     "timestamp": "2026-03-24T21:39:34.616793+00:00",
@@ -10721,7 +10721,7 @@
       "class_a": "Matter",
       "class_b": "Matter"
     },
-    "generated_description": null,
+    "generated_description": "A material quality that exists without formal recognition or cultivation—something inherently present (like a scent) but not formally claimed, organized, or dignified as a distinct thing. The unnamed concept is a substance that persists in a raw, unacknowledged state.",
     "user_notes": "fragrant vs inorganic",
     "fabrication_notes": {
       "material": "",
@@ -10735,7 +10735,7 @@
       "class_3",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "62e973b9-5a6c-45bb-8a14-6b15c727812b",
     "timestamp": "2026-03-24T21:39:35.186085+00:00",
@@ -10776,7 +10776,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This gap likely contains **demonstrative spatial deixis with tactile/rough quality**—the intersection of &quot;this&quot; (proximal pointing) and &quot;thistly&quot; (prickly texture), suggesting a concept for &quot;this sharp/bristling thing here&quot; as a unified perceptual-deictic act rather than separate acts of pointing and describing.",
     "user_notes": "thrive vs pinning",
     "fabrication_notes": {
       "material": "",
@@ -10790,7 +10790,7 @@
       "class_5",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "50d1a4f5-d941-40e0-9ec4-bffb863ee6e4",
     "timestamp": "2026-03-24T21:39:36.660392+00:00",
@@ -10838,7 +10838,7 @@
       "class_a": "Volition",
       "class_b": "Volition"
     },
-    "generated_description": null,
+    "generated_description": "The resolve to strip away excess and communicate only what matters—a deliberate austerity of expression that functions as a warning through its very sparseness and refusal to soften or embellish.",
     "user_notes": "warned vs stainless",
     "fabrication_notes": {
       "material": "",
@@ -10852,7 +10852,7 @@
       "class_5",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "f2fb47c3-2a8f-4745-b31c-a6170eee0d3d",
     "timestamp": "2026-03-24T21:39:37.265880+00:00",
@@ -10893,7 +10893,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space likely captures **qualified existence or conditional presence**: something that applies in most instances or situations without being absolute, occupying the gap between universal claims and specific locations or moments.",
     "user_notes": "commons vs facet",
     "fabrication_notes": {
       "material": "",
@@ -10907,7 +10907,7 @@
       "class_2",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "927c5404-b6cb-481a-87d6-4c7edea1112c",
     "timestamp": "2026-03-24T21:39:38.728622+00:00",
@@ -10955,7 +10955,7 @@
       "class_a": "Space",
       "class_b": "Space"
     },
-    "generated_description": null,
+    "generated_description": "**Scarcity-driven retreat**: The state of abandoning or withdrawing from a path due to insufficient resources or conditions—when a journey becomes impossible because what&#x27;s needed to continue it has run out or disappeared.",
     "user_notes": "dearborn vs retrograde",
     "fabrication_notes": {
       "material": "",
@@ -10969,7 +10969,7 @@
       "class_2",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "5422a0ae-9ebe-4188-b982-46e8a28f8766",
     "timestamp": "2026-03-24T21:39:39.319313+00:00",
@@ -11010,7 +11010,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space captures the concept of a **person positioned at or traversing a boundary**—someone who occupies a liminal location, neither fully in nor out of a defined zone. It&#x27;s the semantic zone between &quot;spoke&quot; (utterance from a point) and the agent/practitioner, suggesting a figure emerging from or standing at the edge of something.",
     "user_notes": "doctor vs spokeswoman",
     "fabrication_notes": {
       "material": "",
@@ -11024,7 +11024,7 @@
       "class_4",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "495b4b5b-5f57-43de-96f1-8e91ab1c819e",
     "timestamp": "2026-03-24T21:39:40.785193+00:00",
@@ -11072,7 +11072,7 @@
       "class_a": "Affections",
       "class_b": "Affections"
     },
-    "generated_description": null,
+    "generated_description": "**Obligation to reciprocate harm or good**: the unstated debt incurred when someone acts toward you—whether wrongfully or generously—that pulls you toward responding in kind.\n\nThis is the gravitational field between enemies (who have wronged you) and benefactors (who have helped you), where the *requirement to react* lives before the reaction itself.",
     "user_notes": "estranged vs savior",
     "fabrication_notes": {
       "material": "",
@@ -11086,7 +11086,7 @@
       "class_6",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "c3925932-dbcd-4a2e-a824-042924324ac0",
     "timestamp": "2026-03-24T21:39:41.371695+00:00",
@@ -11127,7 +11127,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This zone captures **possession of place**—the sense of a location or environment belonging to someone, hovering between the material fact of ownership (hers) and the interrogative uncertainty of location (where). It&#x27;s the unnamed concept of &quot;whose desert&quot; or territorial identity.",
     "user_notes": "elected vs madonna",
     "fabrication_notes": {
       "material": "",
@@ -11141,7 +11141,7 @@
       "class_6",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "e0b47f22-5c32-4ba0-a691-16547f3f456d",
     "timestamp": "2026-03-24T21:39:42.834796+00:00",
@@ -11189,7 +11189,7 @@
       "class_a": "Matter",
       "class_b": "Matter"
     },
-    "generated_description": null,
+    "generated_description": "The concept of **freshly-exposed or newly-revealed matter**—something that has just surfaced, broken through, or been uncovered, combining the finality of burial with the rawness of untouched growth. Think of disturbed earth, newly sprouted vegetation, or anything that marks the boundary between hidden and visible states.",
     "user_notes": "coffin vs novice",
     "fabrication_notes": {
       "material": "",
@@ -11203,7 +11203,7 @@
       "class_3",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "331ec5de-45f7-4694-829b-a07ee62583d9",
     "timestamp": "2026-03-24T21:39:43.440754+00:00",
@@ -11244,7 +11244,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space describes **a staged public confrontation or spectacle designed for observation and judgment**—the physical and social infrastructure where competing interests meet under controlled conditions for an audience to witness and decide outcomes.",
     "user_notes": "coliseum vs diplomatic",
     "fabrication_notes": {
       "material": "",
@@ -11258,7 +11258,7 @@
       "class_5",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "dabc9a8f-cfaf-4edf-9cda-fc410f89bf6e",
     "timestamp": "2026-03-24T21:39:44.880050+00:00",
@@ -11306,7 +11306,7 @@
       "class_a": "Affections",
       "class_b": "Affections"
     },
-    "generated_description": null,
+    "generated_description": "A feeling of wounded pride mixed with performative flourish—the impulse to display one&#x27;s superiority or attractiveness *precisely because* one has been slighted or rejected, weaponizing charm as retaliation.",
     "user_notes": "rounder vs pimp",
     "fabrication_notes": {
       "material": "",
@@ -11320,7 +11320,7 @@
       "class_6",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "506d400d-97e5-4586-9c55-5857bbd569b6",
     "timestamp": "2026-03-24T21:39:45.497425+00:00",
@@ -11361,7 +11361,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This point captures **temporal proximity or immediacy**—the quality of something being near in time rather than far off, distinct from both the forward-looking orientation of &quot;henceforwards&quot; and the present-focused &quot;nowadays.&quot; It&#x27;s the conceptual space of &quot;soon,&quot; &quot;imminently,&quot; or &quot;coming up.&quot;",
     "user_notes": "january vs wayward",
     "fabrication_notes": {
       "material": "",
@@ -11375,7 +11375,7 @@
       "class_1",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "7b33f87e-715d-42b8-950d-a227610f4580",
     "timestamp": "2026-03-24T21:39:46.913984+00:00",
@@ -11423,7 +11423,7 @@
       "class_a": "Space",
       "class_b": "Space"
     },
-    "generated_description": null,
+    "generated_description": "The unnamed concept here is the **creased or wrinkled surface itself as a desirable object**—where something&#x27;s folded, ridged texture becomes materially valuable or emotionally compelling rather than merely functional. It&#x27;s the point where a furrowed or dimpled form (like skin, leather, or fabric) transitions from spatial property into something that can be possessed, coveted, or consumed.",
     "user_notes": "pellet vs gutter",
     "fabrication_notes": {
       "material": "",
@@ -11437,7 +11437,7 @@
       "class_2",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "db298209-4f1b-49f5-a7fb-1908d707ab0d",
     "timestamp": "2026-03-24T21:39:47.590196+00:00",
@@ -11478,7 +11478,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "**Authorization without explicit granting**: the state of being free to act because no prohibition exists, rather than because permission was actively given—what remains when constraints are absent.",
     "user_notes": "liberals vs permitting",
     "fabrication_notes": {
       "material": "",
@@ -11492,7 +11492,7 @@
       "class_5",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "0648a1f0-c67d-4fe7-982e-d268ca7bcb1b",
     "timestamp": "2026-03-24T21:39:48.967462+00:00",
@@ -11540,7 +11540,7 @@
       "class_a": "Affections",
       "class_b": "Affections"
     },
-    "generated_description": null,
+    "generated_description": "**Indebted affection**: gratitude shadowed by obligation, where fondness toward someone is entangled with a sense that you owe them something and cannot fully separate appreciation from duty. The warmth exists, but it&#x27;s constrained by what you feel you must repay.",
     "user_notes": "spoiled vs obliged",
     "fabrication_notes": {
       "material": "",
@@ -11554,7 +11554,7 @@
       "class_6",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "51f303af-d564-417f-808d-63ac16c1b4db",
     "timestamp": "2026-03-24T21:39:49.667490+00:00",
@@ -11595,7 +11595,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "The obsessive pursuit of a single interest or value system that becomes inseparable from one&#x27;s identity and daily practice—commitment that has hardened into behavioral routine.",
     "user_notes": "hobby vs fidelity",
     "fabrication_notes": {
       "material": "",
@@ -11609,7 +11609,7 @@
       "class_4",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "d2a90d02-d5bb-4c18-b1fa-f636b19ecc3b",
     "timestamp": "2026-03-24T21:39:51.022922+00:00",
@@ -11657,7 +11657,7 @@
       "class_a": "Matter",
       "class_b": "Matter"
     },
-    "generated_description": null,
+    "generated_description": "A slick, wet feeling on skin—the specific tactile sensation of something oily coating a surface, distinct from grease as a substance or oiliness as a quality. This is the experienced moment of friction reduction and smooth slipping that occurs when fat or oil physically contacts and lubricates.",
     "user_notes": "anatomical vs greasy",
     "fabrication_notes": {
       "material": "",
@@ -11671,7 +11671,7 @@
       "class_3",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "31eeab99-a79b-4a2b-8c6b-d46025785d59",
     "timestamp": "2026-03-24T21:39:51.762235+00:00",
@@ -11712,7 +11712,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "The concept of **implication or entanglement without direct responsibility**—being connected to or part of something without being its primary cause or agent. It&#x27;s the space between &quot;associated with&quot; (passive connection) and &quot;culprit&quot; (active guilt).",
     "user_notes": "implicated vs throwback",
     "fabrication_notes": {
       "material": "",
@@ -11726,7 +11726,7 @@
       "class_1",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "67a3b376-7af7-4ee0-8b75-449197a481c7",
     "timestamp": "2026-03-24T21:39:53.070761+00:00",
@@ -11774,7 +11774,7 @@
       "class_a": "Abstract Relations",
       "class_b": "Abstract Relations"
     },
-    "generated_description": null,
+    "generated_description": "**Entanglement-as-impediment**: The state where something productively complex (like a tangle of fibers making fabric) becomes the very thing that exhausts or limits capacity—knots that were structurally necessary now obstruct movement or function.",
     "user_notes": "weave vs shaken",
     "fabrication_notes": {
       "material": "",
@@ -11788,7 +11788,7 @@
       "class_1",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "3ea9b01b-0018-4cc1-86cb-e61fbcb1bdc4",
     "timestamp": "2026-03-24T21:39:53.812791+00:00",
@@ -11829,7 +11829,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space maps the sense of **professional qualification or earned status**—the thing that marks someone as legitimately authorized to practice something, sitting between the abstract notion of rank/achievement and the concrete identity of someone who holds it. It&#x27;s the credential itself rather than the person or the attainment.",
     "user_notes": "doctorate vs root",
     "fabrication_notes": {
       "material": "",
@@ -11843,7 +11843,7 @@
       "class_1",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "6f13a989-036f-4669-b329-44c9283b7b2a",
     "timestamp": "2026-03-24T21:39:55.164269+00:00",
@@ -11891,7 +11891,7 @@
       "class_a": "Volition",
       "class_b": "Volition"
     },
-    "generated_description": null,
+    "generated_description": "**Claimed involvement**: The act of asserting oneself into a role or responsibility without formal appointment—occupying a position of agency through declaration rather than delegation or earned standing.",
     "user_notes": "engagement vs surrogate",
     "fabrication_notes": {
       "material": "",
@@ -11905,7 +11905,7 @@
       "class_5",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "cb5cb1b5-d882-47e8-90fd-29beca91ec72",
     "timestamp": "2026-03-24T21:39:55.889629+00:00",
@@ -11946,7 +11946,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space describes **temporary assumption of someone else&#x27;s role or responsibilities**—the act of stepping into another&#x27;s position for a limited duration, without the formal commitment of &quot;partnership&quot; or the broader substitution implied by &quot;stand-in.&quot;",
     "user_notes": "partner vs standstill",
     "fabrication_notes": {
       "material": "",
@@ -11960,7 +11960,7 @@
       "class_1",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "b8690677-3333-4a75-a31a-cfeea5c8e86b",
     "timestamp": "2026-03-24T21:39:57.221107+00:00",
@@ -12008,7 +12008,7 @@
       "class_a": "Abstract Relations",
       "class_b": "Abstract Relations"
     },
-    "generated_description": null,
+    "generated_description": "The conceptual space between &quot;once&quot; and &quot;triplication&quot; — a region occupied by &quot;twice&quot; — captures **iterative multiplicity as discrete, countable events**. This is the notion of something happening a definite but small number of times, where the count itself matters more than the quantity or the infinite potential for repetition.",
     "user_notes": "innumerable vs thrice",
     "fabrication_notes": {
       "material": "",
@@ -12022,7 +12022,7 @@
       "class_1",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "d0cd6dbf-f9e7-44d2-8d70-e34d3d333be9",
     "timestamp": "2026-03-24T21:39:57.918796+00:00",
@@ -12063,7 +12063,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space captures **fragmentation of intention**—when a mind maps an internal state outward but the projection becomes distorted or self-referential, creating a gap between what was meant to be expressed and what actually manifests. The pull toward schizophrenia suggests discoordination between planning and execution; the pull toward projection suggests the mechanism itself (externalizing inner states).",
     "user_notes": "psychosis vs projector",
     "fabrication_notes": {
       "material": "",
@@ -12077,7 +12077,7 @@
       "class_4",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "a0b281f0-17db-46e5-bed1-7d31559c409b",
     "timestamp": "2026-03-24T21:39:59.303725+00:00",
@@ -12125,7 +12125,7 @@
       "class_a": "Intellect",
       "class_b": "Intellect"
     },
-    "generated_description": null,
+    "generated_description": "Speech that is nominally private or internal but shaped by awareness of an imagined audience—thinking aloud while performing thought rather than merely experiencing it. The gap between soliloquy&#x27;s unguarded intellection and neologism&#x27;s invented language: utterance that creates new words or concepts precisely because it&#x27;s half-conscious of being overheard.",
     "user_notes": "monologue vs pseudonym",
     "fabrication_notes": {
       "material": "",
@@ -12139,7 +12139,7 @@
       "class_4",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "e56ee12d-09f0-474f-991c-e8862eba86cf",
     "timestamp": "2026-03-24T21:40:00.017050+00:00",
@@ -12180,7 +12180,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This is the quality of **being-in-the-process-of-assembly**—the active state between raw materials and finished form, where elements are currently arranged but not yet stabilized into a fixed whole. It captures the liminal moment when something is compositionally coherent enough to function but still subject to revision or dissolution.",
     "user_notes": "composite vs forthcoming",
     "fabrication_notes": {
       "material": "",
@@ -12194,7 +12194,7 @@
       "class_1",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "31ce016b-3cde-494f-8748-a3a3ab422874",
     "timestamp": "2026-03-24T21:40:01.362465+00:00",
@@ -12242,7 +12242,7 @@
       "class_a": "Volition",
       "class_b": "Volition"
     },
-    "generated_description": null,
+    "generated_description": "The state of something remaining available and fit for use despite not being actively employed—potential functionality preserved through neglect rather than active maintenance. It&#x27;s the gap between choosing not to use something (expedience) and allowing it to fall into disrepair (disuse).",
     "user_notes": "eligible vs untouched",
     "fabrication_notes": {
       "material": "",
@@ -12256,7 +12256,7 @@
       "class_5",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "428a7b81-b047-4d67-b14d-405f8c67bb92",
     "timestamp": "2026-03-24T21:40:02.085787+00:00",
@@ -12297,7 +12297,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This is the deliberate routing or channeling of something (effort, resources, attention) toward a specific destination or outcome—the act of directing flow rather than the flow itself or the choice to begin. It occupies the gap between deciding to do something (candidate) and the actual pathways/systems that enable it (traffic, highways).",
     "user_notes": "freeway vs applicant",
     "fabrication_notes": {
       "material": "",
@@ -12311,7 +12311,7 @@
       "class_5",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "53d4897e-6024-4f37-a209-94903cc50c9c",
     "timestamp": "2026-03-24T21:40:03.407691+00:00",
@@ -12359,7 +12359,7 @@
       "class_a": "Intellect",
       "class_b": "Intellect"
     },
-    "generated_description": null,
+    "generated_description": "This is the moment of **interrogative groping**—when you sense something exists but can&#x27;t yet frame the question that would make it intelligible. It&#x27;s the state before &quot;what&quot; crystallizes into language.",
     "user_notes": "fudge vs hebrew",
     "fabrication_notes": {
       "material": "",
@@ -12373,7 +12373,7 @@
       "class_4",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "970d6239-13f6-46a2-a8d2-3b90149a035e",
     "timestamp": "2026-03-24T21:40:04.159121+00:00",
@@ -12414,7 +12414,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This point captures the concept of **indefinite spatial or temporal positioning**—where something exists or occurs without precise specification of location or timing, hovering between &quot;thereness&quot; (a place) and &quot;usually&quot; (a recurrent time). It&#x27;s the sense of vague situatedness, like &quot;somewhere around then&quot; or &quot;in that general vicinity.&quot;",
     "user_notes": "thesis vs advocate",
     "fabrication_notes": {
       "material": "",
@@ -12428,7 +12428,7 @@
       "class_4",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "879f7fff-4ce0-4440-932a-332c416797c4",
     "timestamp": "2026-03-24T21:40:05.446960+00:00",
@@ -12476,7 +12476,7 @@
       "class_a": "Matter",
       "class_b": "Matter"
     },
-    "generated_description": null,
+    "generated_description": "**Calibrated growth** — the adjustment of a living system&#x27;s internal parameters to match environmental demands, like how a plant&#x27;s root structure adapts to soil composition or an organism&#x27;s metabolism shifts with seasonal change. It&#x27;s the active tuning of biological machinery rather than passive response.",
     "user_notes": "physiological vs tuning",
     "fabrication_notes": {
       "material": "",
@@ -12490,7 +12490,7 @@
       "class_3",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "3d8fb8c5-cfa9-475c-99ca-78e34429e3c6",
     "timestamp": "2026-03-24T21:40:06.243488+00:00",
@@ -12531,7 +12531,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "The concept of **articulated restraint** or **deliberate withholding**: expressing something partially or conditionally rather than fully, where the act of communication itself becomes constrained by choice or circumstance—what gets said only under specific conditions, or only the defensible portion of what could be said.",
     "user_notes": "horoscope vs expressive",
     "fabrication_notes": {
       "material": "",
@@ -12545,7 +12545,7 @@
       "class_4",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "ad064b5a-2d16-4462-8e7d-bb856976bd7f",
     "timestamp": "2026-03-24T21:40:07.511807+00:00",
@@ -12593,7 +12593,7 @@
       "class_a": "Volition",
       "class_b": "Volition"
     },
-    "generated_description": null,
+    "generated_description": "**Rhythmic production with renewal**—the cyclical process of creating something by repeatedly extracting and replenishing resources, like breathing sustains life or a workshop&#x27;s intake-output cycle. The unnamed concept bridges intentional making with the involuntary restoration that enables it to continue.",
     "user_notes": "breather vs factory",
     "fabrication_notes": {
       "material": "",
@@ -12607,7 +12607,7 @@
       "class_5",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "cd038597-303a-4cd5-97d7-27042412d9ef",
     "timestamp": "2026-03-24T21:40:08.303234+00:00",
@@ -12648,7 +12648,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "The concept of **inevitable doom or catastrophic failure** — the point where outcome becomes predetermined despite ongoing efforts, like a ship&#x27;s trajectory toward disaster that cannot be altered.",
     "user_notes": "lifeboat vs endorse",
     "fabrication_notes": {
       "material": "",
@@ -12662,7 +12662,7 @@
       "class_5",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "2cfc2fb2-8479-48c8-a7f7-c1a4c0abdad9",
     "timestamp": "2026-03-24T21:40:09.572269+00:00",
@@ -12710,7 +12710,7 @@
       "class_a": "Affections",
       "class_b": "Affections"
     },
-    "generated_description": null,
+    "generated_description": "The refinement of effort toward a desired outcome—aspiring to achieve something by perfecting the means rather than merely wishing for it. This is the actionable bridge between wanting something and claiming it as yours.",
     "user_notes": "optimist vs subtitle",
     "fabrication_notes": {
       "material": "",
@@ -12724,7 +12724,7 @@
       "class_6",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "51e2e50c-be7f-4e40-9e2a-92ad091411dd",
     "timestamp": "2026-03-24T21:40:10.375682+00:00",
@@ -12765,7 +12765,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This appears to be the concept of **habitual media consumption**—the state of regularly watching television without necessarily deciding to or being consciously engaged with specific content. It&#x27;s the routine act of &quot;having something on&quot; rather than intentional viewing.",
     "user_notes": "episode vs delay",
     "fabrication_notes": {
       "material": "",
@@ -12779,7 +12779,7 @@
       "class_1",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "a9ee6503-7452-4620-80a8-faebdfd187e3",
     "timestamp": "2026-03-24T21:40:11.670045+00:00",
@@ -12827,7 +12827,7 @@
       "class_a": "Intellect",
       "class_b": "Intellect"
     },
-    "generated_description": null,
+    "generated_description": "The stance of dismissive disbelief coupled with performative acceptance—intellectually rejecting something as absurd while outwardly going along with it anyway. This is the mental posture of someone who treats the world&#x27;s claims as fundamentally ridiculous but strategically useful to pretend otherwise.",
     "user_notes": "sell vs cynical",
     "fabrication_notes": {
       "material": "",
@@ -12841,7 +12841,7 @@
       "class_4",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "68462f21-2103-4483-90b6-9b63c0acdfd5",
     "timestamp": "2026-03-24T21:40:12.455132+00:00",
@@ -12882,7 +12882,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This is the space of **contextual relevance or fit**—the quality of something being right for a particular situation rather than universally true or universally usable. It&#x27;s the distinction between &quot;this applies here&quot; (application) versus &quot;this is generally applicable&quot; (applicable) and &quot;this typically occurs&quot; (usually).",
     "user_notes": "watercolor vs apply",
     "fabrication_notes": {
       "material": "",
@@ -12896,7 +12896,7 @@
       "class_4",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "fdc2369e-45d9-4c91-9eed-b2a082d73c1a",
     "timestamp": "2026-03-24T21:40:13.758595+00:00",
@@ -12944,7 +12944,7 @@
       "class_a": "Intellect",
       "class_b": "Intellect"
     },
-    "generated_description": null,
+    "generated_description": "The thrill of intellectual showmanship—prioritizing the vivid, entertaining presentation of ideas over their depth or truth, where cleverness and wit become ends in themselves rather than servants of understanding.",
     "user_notes": "comedian vs sensational",
     "fabrication_notes": {
       "material": "",
@@ -12958,7 +12958,7 @@
       "class_4",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "43e751f9-8cca-420a-b389-92414f95e5af",
     "timestamp": "2026-03-24T21:40:14.501934+00:00",
@@ -12999,7 +12999,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "A negotiated agreement where a group voluntarily surrenders certain individual autonomies to a collective body in exchange for structured governance and shared resources—the conceptual space between binding commitment (charter) and ideological reorganization (socialist) where power transfers happen through consent rather than coercion or conversion.",
     "user_notes": "socialism vs chartered",
     "fabrication_notes": {
       "material": "",
@@ -13013,7 +13013,7 @@
       "class_5",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "7e654950-b612-42e1-a5d9-0c266ee8a0dd",
     "timestamp": "2026-03-24T21:40:15.817157+00:00",
@@ -13061,7 +13061,7 @@
       "class_a": "Space",
       "class_b": "Space"
     },
-    "generated_description": null,
+    "generated_description": "This point captures **typical manifestation or characteristic expression**—the way something commonly appears or functions across instances rather than in isolated cases. It&#x27;s the difference between a thing&#x27;s occasional behavior and its recognizable, recurring pattern.",
     "user_notes": "vertex vs corporation",
     "fabrication_notes": {
       "material": "",
@@ -13075,7 +13075,7 @@
       "class_2",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "27b7f07e-d5fb-4d31-8995-8a61f7ccfa26",
     "timestamp": "2026-03-24T21:40:16.559934+00:00",
@@ -13116,7 +13116,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This position occupies the threshold between **interrogation and instrumentality**—the space where a question becomes a method. It&#x27;s the point of asking &quot;by what means?&quot; rather than merely &quot;what is?&quot;—where curiosity transforms into purposeful inquiry about mechanism or process.",
     "user_notes": "kanji vs evasion",
     "fabrication_notes": {
       "material": "",
@@ -13130,7 +13130,7 @@
       "class_4",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "7c4128f8-e390-48db-8985-24af16df7a51",
     "timestamp": "2026-03-24T21:40:17.854997+00:00",
@@ -13178,7 +13178,7 @@
       "class_a": "Volition",
       "class_b": "Volition"
     },
-    "generated_description": null,
+    "generated_description": "**Compliance without internalization**: doing what you&#x27;re told while mentally rejecting it, maintaining internal resistance even as you outwardly conform. The gap between forced obedience and genuine acceptance of authority.",
     "user_notes": "unleash vs comply",
     "fabrication_notes": {
       "material": "",
@@ -13192,7 +13192,7 @@
       "class_5",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "3c607e73-a502-4682-b6c4-ecbb8fc75117",
     "timestamp": "2026-03-24T21:40:18.614029+00:00",
@@ -13233,7 +13233,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space describes **aggression or hostility expressed through physical confrontation**—the behavioral manifestation of antagonism in an animal context, like a dog attack or territorial aggression. It&#x27;s the enacted, embodied form of conflict rather than abstract opposition.",
     "user_notes": "antagonist vs wolf",
     "fabrication_notes": {
       "material": "",
@@ -13247,7 +13247,7 @@
       "class_5",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "085ae702-868c-47c5-a414-3e717e1fd719",
     "timestamp": "2026-03-24T21:40:19.902368+00:00",
@@ -13295,7 +13295,7 @@
       "class_a": "Space",
       "class_b": "Space"
     },
-    "generated_description": null,
+    "generated_description": "A surface or substrate that contains something without fully enclosing it—like papers stacked in an open folder or a single sheet forming a temporary boundary rather than a sealed container.",
     "user_notes": "document vs veneer",
     "fabrication_notes": {
       "material": "",
@@ -13309,7 +13309,7 @@
       "class_2",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "0f727677-bee7-4df5-8eeb-d4ed7f04c426",
     "timestamp": "2026-03-24T21:40:20.666153+00:00",
@@ -13350,7 +13350,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This concept occupies the space between **disapproval expressed through withdrawal of support** (exprobate&#x27;s reproving rejection) and **contractual compensation for loss** (rent-rebate&#x27;s financial remedy). It names the act of financially penalizing someone as a concrete form of moral rebuke—withholding payment or imposing a monetary cost as punishment for wrongdoing.",
     "user_notes": "purse vs probate",
     "fabrication_notes": {
       "material": "",
@@ -13364,7 +13364,7 @@
       "class_5",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "442eb547-74af-4d01-bc88-43dc06b94055",
     "timestamp": "2026-03-24T21:40:21.967099+00:00",
@@ -13412,7 +13412,7 @@
       "class_a": "Matter",
       "class_b": "Matter"
     },
-    "generated_description": null,
+    "generated_description": "**Selective sensory occlusion for functional benefit**: The deliberate temporary blocking or narrowing of perception (like squinting, or pharmaceutical vision correction) to achieve a desired physiological or therapeutic outcome, sitting between the permanent loss of sight and the artificial preservation/alteration of a biological state.",
     "user_notes": "wink vs therapy",
     "fabrication_notes": {
       "material": "",
@@ -13426,7 +13426,7 @@
       "class_3",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "87065a77-98c4-4d3f-9a73-8c2e072a5d46",
     "timestamp": "2026-03-24T21:40:22.710546+00:00",
@@ -13467,7 +13467,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This point captures the specific ethos of organized violence—the institutional apparatus that mobilizes human aggression toward collective ends while encoding honor codes. It&#x27;s the gap between the abstract machinery of war and the individual act of killing, where systematic training transforms civilians into agents of state force.",
     "user_notes": "wild vs veteran",
     "fabrication_notes": {
       "material": "",
@@ -13481,7 +13481,7 @@
       "class_1",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "241def52-06fb-41e3-95bb-5d53f04be138",
     "timestamp": "2026-03-24T21:40:24.019056+00:00",
@@ -13529,7 +13529,7 @@
       "class_a": "Matter",
       "class_b": "Matter"
     },
-    "generated_description": null,
+    "generated_description": "**Filtered passage or selective transmission** — the concept of something alive (or organizing) that lets certain wavelengths or particles through while blocking others, like how a desert surface selectively reflects light while absorbing heat, or how biological membranes control what enters cells.",
     "user_notes": "silencing vs optics",
     "fabrication_notes": {
       "material": "",
@@ -13543,7 +13543,7 @@
       "class_3",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "f9194bca-f940-4cb6-b146-305f032a1e71",
     "timestamp": "2026-03-24T21:40:24.741983+00:00",
@@ -13584,7 +13584,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This point captures the notion of **habitual authority or customary dominance**—the space between volitional patterns (&quot;usually&quot;) and positional superiority (&quot;above&quot;), where power operates through established practice rather than explicit command, like how an emir rules through accepted precedent.",
     "user_notes": "oman vs concede",
     "fabrication_notes": {
       "material": "",
@@ -13598,7 +13598,7 @@
       "class_4",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "cc0195ee-35fb-46d0-9f8f-f06ecdf78b9e",
     "timestamp": "2026-03-24T21:40:26.080195+00:00",
@@ -13646,7 +13646,7 @@
       "class_a": "Affections",
       "class_b": "Affections"
     },
-    "generated_description": null,
+    "generated_description": "The authority to investigate and reverse a decision or action—specifically, the power to examine the grounds of a prior judgment and reject it based on that examination. This bridges disapproval (negative assessment) with executive jurisdiction (power to act).",
     "user_notes": "rebuke vs coroner",
     "fabrication_notes": {
       "material": "",
@@ -13660,7 +13660,7 @@
       "class_6",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "6e3c835e-8670-4415-8e2e-01416e0ed871",
     "timestamp": "2026-03-24T21:40:26.808395+00:00",
@@ -13701,7 +13701,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This point captures the sense of **conferring capacity or permission onto someone for a specific final outcome**—the act of empowering another to decide or act at the moment of consequence. It&#x27;s the space between granting agency (&quot;endue&quot;) and the endpoint where choice matters most (&quot;ultimately&quot;).",
     "user_notes": "choose vs endorse",
     "fabrication_notes": {
       "material": "",
@@ -13715,7 +13715,7 @@
       "class_5",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "e06a2e1e-0298-41b2-81f2-714506ab1cc3",
     "timestamp": "2026-03-24T21:40:28.162839+00:00",
@@ -13763,7 +13763,7 @@
       "class_a": "Affections",
       "class_b": "Affections"
     },
-    "generated_description": null,
+    "generated_description": "A state of mild, physical heaviness or stagnation—the dull resistance you feel when emotionally worn down, where effort feels thickened and sluggish rather than actively sorrowful. The body&#x27;s inertia matching a flattened mood.",
     "user_notes": "cheerful vs turd",
     "fabrication_notes": {
       "material": "",
@@ -13777,7 +13777,7 @@
       "class_6",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "cece4c4a-4003-41b9-ab41-9d9772bb855e",
     "timestamp": "2026-03-24T21:40:28.884871+00:00",
@@ -13818,7 +13818,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "The cognitive zone where precision dissolves under incremental change—the pragmatic recognition that while sorites paradoxes expose logical breakdown, *actually using language and making decisions requires acting as if categories hold firm despite their theoretical fuzziness. This is the gap between &quot;the problem has no solution&quot; and &quot;we must still draw the line somewhere.&quot;",
     "user_notes": "souvenir vs intuitive",
     "fabrication_notes": {
       "material": "",
@@ -13832,7 +13832,7 @@
       "class_4",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "f9e30139-4170-4ef7-9792-18478f26e948",
     "timestamp": "2026-03-24T21:40:30.223317+00:00",
@@ -13880,7 +13880,7 @@
       "class_a": "Affections",
       "class_b": "Affections"
     },
-    "generated_description": null,
+    "generated_description": "This unnamed concept occupies the space where superficial self-presentation meets avoidance of genuine commitment—the aesthetic choices and decorative behaviors people adopt to mask their unwillingness to engage authentically or take difficult stands.",
     "user_notes": "cosmetics vs coward",
     "fabrication_notes": {
       "material": "",
@@ -13894,7 +13894,7 @@
       "class_6",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "4f361f13-6ae7-4b35-a085-38356eafb881",
     "timestamp": "2026-03-24T21:40:30.926171+00:00",
@@ -13935,7 +13935,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space captures **habitual contingency**—the sense that something occurs with regularity conditional on circumstances, without being fully determined or explicitly stated. It&#x27;s the conceptual ground between &quot;what typically happens&quot; (usually) and &quot;what the evidence points to&quot; (indicated).",
     "user_notes": "tract vs apply",
     "fabrication_notes": {
       "material": "",
@@ -13949,7 +13949,7 @@
       "class_4",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "bd1aa969-93a3-47a8-bad9-0194dfddc401",
     "timestamp": "2026-03-24T21:40:32.291902+00:00",
@@ -13997,7 +13997,7 @@
       "class_a": "Abstract Relations",
       "class_b": "Abstract Relations"
     },
-    "generated_description": null,
+    "generated_description": "**Inevitable conclusion** — the intersection of temporal progression toward a fixed endpoint with the absence of choice or agency in reaching it. This captures the sense of something drawing inexorably to its predetermined finish, neither chosen nor avoidable.",
     "user_notes": "debut vs fate",
     "fabrication_notes": {
       "material": "",
@@ -14011,7 +14011,7 @@
       "class_1",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "6a444c9b-8691-4906-8d2f-7eec04f6d73e",
     "timestamp": "2026-03-24T21:40:32.987546+00:00",
@@ -14052,7 +14052,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "The state of being caught in a situation where external constraints (the imprisoning structure) prevent you from acting on your intentions, creating cognitive-emotional friction between desire and capability. This is the specific experience of thwarted agency rather than mere confinement or mere disappointment.",
     "user_notes": "detention vs frustrated",
     "fabrication_notes": {
       "material": "",
@@ -14066,7 +14066,7 @@
       "class_5",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "0365926f-a691-4c13-a3d9-8e5bf065e45c",
     "timestamp": "2026-03-24T21:40:34.355614+00:00",
@@ -14114,7 +14114,7 @@
       "class_a": "Affections",
       "class_b": "Affections"
     },
-    "generated_description": null,
+    "generated_description": "A restless hunger for something not yet defined—the state of wanting without knowing what, caught between finding something absurdly entertaining and being unsatisfied by it. This is the mental itch that makes you keep scrolling or asking &quot;what&#x27;s next?&quot; despite nothing quite landing right.",
     "user_notes": "weird vs yearning",
     "fabrication_notes": {
       "material": "",
@@ -14128,7 +14128,7 @@
       "class_6",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "d7e899a8-588b-4ce3-93f2-a3f3b0f95f72",
     "timestamp": "2026-03-24T21:40:35.038022+00:00",
@@ -14169,7 +14169,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "The visceral discomfort of encountering someone or something so morally objectionable that they&#x27;ve earned your disgust—a state where revulsion and judgment collapse into one feeling.",
     "user_notes": "grumpy vs deserve",
     "fabrication_notes": {
       "material": "",
@@ -14183,7 +14183,7 @@
       "class_6",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "d703429f-c797-4870-bd90-b71989d36421",
     "timestamp": "2026-03-24T21:40:36.404863+00:00",
@@ -14231,7 +14231,7 @@
       "class_a": "Affections",
       "class_b": "Affections"
     },
-    "generated_description": null,
+    "generated_description": "A self-absorbed passivity—the state of being emotionally withdrawn yet preoccupied with one&#x27;s own image or worth, neither actively pursuing vanity nor sinking into full dejection. Think of scrolling through your own social media without engagement, or posturing grandly while feeling fundamentally empty.",
     "user_notes": "unmanned vs narcissism",
     "fabrication_notes": {
       "material": "",
@@ -14245,7 +14245,7 @@
       "class_6",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "6c7eb9b3-67c0-4418-8255-35802224a745",
     "timestamp": "2026-03-24T21:40:37.078995+00:00",
@@ -14286,7 +14286,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space likely captures **wonder at something unexpected or undeserved**—the collision between marveling at an outcome and the volition to warrant/claim it. It&#x27;s the mental moment of discovering you&#x27;ve received something you didn&#x27;t earn or fully understand.",
     "user_notes": "comic vs warranty",
     "fabrication_notes": {
       "material": "",
@@ -14300,7 +14300,7 @@
       "class_4",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "df0d41af-e848-4bdb-a3d7-87bdad193f1b",
     "timestamp": "2026-03-24T21:40:38.459522+00:00",
@@ -14348,7 +14348,7 @@
       "class_a": "Volition",
       "class_b": "Volition"
     },
-    "generated_description": null,
+    "generated_description": "This is the tendency or disposition to act in a particular way, sitting between the deliberate commitment of a plan and the relief of having escaped or been freed from something. It&#x27;s habitual inclination or default behavior—what someone does *usually* without fresh decision-making.",
     "user_notes": "trump vs salvage",
     "fabrication_notes": {
       "material": "",
@@ -14362,7 +14362,7 @@
       "class_5",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "d674f850-f3b9-4458-a760-7348eeedd7cb",
     "timestamp": "2026-03-24T21:40:39.113320+00:00",
@@ -14403,7 +14403,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "The concept of **surplus kinship obligation**—when inherited responsibility or property creates unwanted claims on you from relatives you didn&#x27;t choose to maintain, sitting between the compulsion of inheritance law and the excess of familial demand.",
     "user_notes": "estate vs redundancy",
     "fabrication_notes": {
       "material": "",
@@ -14417,7 +14417,7 @@
       "class_1",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "a58e2a60-3d8f-47ad-b5b9-a7e57d94fc7e",
     "timestamp": "2026-03-24T21:40:40.526580+00:00",
@@ -14465,7 +14465,7 @@
       "class_a": "Volition",
       "class_b": "Volition"
     },
-    "generated_description": null,
+    "generated_description": "**Provisional Acceptance** — the mental state of tolerating something as &quot;good enough for now&quot; while remaining alert to its inadequacy, neither fully satisfied nor alarmed enough to act. A grudging willingness suspended between complacency and readiness to object.",
     "user_notes": "suffice vs alerts",
     "fabrication_notes": {
       "material": "",
@@ -14479,7 +14479,7 @@
       "class_5",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "80821d23-9a52-4618-8284-bafdc04c3df6",
     "timestamp": "2026-03-24T21:40:41.160916+00:00",
@@ -14520,7 +14520,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space maps the physical reality of magma and rock systems—the material substrate of volcanism itself, distinct from both the abstract relational concept of &quot;volcano&quot; (a system/process) and the disciplinary framework of &quot;geology&quot; (a knowledge domain). It captures what remains when you strip away naming: the bare phenomenon of molten stone moving through Earth&#x27;s crust.",
     "user_notes": "crater vs drawers",
     "fabrication_notes": {
       "material": "",
@@ -14534,7 +14534,7 @@
       "class_2",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "e043a014-9358-4bab-8967-ba1cac75d785",
     "timestamp": "2026-03-24T21:40:42.620550+00:00",
@@ -14582,7 +14582,7 @@
       "class_a": "Space",
       "class_b": "Space"
     },
-    "generated_description": null,
+    "generated_description": "A boundary or threshold you move through intentionally—the deliberate crossing into enclosed or restricted space, where forward motion becomes conditional on passage through a defined perimeter rather than open traversal.",
     "user_notes": "hajj vs circulate",
     "fabrication_notes": {
       "material": "",
@@ -14596,7 +14596,7 @@
       "class_2",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "7d201853-7bee-449c-a896-4625d0087d92",
     "timestamp": "2026-03-24T21:40:43.241109+00:00",
@@ -14637,7 +14637,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This point captures **destructive transformation through scarcity**—the state where something fundamental is stripped away irreversibly, like how desert heat consumes moisture or fire consumes fuel. It&#x27;s the concept of exhaustion meeting inevitability: a system that cannot replenish what it loses.",
     "user_notes": "wildfire vs crucible",
     "fabrication_notes": {
       "material": "",
@@ -14651,7 +14651,7 @@
       "class_1",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "bcef32fd-0c53-48d3-a4a3-16d7deb29d46",
     "timestamp": "2026-03-24T21:40:44.679570+00:00",
@@ -14699,7 +14699,7 @@
       "class_a": "Space",
       "class_b": "Space"
     },
-    "generated_description": null,
+    "generated_description": "A vehicle designed for traversing vast, empty terrain where speed is sacrificed for endurance and reliable passage through harsh conditions—the concept of slow, deliberate locomotion across desolate expanses.",
     "user_notes": "cruiser vs crawl",
     "fabrication_notes": {
       "material": "",
@@ -14713,7 +14713,7 @@
       "class_2",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "62ebefc3-d3e8-48b8-af4e-ac4f12a75bdb",
     "timestamp": "2026-03-24T21:40:45.332581+00:00",
@@ -14754,7 +14754,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This point captures the *state or quality of being supplementary*—the abstract property that makes something fill a gap or complete a whole, distinct from both the act of completing (complementation) and the thing that completes (complement). It&#x27;s the inherent &quot;completingness&quot; that allows two things to exist in mutual sufficiency.",
     "user_notes": "helpless vs complementary",
     "fabrication_notes": {
       "material": "",
@@ -14768,7 +14768,7 @@
       "class_1",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "8c42a98b-c28d-4f27-98be-195de6b11c50",
     "timestamp": "2026-03-24T21:40:46.749831+00:00",
@@ -14816,7 +14816,7 @@
       "class_a": "Space",
       "class_b": "Space"
     },
-    "generated_description": null,
+    "generated_description": "A small, remote stake or claim—the minimal capital staked on an uncertain venture in an out-of-the-way place, or the meager provisions left behind in a forsaken location.",
     "user_notes": "back vs grub",
     "fabrication_notes": {
       "material": "",
@@ -14830,7 +14830,7 @@
       "class_2",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "e7a77613-581c-4958-9bd0-29788d86d5c7",
     "timestamp": "2026-03-24T21:40:47.389648+00:00",
@@ -14871,7 +14871,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space holds the essence of *what something fundamentally is*—its irreducible nature or defining character—when that essence carries an implicit warning or caution about consequences. It&#x27;s the conceptual territory where quiddity (the &quot;whatness&quot; of a thing) meets monitory urgency: recognizing what something *truly is* precisely because ignoring that reality poses danger.",
     "user_notes": "monitor vs quirk",
     "fabrication_notes": {
       "material": "",
@@ -14885,7 +14885,7 @@
       "class_4",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "04f3d774-e4c5-4696-8612-6b93630d7ea4",
     "timestamp": "2026-03-24T21:40:48.823712+00:00",
@@ -14933,7 +14933,7 @@
       "class_a": "Intellect",
       "class_b": "Intellect"
     },
-    "generated_description": null,
+    "generated_description": "A scholarly argument or position that cannot be adequately articulated—the intellectual conviction that precedes or exceeds one&#x27;s ability to defend it coherently.",
     "user_notes": "dissertation vs speechless",
     "fabrication_notes": {
       "material": "",
@@ -14947,7 +14947,7 @@
       "class_4",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "94e4698c-7003-4716-a601-b0a5bc5d8d42",
     "timestamp": "2026-03-24T21:40:49.429683+00:00",
@@ -14988,7 +14988,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This semantic space likely captures **preparatory vigilance**—the proactive stance of learning or gathering knowledge specifically to prevent harm or manage uncertain risks. It&#x27;s the mindset between formal education (systematic knowledge) and precaution (defensive action), where you study something *because* danger or failure is possible.",
     "user_notes": "precaution vs diploma",
     "fabrication_notes": {
       "material": "",
@@ -15002,7 +15002,7 @@
       "class_4",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "469f8f40-5c9e-4b91-bf9a-2a323eb903aa",
     "timestamp": "2026-03-24T21:40:50.862060+00:00",
@@ -15050,7 +15050,7 @@
       "class_a": "Matter",
       "class_b": "Matter"
     },
-    "generated_description": null,
+    "generated_description": "The sensory shock of a piercing, discordant sound—something between the physical impact of noise and the visceral discomfort of a harsh stimulus, like a sudden screech or metallic clash that makes you wince.",
     "user_notes": "stylus vs citrus",
     "fabrication_notes": {
       "material": "",
@@ -15064,7 +15064,7 @@
       "class_3",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "7bbdb352-664b-4aa8-bb46-aae614d70717",
     "timestamp": "2026-03-24T21:40:51.474073+00:00",
@@ -15105,7 +15105,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "The accumulation or storage of resources (material or abstract) with intentional purpose—neither the passive state of having inventory nor the deliberate act of retrieving/using it, but the intermediate act of deliberately building reserves against future need.",
     "user_notes": "stock vs invoice",
     "fabrication_notes": {
       "material": "",
@@ -15119,7 +15119,7 @@
       "class_1",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "348158e2-cedd-4230-bc28-10ce3fd18580",
     "timestamp": "2026-03-24T21:40:52.892443+00:00",
@@ -15160,7 +15160,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This region captures **contextual positioning**—the sense of something being situationally apt or occurring within a particular frame of reference, where versatility meets spatial/linguistic deixis. It&#x27;s the quality of being &quot;right for the moment&quot; rather than universally applicable, hovering between adaptability and specific-location-ness.",
     "user_notes": "thirteen vs versatility",
     "fabrication_notes": {
       "material": "",
@@ -15174,7 +15174,7 @@
       "class_1",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "86ec08bf-c8ca-4bcd-98e6-eaf75589857c",
     "timestamp": "2026-03-24T21:40:54.952810+00:00",
@@ -15222,7 +15222,7 @@
       "class_a": "Affections",
       "class_b": "Affections"
     },
-    "generated_description": null,
+    "generated_description": "A state of moral corruption so visceral and self-consuming that it destroys the agent from within—malevolence that devours its own substrate rather than merely causing external harm. The concept of *self-annihilating evil*: wickedness that is fundamentally futile because it corrupts the perpetrator&#x27;s own capacity to act effectively.",
     "user_notes": "atrocious vs cannibal",
     "fabrication_notes": {
       "material": "",
@@ -15236,7 +15236,7 @@
       "class_6",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "c4416ffe-1f3f-453e-ab2d-5e4c2356a7ba",
     "timestamp": "2026-03-24T21:40:55.585339+00:00",
@@ -15277,7 +15277,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This region captures the act of making something perceptible or drawing attention to it—the boundary between the passive state of being unknown and the active work of signaling presence. It&#x27;s the moment when obscurity transitions into visibility through intentional or unintentional revelation.",
     "user_notes": "attentive vs notice",
     "fabrication_notes": {
       "material": "",
@@ -15291,7 +15291,7 @@
       "class_4",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "8247fdd2-6d45-4215-a33c-9a5c98f6119c",
     "timestamp": "2026-03-24T21:40:56.997353+00:00",
@@ -15339,7 +15339,7 @@
       "class_a": "Matter",
       "class_b": "Matter"
     },
-    "generated_description": null,
+    "generated_description": "A small, isolated body of land surrounded by water that exists in a state of partial submersion or impermanence—something between stable ground and dissolution, like a sandbar or tidal flat that appears and disappears with the water level.",
     "user_notes": "isle vs thaw",
     "fabrication_notes": {
       "material": "",
@@ -15353,7 +15353,7 @@
       "class_3",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "da6d596c-b34b-4562-b565-a6903c3c03fd",
     "timestamp": "2026-03-24T21:40:57.631928+00:00",
@@ -15394,7 +15394,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "The point captures **constraint acceptance**—the mental state of acknowledging limits as legitimately binding rather than fighting them, sitting between the abstract idea of restriction and the lived experience of being restricted.",
     "user_notes": "laurel vs restrictive",
     "fabrication_notes": {
       "material": "",
@@ -15408,7 +15408,7 @@
       "class_5",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "f3e4271a-7c36-45de-989e-82317a08495c",
     "timestamp": "2026-03-24T21:40:59.065902+00:00",
@@ -15456,7 +15456,7 @@
       "class_a": "Affections",
       "class_b": "Affections"
     },
-    "generated_description": null,
+    "generated_description": "**Cautious optimism** — the emotional stance of wanting to believe something will improve while actively restraining expectation to avoid disappointment. It&#x27;s hope with a self-protective brake applied.",
     "user_notes": "reassurance vs cautiously",
     "fabrication_notes": {
       "material": "",
@@ -15470,7 +15470,7 @@
       "class_6",
       "adjacent_cat"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "76f455ba-5759-4d63-b555-5f1d33112b43",
     "timestamp": "2026-03-24T21:40:59.671416+00:00",
@@ -15511,7 +15511,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This point describes **wayfinding through verification**—the process of establishing your position or identity within a system before proceeding, like checking credentials at a checkpoint before entering a restricted area, or confirming your location before navigating forward.",
     "user_notes": "navigator vs password",
     "fabrication_notes": {
       "material": "",
@@ -15525,7 +15525,7 @@
       "class_2",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "ba5a35f8-a73f-4193-8c09-3320e87f6fab",
     "timestamp": "2026-03-24T21:41:01.118528+00:00",
@@ -15628,7 +15628,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This concept describes the moment of impact or contact—when a descending object meets a surface and transitions from motion to rest. It&#x27;s the physical instantiation of arrival, where potential energy converts to force.",
     "user_notes": "touchdown vs hammering",
     "fabrication_notes": {
       "material": "",
@@ -15642,7 +15642,7 @@
       "class_5",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "0c6029b6-62c6-47a3-9b78-d09ce6889571",
     "timestamp": "2026-03-24T21:41:03.163833+00:00",
@@ -15745,7 +15745,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space captures the concept of **leverage through dispossession**—a person or group stripped of rights or resources who gains power precisely through that vulnerability (like a slave uprising or a marginalized population becoming politically decisive). It sits between the will to rebel and the bare fact of being owned/used.",
     "user_notes": "spartan vs assets",
     "fabrication_notes": {
       "material": "",
@@ -15759,7 +15759,7 @@
       "class_5",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "689eb2d8-194c-41e0-8a78-492e1d5a6f1a",
     "timestamp": "2026-03-24T21:41:05.195539+00:00",
@@ -15862,7 +15862,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This is the act or mechanism of prolonging something&#x27;s existence through continuous supply or support—the operational infrastructure of persistence rather than the state itself. It occupies the gap between the abstract concept of sustaining and the concrete delivery systems that make sustenance possible.",
     "user_notes": "style vs sustained",
     "fabrication_notes": {
       "material": "",
@@ -15876,7 +15876,7 @@
       "class_1",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "1061b57c-cf34-4591-9fda-06a9f0c5070f",
     "timestamp": "2026-03-24T21:41:07.257438+00:00",
@@ -15979,7 +15979,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space captures **public notoriety achieved through repeated telling**—the boundary between a factual announcement and something that has become culturally legendary through circulation and retelling. It&#x27;s the quality of being &quot;famous for being famous&quot; or known primarily because knowledge of it spreads.",
     "user_notes": "announce vs legendary",
     "fabrication_notes": {
       "material": "",
@@ -15993,7 +15993,7 @@
       "class_4",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "4fc52e64-2894-4107-a54c-d5a65e62a187",
     "timestamp": "2026-03-24T21:41:09.306533+00:00",
@@ -16096,7 +16096,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space captures **detached resolve**—the stance of someone who has abandoned idealistic expectations yet maintains strict control over their actions and responses, neither indulging despair nor hope. It&#x27;s the emotional discipline that emerges when cynicism stops being performative complaint and becomes a working philosophy that *governs behavior*.",
     "user_notes": "cynical vs discipline",
     "fabrication_notes": {
       "material": "",
@@ -16110,7 +16110,7 @@
       "class_4",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "e009066b-d54b-4fbb-b258-424a4e3b7b3d",
     "timestamp": "2026-03-24T21:41:11.337934+00:00",
@@ -16213,7 +16213,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space holds the concept of **ceremonial offering or ritual tribute**—the solemn presentation of something valued (material or spiritual) as an act of devotion or respect, combining pomp&#x27;s ceremonial grandeur with christian&#x27;s devotional intent, and pilon&#x27;s sense of giving beyond obligation.",
     "user_notes": "christianity vs pimp",
     "fabrication_notes": {
       "material": "",
@@ -16227,7 +16227,7 @@
       "class_6",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "9f4b4390-5477-4c39-a9bf-eefb39b498c5",
     "timestamp": "2026-03-24T21:41:13.385100+00:00",
@@ -16330,7 +16330,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This region describes something **intentionally created for financial benefit**—work or output that is both deliberately undertaken (commissioned) and designed to generate returns (profitable). It&#x27;s the space of purposeful economic production: a painting made to order for payment, a manufactured good designed for sale, or any deliberate labor with built-in profit motive.",
     "user_notes": "commissioning vs lucrative",
     "fabrication_notes": {
       "material": "",
@@ -16344,7 +16344,7 @@
       "class_5",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "170bfee7-6fbb-40ec-b1b9-4dbe01716b8f",
     "timestamp": "2026-03-24T21:41:15.439383+00:00",
@@ -16447,7 +16447,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "The sensation of deliberately choosing comfort or beauty despite knowing it&#x27;s wasteful or self-indulgent—aesthetic surrender made tangible, like sinking into expensive silk while ignoring practical consequences.",
     "user_notes": "weave vs decade",
     "fabrication_notes": {
       "material": "",
@@ -16461,7 +16461,7 @@
       "class_1",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "83f3c915-38e2-4996-bead-80fbe6ee7eec",
     "timestamp": "2026-03-24T21:41:17.497877+00:00",
@@ -16564,7 +16564,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "The act of deliberately removing oneself from participation or engagement—stopping involvement without necessarily stopping the activity itself (like stepping back from a conversation while it continues, or pausing your role in something ongoing).",
     "user_notes": "inhibition vs switching",
     "fabrication_notes": {
       "material": "",
@@ -16578,7 +16578,7 @@
       "class_1",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "bc249547-4ce3-461d-8ed3-35f85d2c964c",
     "timestamp": "2026-03-24T21:41:19.585734+00:00",
@@ -16681,7 +16681,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space captures the feeling of having a statement or identity publicly displayed or declared, but stripped of its intended force or authority—like a banner raised without conviction, or frustration that&#x27;s been made visible but rendered impotent. It&#x27;s the gap between assertion and actual power.",
     "user_notes": "banner vs frustration",
     "fabrication_notes": {
       "material": "",
@@ -16695,7 +16695,7 @@
       "class_4",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "d5daac74-ac76-4447-9e73-0ed39325707d",
     "timestamp": "2026-03-24T21:41:21.656556+00:00",
@@ -16798,7 +16798,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "The act of producing something without understanding what you&#x27;re making or how it works—generation that bypasses comprehension, like speaking in tongues or following a formula that yields results you can&#x27;t explain.",
     "user_notes": "generate vs incomprehensible",
     "fabrication_notes": {
       "material": "",
@@ -16812,7 +16812,7 @@
       "class_1",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "a40c6139-0b05-42db-bea4-ddd2ce20cd6b",
     "timestamp": "2026-03-24T21:41:23.727501+00:00",
@@ -16915,7 +16915,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This space captures the quality of **diffuse obscurity arising from organic proliferation**—cloudiness or murkiness caused by active growth or fermentation, like yeast bloom on fruit or fungal spores suspended in air. The concept bridges decay&#x27;s visual haziness with its biological agency.",
     "user_notes": "yeast vs haze",
     "fabrication_notes": {
       "material": "",
@@ -16929,7 +16929,7 @@
       "class_3",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "94000e6f-0225-469e-96d3-22cddcb3f5b6",
     "timestamp": "2026-03-24T21:41:25.820312+00:00",
@@ -17032,7 +17032,7 @@
       }
     ],
     "roget_context": null,
-    "generated_description": null,
+    "generated_description": "This is the concept of a **discrete, tangible record of knowledge or findings that exists independently of its medium**—something that bridges the abstract claim or argument (publication) with the physical or spatial instantiation (document), capturing what persists when you remove the distinction between the idea being shared and the object that carries it.",
     "user_notes": "manuscript vs convince",
     "fabrication_notes": {
       "material": "",
@@ -17046,7 +17046,7 @@
       "class_4",
       "cross_section"
     ],
-    "starred": false,
+    "starred": true,
     "v1_source": null,
     "id": "fbc3686b-0719-4efb-be81-a57ea85ae7d4",
     "timestamp": "2026-03-24T21:41:27.873632+00:00",
@@ -31457,6 +31457,241 @@
     "v1_source": null,
     "id": "ac553507-3fb8-4bb4-82a7-0d8b41dd156b",
     "timestamp": "2026-03-24T21:47:11.023726+00:00",
+    "schema_version": 1
+  },
+  {
+    "type": "probe_discovery",
+    "coordinates_2d": [
+      0.0,
+      0.0
+    ],
+    "coordinates_highD": null,
+    "desert_value": 0.8207988826097357,
+    "nearest_concepts": [
+      {
+        "term": "plash",
+        "distance": 0.8207988826097357,
+        "roget_categories": null,
+        "roget_class": "Matter"
+      },
+      {
+        "term": "plagiarism",
+        "distance": 0.8221342480448187,
+        "roget_categories": null,
+        "roget_class": "Abstract Relations"
+      },
+      {
+        "term": "plaguy",
+        "distance": 0.8291330214854178,
+        "roget_categories": null,
+        "roget_class": "Volition"
+      }
+    ],
+    "roget_context": null,
+    "generated_description": "This point occupies the space between a sudden wet impact (plash) and appropriation of others&#x27; work (plagiarism)—suggesting the concept of **borrowing without acknowledgment in casual speech or writing**, where someone adopts another&#x27;s turn of phrase or anecdote in conversation without crediting them, falling short of formal plagiarism but violating conversational honesty.",
+    "user_notes": "riveting ↔ plunder",
+    "fabrication_notes": {
+      "material": "",
+      "method": "",
+      "dimensions": "",
+      "status": "idea",
+      "photos": []
+    },
+    "tags": [
+      "probe_discovery"
+    ],
+    "starred": false,
+    "v1_source": null,
+    "id": "bb6820ef-a419-49ff-930b-44d21ff5aeee",
+    "timestamp": "2026-03-26T01:06:32.399735+00:00",
+    "schema_version": 1
+  },
+  {
+    "type": "probe_discovery",
+    "coordinates_2d": [
+      0.0,
+      0.0
+    ],
+    "coordinates_highD": null,
+    "desert_value": 0.8207988826097357,
+    "nearest_concepts": [
+      {
+        "term": "plash",
+        "distance": 0.8207988826097357,
+        "roget_categories": null,
+        "roget_class": "Matter"
+      },
+      {
+        "term": "plagiarism",
+        "distance": 0.8221342480448187,
+        "roget_categories": null,
+        "roget_class": "Abstract Relations"
+      },
+      {
+        "term": "plaguy",
+        "distance": 0.8291330214854178,
+        "roget_categories": null,
+        "roget_class": "Volition"
+      }
+    ],
+    "roget_context": null,
+    "generated_description": "This point occupies the space between a sudden wet impact (plash) and appropriation of others&#x27; work (plagiarism)—suggesting the concept of **borrowing without acknowledgment in casual speech or writing**, where someone adopts another&#x27;s turn of phrase or anecdote in conversation without crediting them, falling short of formal plagiarism but violating conversational honesty.",
+    "user_notes": "riveting ↔ plunder",
+    "fabrication_notes": {
+      "material": "",
+      "method": "",
+      "dimensions": "",
+      "status": "idea",
+      "photos": []
+    },
+    "tags": [
+      "probe_discovery"
+    ],
+    "starred": false,
+    "v1_source": null,
+    "id": "a5bed5e6-9a2e-4330-baba-9f5c69b5a253",
+    "timestamp": "2026-03-26T01:06:33.470426+00:00",
+    "schema_version": 1
+  },
+  {
+    "type": "probe_discovery",
+    "coordinates_2d": [
+      0.0,
+      0.0
+    ],
+    "coordinates_highD": null,
+    "desert_value": 0.8207988826097357,
+    "nearest_concepts": [
+      {
+        "term": "plash",
+        "distance": 0.8207988826097357,
+        "roget_categories": null,
+        "roget_class": "Matter"
+      },
+      {
+        "term": "plagiarism",
+        "distance": 0.8221342480448187,
+        "roget_categories": null,
+        "roget_class": "Abstract Relations"
+      },
+      {
+        "term": "plaguy",
+        "distance": 0.8291330214854178,
+        "roget_categories": null,
+        "roget_class": "Volition"
+      }
+    ],
+    "roget_context": null,
+    "generated_description": "This point occupies the space between a sudden wet impact (plash) and appropriation of others&#x27; work (plagiarism)—suggesting the concept of **borrowing without acknowledgment in casual speech or writing**, where someone adopts another&#x27;s turn of phrase or anecdote in conversation without crediting them, falling short of formal plagiarism but violating conversational honesty.",
+    "user_notes": "riveting ↔ plunder",
+    "fabrication_notes": {
+      "material": "",
+      "method": "",
+      "dimensions": "",
+      "status": "idea",
+      "photos": []
+    },
+    "tags": [
+      "probe_discovery"
+    ],
+    "starred": false,
+    "v1_source": null,
+    "id": "d78e0740-2b8f-414d-b060-6ea381e8f8ce",
+    "timestamp": "2026-03-26T01:06:37.495095+00:00",
+    "schema_version": 1
+  },
+  {
+    "type": "probe_discovery",
+    "coordinates_2d": [
+      0.0,
+      0.0
+    ],
+    "coordinates_highD": null,
+    "desert_value": 0.8207988826097357,
+    "nearest_concepts": [
+      {
+        "term": "plash",
+        "distance": 0.8207988826097357,
+        "roget_categories": null,
+        "roget_class": "Matter"
+      },
+      {
+        "term": "plagiarism",
+        "distance": 0.8221342480448187,
+        "roget_categories": null,
+        "roget_class": "Abstract Relations"
+      },
+      {
+        "term": "plaguy",
+        "distance": 0.8291330214854178,
+        "roget_categories": null,
+        "roget_class": "Volition"
+      }
+    ],
+    "roget_context": null,
+    "generated_description": "The soft, wet impact of something striking water or mud—distinct from a splash by being smaller, less violent, and often accompanied by adhesion rather than dispersal. A plash is the sound and sensation of minor liquid disturbance, the threshold between a drip&#x27;s quietness and a splash&#x27;s drama.",
+    "user_notes": "riveting ↔ plunder",
+    "fabrication_notes": {
+      "material": "",
+      "method": "",
+      "dimensions": "",
+      "status": "idea",
+      "photos": []
+    },
+    "tags": [
+      "probe_discovery"
+    ],
+    "starred": false,
+    "v1_source": null,
+    "id": "70e9ef76-33c5-4d51-8938-8b6fd385e338",
+    "timestamp": "2026-03-26T01:06:47.311330+00:00",
+    "schema_version": 1
+  },
+  {
+    "type": "probe_discovery",
+    "coordinates_2d": [
+      0.0,
+      0.0
+    ],
+    "coordinates_highD": null,
+    "desert_value": 0.8207988826097357,
+    "nearest_concepts": [
+      {
+        "term": "plash",
+        "distance": 0.8207988826097357,
+        "roget_categories": null,
+        "roget_class": "Matter"
+      },
+      {
+        "term": "plagiarism",
+        "distance": 0.8221342480448187,
+        "roget_categories": null,
+        "roget_class": "Abstract Relations"
+      },
+      {
+        "term": "plaguy",
+        "distance": 0.8291330214854178,
+        "roget_categories": null,
+        "roget_class": "Volition"
+      }
+    ],
+    "roget_context": null,
+    "generated_description": "The soft, wet impact of something striking water or mud—distinct from a splash by being smaller, less violent, and often accompanied by adhesion rather than dispersal. A plash is the sound and sensation of minor liquid disturbance, the threshold between a drip&#x27;s quietness and a splash&#x27;s drama.",
+    "user_notes": "riveting ↔ plunder",
+    "fabrication_notes": {
+      "material": "",
+      "method": "",
+      "dimensions": "",
+      "status": "idea",
+      "photos": []
+    },
+    "tags": [
+      "probe_discovery"
+    ],
+    "starred": false,
+    "v1_source": null,
+    "id": "57451a88-61e0-4963-9fff-50f5270cf004",
+    "timestamp": "2026-03-26T01:06:58.718890+00:00",
     "schema_version": 1
   }
 ]

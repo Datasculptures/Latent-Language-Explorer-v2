@@ -4,6 +4,7 @@ import { loadSceneData } from './scene/dataLoader'
 import { useAppStore } from './store'
 import LandscapePage from './pages/Landscape'
 import DiscoveryPage from './pages/Discovery'
+import JournalPage   from './pages/Journal'
 
 export default function App() {
   const canvasRef                       = useRef<HTMLCanvasElement>(null)
@@ -38,7 +39,7 @@ export default function App() {
         <span style={{ color:'#00b4d8', fontSize:'0.85rem', fontWeight:'bold' }}>
           LLE v2
         </span>
-        {(['landscape','discovery'] as const).map(page => (
+        {(['landscape','discovery','journal'] as const).map(page => (
           <button key={page}
             onClick={() => setActivePage(page)}
             style={{
@@ -63,12 +64,17 @@ export default function App() {
       {/* Canvas -- always mounted, never removed */}
       <div style={{ position:'relative', flex:1 }}>
         <canvas ref={canvasRef}
-          style={{ position:'absolute', inset:0, width:'100%', height:'100%' }}
+          style={{
+            position:'absolute', inset:0, width:'100%', height:'100%',
+            // Hide canvas on journal page — keep it mounted so 3D state is preserved
+            visibility: activePage === 'journal' ? 'hidden' : 'visible',
+          }}
         />
 
         {/* Page UI panels -- layered over canvas */}
         {activePage === 'landscape' && loadState === 'ready' && <LandscapePage />}
         {activePage === 'discovery' && loadState === 'ready' && <DiscoveryPage />}
+        {activePage === 'journal'   && <JournalPage />}
 
         {/* Status overlays */}
         {loadState === 'no_pipeline' && (

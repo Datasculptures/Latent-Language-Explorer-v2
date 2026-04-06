@@ -9,8 +9,8 @@ $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 Set-Location $ScriptDir
 
 # Dependency checks
-if (-not (Get-Command python -ErrorAction SilentlyContinue)) {
-    Write-Error "ERROR: python not found. Install Python 3.11+."; exit 1
+if (-not (Get-Command py -ErrorAction SilentlyContinue)) {
+    Write-Error "ERROR: py launcher not found. Install Python 3.11+ from python.org."; exit 1
 }
 if (-not (Get-Command node -ErrorAction SilentlyContinue)) {
     Write-Error "ERROR: node not found. Install Node.js 20+."; exit 1
@@ -43,9 +43,12 @@ Write-Host "  Frontend: http://localhost:$FrontendPort"
 Write-Host "  Press Ctrl+C to stop."
 Write-Host ""
 
-# Start backend
+# Start backend — set PYTHONPATH so py 3.14 can find packages in the local venv
+$SitePackages = Join-Path (Split-Path $ScriptDir -Parent) "Lib\site-packages"
+$env:PYTHONPATH = $SitePackages
 $BackendJob = Start-Process -FilePath "py" `
     -ArgumentList "-m uvicorn backend.app.main:app --host 0.0.0.0 --port $BackendPort --reload --reload-dir backend" `
+    -WorkingDirectory $ScriptDir `
     -NoNewWindow -PassThru
 
 # Start frontend

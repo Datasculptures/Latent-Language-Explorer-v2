@@ -1,7 +1,7 @@
 /**
  * Typed API client. All API calls go through this module.
  */
-import type { JournalEntry, JournalEntryCreate } from '../types'
+import type { JournalEntry, JournalEntryCreate, VoronoiVertex, PathResult } from '../types'
 
 const API_BASE = '/api'
 
@@ -102,4 +102,17 @@ export async function describePoint(
   req: DescribePointRequest
 ): Promise<{ description: string; desert_value: number }> {
   return apiFetch('/describe-point', { method: 'POST', body: JSON.stringify(req) })
+}
+
+export async function fetchVoronoiVertices(): Promise<{ meta: Record<string, unknown>; vertices: VoronoiVertex[] }> {
+  return apiFetch('/voronoi-vertices')
+}
+
+export interface PathRequest {
+  term_a: string
+  term_b: string
+}
+
+export async function findConceptPath(req: PathRequest): Promise<PathResult> {
+  return apiFetch('/path', { method: 'POST', body: JSON.stringify(req) })
 }

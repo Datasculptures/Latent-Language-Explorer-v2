@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { SceneManager } from '../scene/SceneManager'
 import { useAppStore }  from '../store'
-import { fetchJournalEntries, createJournalEntry, describePoint }
+import { fetchJournalEntries, createJournalEntry, describePoint,
+         fetchVoronoiVertices }
   from '../api/client'
-import type { JournalEntry } from '../types'
+import type { JournalEntry, VoronoiVertex } from '../types'
 
 export default function DiscoveryPage() {
   const { setSurfaceMode } = useAppStore()
@@ -17,6 +18,14 @@ export default function DiscoveryPage() {
   const [describing,     setDescribing]     = useState(false)
   const [journalEntries, setJournalEntries] = useState<JournalEntry[]>([])
   const [journalOpen,    setJournalOpen]    = useState(false)
+
+  // Absence Catalogue
+  const [absenceOpen,     setAbsenceOpen]     = useState(false)
+  const [voronoiVerts,    setVoronoiVerts]    = useState<VoronoiVertex[]>([])
+  const [absenceLoading,  setAbsenceLoading]  = useState(false)
+  const [absenceDesc,     setAbsenceDesc]     = useState<Record<string, string>>({})
+  const [absenceDescBusy, setAbsenceDescBusy] = useState<string | null>(null)
+  const absenceLoadedRef = useRef(false)
 
   // Switch to desert surface mode while on this page
   useEffect(() => {
@@ -108,6 +117,53 @@ export default function DiscoveryPage() {
   const depthLabel = (d: number) =>
     d >= 0.05 ? '⬛ DEEP' : d >= 0.02 ? '▪ shallow' : '· flat'
 
+  const openAbsenceCatalogue = async () => {
+    setAbsenceOpen(o => !o)
+    if (absenceLoadedRef.current) return
+    setAbsenceLoading(true)
+    try {
+      const { vertices } = await fetchVoronoiVertices()
+      // Top 50 by equidistance (already ranked; rank 1 = highest)
+      const top50 = [...vertices].sort((a, b) => a.rank - b.rank).slice(0, 50)
+      setVoronoiVerts(top50)
+      absenceLoadedRef.current = true
+    } finally {
+      setAbsenceLoading(false)
+    }
+  }
+
+  const describeVoronoi = async (v: VoronoiVertex) => {
+    if (absenceDescBusy) return
+    setAbsenceDescBusy(v.id)
+    try {
+      const nearest = v.parents.map(p => ({
+        term:             p.term,
+        distance:         p.distance,
+        roget_categories: [p.category_name],
+        roget_class:      p.class_name ?? null,
+      }))
+      const resp = await describePoint({
+        coordinates_2d:   [v.x, v.y],
+        desert_value:     v.mean_dist,
+        nearest_concepts: nearest,
+      })
+      setAbsenceDesc(d => ({ ...d, [v.id]: resp.description }))
+      // Auto-save to journal
+      const entry = await createJournalEntry({
+        type:                 'voronoi',
+        coordinates_2d:       [v.x, v.y],
+        desert_value:         v.mean_dist,
+        nearest_concepts:     nearest,
+        generated_description: resp.description,
+      })
+      setJournalEntries(prev => [entry, ...prev])
+    } catch (e) {
+      setAbsenceDesc(d => ({ ...d, [v.id]: `[Error: ${e}]` }))
+    } finally {
+      setAbsenceDescBusy(null)
+    }
+  }
+
   return (
     <>
       {/* Probe panel */}
@@ -188,11 +244,79 @@ export default function DiscoveryPage() {
         )}
       </div>
 
+      {/* Absence Catalogue toggle */}
+      <button
+        onClick={openAbsenceCatalogue}
+        style={{
+          position:'absolute', top:'1rem', right:'1rem',
+          ...btnStyle, width:'auto', padding:'0.3rem 0.75rem',
+        }}>
+        {absenceOpen ? 'Hide Absences' : 'Absence Catalogue'}
+      </button>
+
+      {/* Absence Catalogue panel */}
+      {absenceOpen && (
+        <div style={{
+          position:'absolute', top:'3rem', right:'1rem',
+          background:'rgba(10,10,15,0.96)', border:'1px solid #222',
+          padding:'0.75rem', borderRadius:'4px', width:'300px',
+          maxHeight:'70vh', overflowY:'auto', zIndex:20,
+        }}>
+          <div style={{ fontSize:'0.7rem', color:'#555', marginBottom:'0.5rem',
+                        textTransform:'uppercase', letterSpacing:'0.08em' }}>
+            Absence Catalogue — top 50 voids
+          </div>
+          {absenceLoading && (
+            <div style={{ fontSize:'0.75rem', color:'#444' }}>Loading…</div>
+          )}
+          {voronoiVerts.map(v => (
+            <div key={v.id} style={{
+              borderBottom:'1px solid #1a1a1a', paddingBottom:'0.5rem',
+              marginBottom:'0.5rem',
+            }}>
+              <div style={{ display:'flex', justifyContent:'space-between', alignItems:'baseline' }}>
+                <span style={{ fontSize:'0.72rem', color:'#888' }}>
+                  #{v.rank}
+                  <span style={{ color:'#555', marginLeft:'0.4rem' }}>
+                    eq={v.equidistance.toFixed(4)}
+                  </span>
+                </span>
+                <div style={{ display:'flex', gap:'0.3rem' }}>
+                  <button
+                    onClick={() => {
+                      const sm = SceneManager.getInstance()
+                      const pos = sm.umapToScene(v.x, v.y)
+                      sm.flyTo(pos)
+                    }}
+                    style={btnSmall}>Fly To</button>
+                  <button
+                    onClick={() => describeVoronoi(v)}
+                    disabled={absenceDescBusy === v.id}
+                    style={btnSmall}>
+                    {absenceDescBusy === v.id ? '…' : 'Describe'}
+                  </button>
+                </div>
+              </div>
+              <div style={{ fontSize:'0.68rem', color:'#555', marginTop:'0.2rem' }}>
+                {v.parents.slice(0, 3).map(p => p.term).join(', ')}
+              </div>
+              {absenceDesc[v.id] && (
+                <div style={{ fontSize:'0.68rem', color:'#777', fontStyle:'italic',
+                              marginTop:'0.3rem', borderLeft:'2px solid #222',
+                              paddingLeft:'0.4rem' }}>
+                  {absenceDesc[v.id]}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+
       {/* Journal toggle */}
       <button
         onClick={() => setJournalOpen(o => !o)}
         style={{
-          position:'absolute', top:'1rem', right:'1rem',
+          position:'absolute', top:'1rem', right:'calc(1rem + 180px)',
           ...btnStyle, width:'auto', padding:'0.3rem 0.75rem',
         }}>
         Journal ({journalEntries.length})

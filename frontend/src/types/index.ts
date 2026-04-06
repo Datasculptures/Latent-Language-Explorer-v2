@@ -90,8 +90,40 @@ export interface JournalEntryCreate {
   starred?: boolean
 }
 
+export interface VoronoiParent {
+  term: string
+  distance: number
+  class_id: number
+  class_name: string
+  category_name: string
+}
+
+export interface VoronoiVertex {
+  id: string
+  x: number
+  y: number
+  equidistance: number
+  mean_dist: number
+  parent_count: number
+  parents: VoronoiParent[]
+  rank: number
+}
+
+export interface PathStep {
+  term: string
+  position_2d: [number, number]
+}
+
+export interface PathResult {
+  term_a: string
+  term_b: string
+  steps: PathStep[]
+  total_length: number
+  step_count: number
+}
+
 export type SurfaceMode = 'wireframe' | 'contour' | 'density' | 'desert'
-export type ActivePage  = 'landscape' | 'discovery'
+export type ActivePage  = 'landscape' | 'discovery' | 'journal'
 
 /** Roget class colours. Will expand to section-level tints in Phase 1. */
 export const ROGET_CLASS_COLOURS: Record<RogetClassId, string> = {

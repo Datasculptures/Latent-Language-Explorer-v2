@@ -8,6 +8,20 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 
+# Load .env from project root — stdlib only, no third-party deps needed
+_env_file = PROJECT_ROOT / ".env"
+if _env_file.exists():
+    with open(_env_file, encoding="utf-8") as _f:
+        for _line in _f:
+            _line = _line.strip()
+            if not _line or _line.startswith("#") or "=" not in _line:
+                continue
+            _k, _, _v = _line.partition("=")
+            _k = _k.strip()
+            _v = _v.strip().strip("\"'")
+            if _k and _k not in os.environ:
+                os.environ[_k] = _v
+
 DATA_DIR    = PROJECT_ROOT / "backend" / "data"
 JOURNAL_DIR = DATA_DIR / "journal"
 EXPORTS_DIR = DATA_DIR / "exports"
