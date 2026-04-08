@@ -65,7 +65,7 @@ The 3D terrain is a visualization of a 2D UMAP projection of 384-dimensional emb
 
 **Height is not a third semantic dimension.** Terrain height is KDE density — a count of how many named concepts are nearby in 2D UMAP space. A tall peak means a dense cluster of named terms. A desert valley means sparse named terms. Neither height nor depth tells you anything about semantic importance, cognitive salience, or conceptual depth.
 
-**UMAP is stochastic and seed-dependent.** The projection uses seed 42 (documented, fixed). A different seed produces a different terrain. The terrain is one projection, not the projection.
+**UMAP is stochastic and seed-dependent.** The projection uses seed 21 (documented, fixed). A different seed produces a different terrain. The terrain is one projection, not the projection.
 
 ---
 

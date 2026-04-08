@@ -97,6 +97,16 @@ def main():
     polysemy_map = {t: float(polysemy_scores[i]) for i, t in enumerate(ctx_terms)}
     ctx_keys     = ctx_meta["context_keys"]
 
+    # Context positions — optional, produced by compute_context_positions.py
+    ctx_positions: dict = {}
+    if CTX_POS_FILE.exists():
+        with open(CTX_POS_FILE) as f:
+            ctx_positions = json.load(f)
+        print(f"Loaded context positions for {len(ctx_positions):,} terms.")
+    else:
+        print("Note: context_positions.json not found — "
+              "using base position as placeholder for context variants.")
+
     # Contextual variant distances from neutral vector per term
     print("Computing contextual variant distances ...")
     neutral_idx = ctx_keys.index("neutral")
@@ -132,16 +142,6 @@ def main():
         attractors = json.load(f)
     with open(BASINS_JSON) as f:
         basins = json.load(f)
-
-    # Context positions — optional, produced by compute_context_positions.py
-    ctx_positions: dict = {}
-    if CTX_POS_FILE.exists():
-        with open(CTX_POS_FILE) as f:
-            ctx_positions = json.load(f)
-        print(f"Loaded context positions for {len(ctx_positions):,} terms.")
-    else:
-        print("Note: context_positions.json not found — "
-              "using base position as placeholder for context variants.")
 
     # Tortuosity is optional — only added if compute_tortuosity.py has run
     tortuosity_map: dict = {}
@@ -247,7 +247,7 @@ def main():
     print(f"\nData bundle summary:")
     print(f"  Concepts:    {len(concepts):,}")
     print(f"  Categories:  {bundle['meta']['roget_category_count']:,}")
-    print(f"  UMAP seed:   {UMAP_RANDOM_SEED} (must be 42)")
+    print(f"  UMAP seed:   {UMAP_RANDOM_SEED} (canonical: {UMAP_RANDOM_SEED})")
     print(f"  Git hash:    {bundle['meta']['pipeline_git_hash']}")
     print(f"\nPhase 2 complete. Backend can now serve terrain data.")
     print(f"Proceed to Phase 3: discovery pipeline.")

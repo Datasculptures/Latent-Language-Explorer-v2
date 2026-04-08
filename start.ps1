@@ -8,9 +8,14 @@ $ErrorActionPreference = "Stop"
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 Set-Location $ScriptDir
 
-# Dependency checks
-if (-not (Get-Command py -ErrorAction SilentlyContinue)) {
-    Write-Error "ERROR: py launcher not found. Install Python 3.11+ from python.org."; exit 1
+# Resolve Python: prefer the AppData install (has all packages), fall back to py launcher
+$PythonExe = "C:\Users\SeanP\AppData\Local\Python\pythoncore-3.14-64\python.exe"
+if (-not (Test-Path $PythonExe)) {
+    if (Get-Command py -ErrorAction SilentlyContinue) {
+        $PythonExe = "py"
+    } else {
+        Write-Error "ERROR: Python not found. Install Python 3.11+ from python.org."; exit 1
+    }
 }
 if (-not (Get-Command node -ErrorAction SilentlyContinue)) {
     Write-Error "ERROR: node not found. Install Node.js 20+."; exit 1
@@ -28,13 +33,21 @@ if (Test-Path ".env") {
 
 if ($Install) {
     Write-Host "Installing Python dependencies..."
-    py -m pip install -r backend/requirements.txt
+    & $PythonExe -m pip install -r backend/requirements.txt
     Write-Host "Installing Node dependencies..."
     Set-Location frontend; npm install; Set-Location ..
 }
 
 $BackendPort  = if ($env:PORT_BACKEND)  { $env:PORT_BACKEND }  else { "8000" }
 $FrontendPort = if ($env:PORT_FRONTEND) { $env:PORT_FRONTEND } else { "3000" }
+
+# Port conflict checks
+foreach ($port in @($BackendPort, $FrontendPort)) {
+    $inUse = netstat -ano | Select-String ":$port\s" | Select-String "LISTENING"
+    if ($inUse) {
+        Write-Warning "Port $port is already in use. The server may fail to bind or choose a different port."
+    }
+}
 
 Write-Host ""
 Write-Host "  Latent Language Explorer V2"
@@ -43,10 +56,8 @@ Write-Host "  Frontend: http://localhost:$FrontendPort"
 Write-Host "  Press Ctrl+C to stop."
 Write-Host ""
 
-# Start backend — set PYTHONPATH so py 3.14 can find packages in the local venv
-$SitePackages = Join-Path (Split-Path $ScriptDir -Parent) "Lib\site-packages"
-$env:PYTHONPATH = $SitePackages
-$BackendJob = Start-Process -FilePath "py" `
+# Start backend
+$BackendJob = Start-Process -FilePath $PythonExe `
     -ArgumentList "-m uvicorn backend.app.main:app --host 0.0.0.0 --port $BackendPort --reload --reload-dir backend" `
     -WorkingDirectory $ScriptDir `
     -NoNewWindow -PassThru

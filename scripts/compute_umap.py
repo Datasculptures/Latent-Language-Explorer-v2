@@ -36,12 +36,15 @@ from terrain_config import (
     PCA_N_COMPONENTS,
 )
 
-# Seed guard -- refuse to run if seed has been changed
-if UMAP_RANDOM_SEED != 42:
-    print(f"ERROR: UMAP_RANDOM_SEED is {UMAP_RANDOM_SEED}, expected 42.")
+# Seed guard -- refuse to run if seed has been changed from the canonical value.
+# To change the seed: update UMAP_RANDOM_SEED and SCHEMA_VERSION in terrain_config.py,
+# clear the journal, and update this guard to match.
+CANONICAL_SEED = 21
+if UMAP_RANDOM_SEED != CANONICAL_SEED:
+    print(f"ERROR: UMAP_RANDOM_SEED is {UMAP_RANDOM_SEED}, expected {CANONICAL_SEED}.")
     print("Changing the seed invalidates all journal coordinates.")
-    print("If this change is intentional, increment SCHEMA_VERSION in terrain_config.py")
-    print("and write a coordinate migration script before proceeding.")
+    print("If this change is intentional, increment SCHEMA_VERSION in terrain_config.py,")
+    print("clear the journal, and update CANONICAL_SEED in this script.")
     sys.exit(1)
 
 if UMAP_N_COMPONENTS != 2:

@@ -10,13 +10,13 @@ change, increment SCHEMA_VERSION and write a coordinate migration script.
 
 # ── Versioning ────────────────────────────────────────────────────────
 PROJECT_VERSION = "2.0.0"
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 
 # ── UMAP ──────────────────────────────────────────────────────────────
-# Seed 42. Do not change after first embedding run.
-# V1 used seed 21 (after two prior changes: 42 → 1729 → 21).
-# V2 restores 42 as the documented canonical value.
-UMAP_RANDOM_SEED = 42
+# Seed 21. Do not change after first embedding run.
+# History: V1 used seeds 42 → 1729 → 21. V2 launched with 42, then
+# reset to 21 on 2026-04-06 (fresh start, journal cleared).
+UMAP_RANDOM_SEED = 21
 UMAP_N_COMPONENTS = 2       # 2D layout. Height is KDE density, not a UMAP dim.
 UMAP_N_NEIGHBORS = 15
 UMAP_MIN_DIST = 0.1

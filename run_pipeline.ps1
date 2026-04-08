@@ -11,7 +11,7 @@ $sw = [System.Diagnostics.Stopwatch]::StartNew()
 
 function Step($n, $desc, $script) {
     Write-Host "[$n] $desc..."
-    py $script
+    & "C:\Users\SeanP\AppData\Local\Python\pythoncore-3.14-64\python.exe" $script
 }
 
 if (-not $Downstream) {

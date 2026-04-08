@@ -80,10 +80,10 @@ TypeScript + React + Vite frontend. Single Three.js renderer shared between the 
 ## UMAP Seed
 
 ```python
-UMAP_RANDOM_SEED = 42   # scripts/terrain_config.py
+UMAP_RANDOM_SEED = 21   # scripts/terrain_config.py
 ```
 
-**Never change this after the first embedding run.** Changing it invalidates all journal coordinates. If the seed must change, increment `SCHEMA_VERSION` and write a coordinate migration script.
+**Never change this after the first embedding run.** Changing it invalidates all journal coordinates. If the seed must change, clear the journal and increment `SCHEMA_VERSION`.
 
 ---
 
