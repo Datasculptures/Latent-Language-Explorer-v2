@@ -80,7 +80,7 @@ TypeScript + React + Vite frontend. Single Three.js renderer shared between the 
 ## UMAP Seed
 
 ```python
-UMAP_RANDOM_SEED = 21   # scripts/terrain_config.py
+UMAP_RANDOM_SEED = 42   # scripts/terrain_config.py
 ```
 
 **Never change this after the first embedding run.** Changing it invalidates all journal coordinates. If the seed must change, clear the journal and increment `SCHEMA_VERSION`.
@@ -100,18 +100,32 @@ V2 applies four filters before selecting probe pairs:
 
 ## Key Discoveries (V2)
 
-**chairperson vs composure** · depth 0.9329 · deepest near: *chairman*
-The region between institutional role and emotional equanimity passes through the formal exercise of authority. Something about the composure required to chair — the unnamed quality of presiding-without-reacting.
+**Topographic Warding** · ridge vs flanking · depth 0.9641
+The condition where elevated terrain performs a defensive function
+through its geometry alone — a ridge hardening into a protective
+boundary against lateral approach.
 
-**dean vs valiant** · depth 0.9199 · deepest near: *noble*
-Between an institutional title and a personal virtue lies a shared root in the idea of being worthy of regard. The unnamed concept is something like *deserved standing* — authority that derives from character rather than appointment.
+**Moral Arrears** · paradise vs dignity · depth 0.9448
+The existential debt incurred when a rightful claim to perfection
+meets systemic failure — worthiness uncompensated by the harmony
+it necessitates.
 
-**magician vs molded** · depth 0.8948 · deepest near: *quantum*
-Between performance and material transformation, the embedding finds quantum physics. Something about transformation at a scale smaller than observation — change that happens without an observable mechanism. The gap between the trick and the substance.
+**Atmospheric Conduit** · telephone vs azure · depth 0.9167
+The intangible medium that carries voice through sky — the invisible
+infrastructure of aerial transmission.
 
-**navigator vs password** · depth 0.8015 · deepest near: *authentication*
-Between spatial wayfinding and access credentials, the model finds authentication. The unnamed concept is the moment of being recognized as authorized to proceed — the credential as a form of passage, the login as a kind of navigation.
+**Atmospheric Conduit** · navigator vs password · depth 0.8015
+Between spatial wayfinding and access credentials: the act of being
+recognized as authorized to proceed. A credential as a form of passage.
 
+Descriptions generated via Anthropic API and quality-optimized through
+Adaptive Data by Adaption (E → A grade, 94% improvement).
+Full corpus: [kaggle.com/datasets/datasculptures/roget-semantic-terrain](https://kaggle.com/datasets/datasculptures/roget-semantic-terrain)
+
+## Kaggle
+
+- **Dataset:** [Roget 1911 Semantic Embedding Terrain](https://kaggle.com/datasets/datasculptures/roget-semantic-terrain) — 3,298 discoveries with descriptions
+- **Notebook:** [Latent Language Explorer V2](https://kaggle.com/code/datasculptures/latent-language-explorer-v2-notebook) — reproducible methodology
 ---
 
 ## Fabrication
