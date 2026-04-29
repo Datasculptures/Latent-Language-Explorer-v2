@@ -55,3 +55,41 @@ data/roget/vocab_stats.json
 data/embeddings/
 data/terrain/
 data/discovery/
+
+# Kaggle export
+kaggle_export/
+
+
+backend/data/journal/ 
+data/embeddings/           
+data/terrain/              
+data/roget/               
+backend/data/data_bundle.json  
+
+# The journal — sensitive/personal
+backend/data/journal/      o
+
+# Kaggle working files
+kaggle_export/             
+kaggle_export/adaption_*/  
+kaggle_export/semantic_desert_probes*.json  
+
+# Environment
+.env                       
+node_modules/             
+__pycache__/               
+dist/                      
+
+# Scratch scripts
+scripts/make_sample.py     l
+scripts/clean_sample.py    
+scripts/final_clean.py     
+scripts/blocklist_note.txt 
+
+Lib/
+scripts/*.exe
+scripts/make_sample.py
+scripts/scan_content.py
+scripts/final_clean.py
+scripts/clean_sample.py
+scripts/blocklist_note.txt

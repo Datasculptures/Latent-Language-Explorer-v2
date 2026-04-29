@@ -56,6 +56,7 @@ from terrain_config import (
     UMAP_RANDOM_SEED,
     PROBE_MIN_DENSITY_THRESHOLD,
     PROBE_MIN_ZIPF_FREQUENCY,
+    PROBE_TERM_BLOCKLIST,
 )
 
 
@@ -345,6 +346,13 @@ def main():
             threshold=PROBE_MIN_DENSITY_THRESHOLD,
             k=5,
         )
+
+    # Blocklist filter: remove terms that should never appear as probe endpoints
+    before_block = len(dense_terms)
+    dense_terms = {t for t in dense_terms if t.lower() not in PROBE_TERM_BLOCKLIST}
+    blocked = before_block - len(dense_terms)
+    if blocked:
+        print(f"After blocklist filter: {len(dense_terms):,} terms ({blocked:,} blocked)")
 
     for c in concepts:
         if c.get("is_obsolete", False):

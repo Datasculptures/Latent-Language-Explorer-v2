@@ -105,6 +105,28 @@ EXPORT_CONTOUR_INTERVAL_INCHES = 0.25
 EXPORT_DPI = 300
 EXPORT_MAX_GRID_DIMENSION = 1024
 
+# ── Probe term blocklist ───────────────────────────────────────────────
+# Terms excluded from probe pair selection regardless of Zipf/density score.
+# Applied in select_probe_pairs.py and package_kaggle_dataset.py.
+PROBE_TERM_BLOCKLIST = {
+    # Slurs
+    "nigger", "coon", "faggot", "tranny", "spick", "chink", "kike",
+    "wetback", "gook", "retard", "spastic",
+    # Explicit sexual
+    "asshole", "boner", "lewd", "pimp", "puke", "slut", "whore",
+    "homo", "feces", "faeces", "shit", "fuck", "cunt",
+    "masturbate", "masturbation", "pornographic", "erotic",
+    "brothel", "prostitute", "prostitution", "incest",
+    # Violence / self-harm
+    "suicide", "murderous", "bloodshed",
+    # Drugs
+    "heroin", "cocaine",
+    # Extremism
+    "jihad",
+    # Abbreviations that passed Zipf
+    "usda",
+}
+
 # ── Security ───────────────────────────────────────────────────────────
 MAX_QUERY_LENGTH = 500
 MAX_CONCEPT_LABEL_LENGTH = 100

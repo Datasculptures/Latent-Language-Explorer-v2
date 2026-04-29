@@ -1,0 +1,15 @@
+{
+  "title": "Latent Language Explorer V2",
+  "id": "datasculptures/latent-language-explorer-v2",
+  "code_file": "latent_language_explorer.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": false,
+  "enable_gpu": false,
+  "enable_internet": true,
+  "dataset_sources": [
+    "datasculptures/roget-semantic-terrain"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}
